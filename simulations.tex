@@ -953,6 +953,9 @@ With the above presented results, the design of cellular antennas is finished. I
 
 To finalize the project, antennas to support GPS and Wi-Fi frequencies were required. As the cellular antennas are integrated to the side metals at the ends of the phone, the most logical and the only possible locations for these antennas are the metals on the long sides of the handset. With this placement of GPS/Wi-Fi antennas the metallic side frame would be utilized nearly completely for communications purposes.
 
+
+\subsubsection{GPS and Wi-Fi antennas}
+\label{sec:gpswifi}
 As Wi-Fi operates on higher frequencies ($2.4\,\giga\hertz$ and $5\,\giga\hertz$ bands), the required antenna element can be rather short. However, GPS uses lower frequency, $1.575\,\giga\hertz$, and thus requires a longer antenna. The structure was desired to be kept as simple as possible, and therefore these two were combined by a $0.5\,\milli\meter$ slot. Feed was placed to the shorter part and currents couple from that to the other part. To improve the available bandwidth, the antennas were enlarged, and part of them was bended to lie on the front face of the handset. The structure is illustrated in Figure \ref{fig:gps_struct}.
 \begin{figure}[H]
     \centering
@@ -1024,4 +1027,22 @@ The performance of GPS and Wi-Fi antennas is seen in Figure \ref{fig:gpswifi_per
     \caption{GPS/Wi-Fi performance.}
     \label{fig:gpswifi_perf}
 \end{figure}
+
+
+\subsubsection{Complete structure}
+\label{sec:complete_structure}
+With the GPS and Wi-Fi antennas added to the phone, the design project is complete. Figure \ref{fig:complete_struct} shows an overall view of the phone and how the antennas locate on it. All the antennas are integrated to the metallic side frame, which will save some space inside the phone for other subsystems and parts of the device.
+
+<kuva>
+
+The addition of the GPS/Wi-Fi antennas had a minor effect on the performance of the cellular antennas. Figure \ref{fig:cellular_final_eff} shows the efficiency of these antennas after the addition of the other elements. As it can be seen, the performance targets are still met, and the most noticeable difference is basically the worse peak value of Element 1, which is still over $50\,\%$.
+
+<kuva>
+
+Project goals also had a requirement for isolation between the main and diversity cellular antennas. The target was $-15\,\db$, which practically means, that no power flows from one antenna to the other preventing radiation. Isolation of these elements is presented in Figure \ref{fig:isolation}. In the figure, various $S_{ij}$-parameters are shown, and indexes $i$ and $j$ refer to the antenna elements from or to which the power is scattered. Clearly, these antennas are well isolated as all combinations are below the target value, and generally a lot below it.
+
+<kuva>
+
+The last result to report is radiation patterns. For mobile phones, omnidirectional patterns are desired due to the fact that users should be able to communicate without a need to point their phones to a certain direction. Figures \ref{säteilykuvat} present the patterns for few frequencies on $xy$, $xz$, and $yz$-planes.
+
 \clearpage
