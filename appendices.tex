@@ -1,0 +1,34 @@
+\appendix 
+\clearpage
+%% Lisää tekstin "Liitteet" sisällysluetteloon
+%%
+%% Adds the word "Appendices" to the table of contents
+%\addtocontents{toc}{\protect\contentsline{section}{Liiteet}{}{appendix}}
+\addtocontents{toc}{\protect\contentsline{section}{Appendices}{}{appendix}}
+
+\section{Esimerkki liitteestä\label{LiiteA}}
+%% Liitteiden kaavat, taulukot ja kuvat numeroidaan omana kokonaisuutenaan
+%%
+%% Equations, tables and figures have their own numbering in Appendices
+%% NOTE: laita jokaiseen liitteeseen
+\renewcommand{\theequation}{A\arabic{equation}}
+\setcounter{equation}{0}  
+\renewcommand{\thefigure}{A\arabic{figure}}
+\setcounter{figure}{0}
+\renewcommand{\thetable}{A\arabic{table}}
+\setcounter{table}{0}
+
+
+
+\clearpage
+\section{Toinen esimerkki liitteestä\label{LiiteB}}
+
+%% Liitteiden kaavat, taulukot ja kuvat numeroidaan omana kokonaisuutenaan
+%%
+%% Equations, tables and figures have their own numbering in Appendices
+\renewcommand{\theequation}{B\arabic{equation}}
+\setcounter{equation}{0}  
+\renewcommand{\thefigure}{B\arabic{figure}}
+\setcounter{figure}{0}
+\renewcommand{\thetable}{B\arabic{table}}
+\setcounter{table}{0}

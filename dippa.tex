@@ -1,0 +1,395 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                                                %%
+%% Esimerkki opinnäytteen tekemisestä LaTeX:lla 20130926          %%
+%% Alkuperäinen versio Luis Costa,  muutokset Perttu Puska        %%
+%%                                                                %%
+%% Tähän esimerkkiin kuuluu tiedostot                             %%
+%%               opinnaytepohja.tex (versio 1.7)                  %%
+%%               aaltothesis.sty (versio 1.7)                     %%
+%%               kuva1.eps                                        %%
+%%               kuva2.eps                                        %%
+%%                                                                %%
+%%                                                                %%
+%% Kääntäminen                                                    %%
+%% latex:                                                         %%
+%%             $ latex opinnaytepohja                             %%
+%%             $ latex opinnaytepohja                             %%
+%%                                                                %%
+%%   Tuloksena on tiedosto opinnayte.dvi, joka                    %%
+%%   muutetaan ps-muotoon seuraavasti                             %%
+%%                                                                %%
+%%             $ dvips opinnaytepohja -o                          %%
+%%                                                                %%
+%% Selittävät kommentit on tässä esimerkissä varustettu           %%
+%% %%-merkeillä ja muutokset, joita käyttäjä voi tehdä,           %%
+%% on varustettu %-merkeillä                                      %%
+%%                                                                %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Käytä toinen näistä, jos kirjoitat suomeksi:
+%% ensimmäinen, jos käytät pdflatexia (kuvat on oltava pdf-tiedostoina)
+%% toinen, jos haluat tuottaa ps-tiedostoa (käytä eps-formaattia kuville).
+%%
+%% Use one of these you write in Finnish:
+%% the 1st when using pdflatex (use pdf figures) or
+%% the 2nd when producing a ps file (use eps figures).
+%\documentclass[finnish,12pt,a4paper,pdftex]{article}
+%\documentclass[finnish,12pt,a4paper,dvips]{article}
+
+
+%% Käytä näitä, jos kirjoitat englanniksi
+%%
+%% Uncomment one of these if you write in English
+\documentclass[english,12pt,a4paper,pdftex]{article}
+%\documentclass[english,12pt,a4paper,dvips]{article}
+
+%% Tämä paketti on pakollinen
+%% Valitse korkeakoulusi näistä: arts, biz, chem, elec, eng, sci.
+%% Valiste editorisi käyttämä merkkikoodaustapa: utf8, latin1
+%%
+%% This package is required
+%% Choose your school from arts, biz, chem, elec, eng, sci.
+%% Choose the character encoding scheme used by your editor: utf8, latin1
+\usepackage[elec,utf8]{aaltothesis} % this is the default in aaltothesis.sty
+%\usepackage[elec,latin1]{aaltothesis}
+
+\usepackage[english]{babel}
+
+%% Jos käytät latex-komentoa käännettäessä (oletusarvo), 
+%% kuvat kannattaa tehdä eps-muotoon. Älä käytä ps-muotoisia kuvia!
+%% Käytä seuraavaa latex-komennon ja eps-kuvien kanssa 
+%%
+%% Jos taas käytät pdflatex-komentoa, joka kääntää tekstin suoraan
+%% pdf-tiedostoksi, kuvasi on oltava jpg-formaatissa tai pdf-formaatissa.
+%%
+%% Use this if you run pdflatex and use jpg/pdf-format pictures.
+%%
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{pdflscape}
+\usepackage{afterpage}
+\usepackage{rotating}
+\usepackage{rotfloat}
+\usepackage{verbatim}
+
+\usepackage{lipsum}
+
+%% Jos et jostain syystä pidä, miten alla oleva hyperref-paketti käyttää
+%% fontteja, värejä yms., käytä tämän paketin makroja muuttamaan
+%% fonttimäärittelyt. Katso paketin dokumentaatiota. Paketti määrittelee
+%% \url-makron, joten ota paketti käyttöön, jos et käytä hyperref-pakettia.
+%%
+%% Use the macros in this package to change how the hyperref package below 
+%% typesets its hypertext -- hyperlink colour, font, etc. See the package
+%% documentation. It also defines the \url macro, so use the package when 
+%% not using the hyperref package.
+
+%\usepackage[sort&compress]{natbib}
+\usepackage[normalem]{ulem}
+
+
+\usepackage{xpatch}
+
+\usepackage{csquotes}
+\usepackage[style=ieee,sorting=none,sortcites=true,backend=biber]{biblatex}
+%\usepackage[style=chem-acs,backend=biber,biblabel=brackets]{biblatex}
+\addbibresource{references.bib}
+\DefineBibliographyStrings{english}{phdthesis = {Doctoral dissertation}}
+
+\xpatchbibdriver{online}
+  {\printtext[parens]{\usebibmacro{date}}}
+  {\iffieldundef{year}
+    {}
+    {\printtext[parens]{\usebibmacro{date}}}}
+  {}
+  {\typeout{There was an error patching biblatex-ieee (specifically, ieee.bbx's @online driver)}}
+
+
+
+\usepackage{enumitem}
+\setlist{nolistsep}
+
+\usepackage{array}
+\usepackage{multirow}
+%\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+%\newcolumntype{M}{>{\centering\arraybackslash}m{\dimexpr.25\linewidth-2\tabcolsep}}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+
+%% Saat pdf-tiedoston viittaukset ja linkit kuntoon seuraavalla paketilla.
+%% Paketti toimii erityisen hyvin pdflatexin kanssa. 
+%%
+%% Use this if you want to get links and nice output with pdflatex
+\usepackage[pdfpagemode=None,colorlinks=true,urlcolor=black,%
+linkcolor=black,citecolor=black,pdfstartview=FitH]{hyperref}
+\usepackage{breakurl}
+
+\usepackage{cleveref}
+\newcommand{\crefrangeconjunction}{--}
+
+%% Matematiikan fontteja, symboleja ja muotoiluja lisää, näitä tarvitaan usein 
+%%
+%% Use this if you write hard core mathematics, these are usually needed
+\usepackage{amsfonts,amssymb,amsbsy,mathtools}
+\usepackage[amssymb]{SIunits}
+\newcommand\sub[2]{{#1}_{\mathrm{#2}}}
+\renewcommand\j{\mathrm{j}}
+\newcommand\db{\mathrm{dB}}
+
+\usepackage{textcomp}
+
+\usepackage{tikz}
+\usepackage[american]{circuitikz}
+\tikzstyle{densely dashed}= [dash pattern=on 4pt off 3pt]
+\usetikzlibrary{decorations.pathreplacing,decorations.pathmorphing}
+
+%% Vaakasuunnan mitat, ÄLÄ KOSKE!
+\setlength{\hoffset}{-1in}
+\setlength{\oddsidemargin}{35mm}
+\setlength{\evensidemargin}{25mm}
+\setlength{\textwidth}{15cm}
+%% Pystysuunnan mitat, ÄLÄ KOSKE!
+\setlength{\voffset}{-1in}
+\setlength{\headsep}{7mm}
+\setlength{\headheight}{1em}
+\setlength{\topmargin}{25mm-\headheight-\headsep}
+\setlength{\textheight}{23cm}
+
+
+%% Kaikki mikä paperille tulostuu, on tämän jälkeen
+%%
+%% Output starts here
+\begin{document}
+
+%% Korjaa vastaamaan korkeakouluasi, jos automaattisesti asetettu nimi on 
+%% virheellinen 
+%%
+%% Change the school field to describe your school if the autimatically 
+%% set name is wrong
+% \university{aalto University}{aalto-Yliopisto}
+% \school{School of Electrical Engineering}{SähköTekniikan korkeakoulu}
+
+%% Vain kandityölle: Korjaa seuraavat vastaamaan koulutusohjelmaasi
+%%
+%% Only for B.Sc. thesis: Choose your degree programme. 
+%\degreeprogram{Electronics and electrical engineering}%
+%{Elektroniikka ja sähkötekniikka}
+%%
+
+%% Vain DI/M.Sc.- ja lisensiaatintyölle: valitse laitos, 
+%% professuuri ja sen professuurikoodi. 
+%%
+%% Only for M.Sc. and Licentiate thesis: Choose your department,
+%% professorship and professorship code. 
+\department{Department of Radio Science and Technology}%
+{Radiotieteen ja -tekniikan laitos}
+\professorship{Radio Science and Engineering}{Radiotiede ja -tekniikka}
+\code{S-26}
+%%
+
+%% Valitse yksi näistä kolmesta
+%%
+%% Choose one of these:
+%\univdegree{BSc}
+\univdegree{MSc}
+%\univdegree{Lic}
+
+%% Oma nimi
+%%
+%% Should be self explanatory...
+\author{Joni Kurvinen}
+
+%% Opinnäytteen otsikko tulee vain tähän. Älä tavuta otsikkoa ja
+%% vältä liian pitkää otsikkotekstiä. Jos latex ryhmittelee otsikon
+%% huonosti, voit joutua pakottamaan rivinvaihdon \\ kontrollimerkillä.
+%% Muista että otsikkoja ei tavuteta! 
+%% Jos otsikossa on ja-sana, se ei jää rivin viimeiseksi sanaksi 
+%% vaan aloittaa uuden rivin.
+%% 
+%% Your thesis title. If the title is very long and the latex 
+%% does unsatisfactory job of breaking the lines, you will have to
+%% break the lines yourself with \\ control character. 
+%% Do not hyphenate titles.
+\thesistitle{Antennas for metal-covered handsets}{Metallikuoristen matkapuhelimien antennit}
+
+\place{Espoo}
+%% Kandidaatintyön päivämäärä on sen esityspäivämäärä! 
+%% 
+%% For B.Sc. thesis use the date when you present your thesis. 
+\date{xy.qw.2016}
+
+%% Kandidaattiseminaarin vastuuopettaja tai diplomityön valvoja.
+%% Huomaa tittelissä "\" -merkki pisteen jälkeen, 
+%% ennen välilyöntiä ja seuraavaa merkkijonoa. 
+%% Näin tehdään, koska kyseessä ei ole lauseen loppu, jonka jälkeen tulee 
+%% hieman pidempi väli vaan halutaan tavallinen väli.
+%%
+%% B.Sc. or M.Sc. thesis supervisor 
+%% Note the "\" after the comma. This forces the following space to be 
+%% a normal interword space, not the space that starts a new sentence. 
+\supervisor{Prof.\ Ville Viikari}{Prof.\ Ville Viikari}
+
+%% Kandidaatintyön ohjaaja(t) tai diplomityön ohjaaja(t)
+%% 
+%% B.Sc. or M.Sc. thesis advisor(s). 
+%%
+%% Note that there has been a change in the official EN translation
+%% of the Finnish title ``ohjaaja'' which in the previous version (1.5) 
+%% of this document was called ``instructor''. The recommended
+%% translation is now ``advisor''.  
+%% However, the LaTeX internal variable remains \instructor
+%% as there is little point to change the variable name. 
+%%
+%\instructor{Prof. Pirjo Professori}{Prof. Pirjo Professori}
+\instructor{D.Sc.\ (Tech.) Anu Lehtovuori}{TkT Anu Lehtovuori}
+%\instructor{M.Sc.\ (Tech.) Polli Pohjaaja}{DI Polli Pohjaaja}
+
+%% Aaltologo: syntaksi:
+%% \uselogo{aaltoRed|aaltoBlue|aaltoYellow|aaltoGray|aaltoGrayScale}{?|!|''}
+%% Logon kieli on sama kuin dokumentin kieli
+%%
+%% Aalto logo: syntax:
+% \uselogo{aaltoRed|aaltoBlue|aaltoYellow|aaltoGray|aaltoGrayScale}{?|!|''}
+%% Logo language is set to be the same as the document language.
+\uselogo{aaltoRed}{?}
+
+%% Tehdään kansilehti
+%%
+%% Create the coverpage
+\makecoverpage
+
+%
+%% English abstract, uncomment if you need one. 
+%% 
+%% Abstract keywords
+\keywords{Resistor, Resistance,\\ Temperature}
+%% Abstract text
+\begin{abstractpage}[english]
+ Your abstract in English. Try to keep the abstract short, approximately 
+ 100 words should be enough. Abstract explains your research topic, 
+ the methods you have used, and the results you obtained.  
+\end{abstractpage}
+
+%% Pakotetaan uusi sivu varmuuden vuoksi, jotta 
+%% mahdollinen suomenkielinen ja englanninkielinen tiivistelmä
+%% eivät tule vahingossakaan samalle sivulle
+%%
+%% Force new page so that English abstract starts from a new page
+\newpage
+%% Suomenkielinen tiivistelmä
+%% 
+%% Finnish abstract
+%%
+%% Tiivistelmän avainsanat
+\keywords{Avainsanoiksi valitaan kirjoituksen sisältöä keskeisesti kuvaavia
+käsitteitä}
+%% Tiivistelmän tekstiosa
+\begin{abstractpage}[finnish]
+  Tiivistelmässä on lyhyt selvitys (noin 100 sanaa)
+  kirjoituksen tärkeimmästä sisällöstä: mitä ja miten on tutkittu,
+  sekä mitä tuloksia on saatu. 
+  Tiivistelmässä on lyhyt selvitys (noin 100 sanaa)
+  kirjoituksen tärkeimmästä sisällöstä: mitä ja miten on tutkittu,
+  sekä mitä tuloksia on saatu. 
+
+  Tiivistelmässä on lyhyt selvitys (noin 100 sanaa)
+  kirjoituksen tärkeimmästä sisällöstä: mitä ja miten on tutkittu,
+  sekä mitä tuloksia on saatu. 
+  Tiivistelmässä on lyhyt selvitys (noin 100 sanaa)
+  kirjoituksen tärkeimmästä sisällöstä: mitä ja miten on tutkittu,
+  sekä mitä tuloksia on saatu. 
+  Tiivistelmässä on lyhyt selvitys (noin 100 sanaa)
+  kirjoituksen tärkeimmästä sisällöstä: mitä ja miten on tutkittu,
+  sekä mitä tuloksia on saatu. 
+\end{abstractpage}
+
+%% Note that 
+%% if you are writing your master's thesis in English place the English
+%% abstract first followed by the possible Finnish abstract
+
+%% Esipuhe 
+%%
+%% Preface
+\input{preface.tex}
+
+%% Pakotetaan varmuuden vuoksi esipuheen jälkeinen osa
+%% alkamaan uudelta sivulta
+%%
+%% Force new page after preface
+\newpage
+
+
+%% Sisällysluettelo
+%% 
+%% Table of contents. 
+\thesistableofcontents
+
+
+%% Symbolit ja lyhenteet
+%%
+%% Symbols and abbreviations
+\input{symbols.tex}
+
+%% Sivulaskurin viilausta opinnäytteen vaatimusten mukaan:
+%% Aloitetaan sivunumerointi arabialaisilla numeroilla (ja jätetään
+%% leipätekstin ensimmäinen sivu tyhjäksi, 
+%% ks. alla \thispagestyle{empty}).
+%% Pakotetaan lisäksi ensimmäinen varsinainen tekstisivu alkamaan 
+%% uudelta sivulta clearpage-komennolla. 
+%% clearpage on melkein samanlainen kuin newpage, mutta 
+%% flushaa myös LaTeX:n floatit 
+%% 
+%% Corrects the page numbering, there is no need to change these
+\cleardoublepage
+\storeinipagenumber
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+
+%% Leipäteksti alkaa
+%%
+%% Text body begins. Note that since the text body
+%% is mostly in Finnish the majority of comments are
+%% also in Finnish after this point. There is no point in explaining
+%% Finnish-language specific thesis conventions in English.
+\input{introduction.tex}
+
+\input{background.tex}
+
+\input{antennas.tex}
+
+\input{metal_cover.tex}
+
+\input{objectives.tex}
+
+\input{simulations.tex}
+
+%\input{measurements.tex}
+
+\input{results.tex}
+
+\input{conclusions.tex}
+
+%% Lähdeluettelo
+%%
+%% \phantomsection varmistaa, että hyperref-paketti latoo hypertekstilinkit
+%% oikein.
+%%
+%% The \phantomsection command is necessary for hyperref to jump to the 
+%% correct page, in other words it puts a hyper marker on the page.
+
+\phantomsection
+%\addcontentsline{toc}{section}{Viitteet}
+\addcontentsline{toc}{section}{References}
+%\bibliographystyle{unsrt}
+%\bibliography{references.bib}
+{\renewcommand{\markboth}[2]{}
+\printbibliography}
+
+%% Liitteet 
+%\input{appendices.tex}
+
+\end{document}
