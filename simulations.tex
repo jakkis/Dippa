@@ -996,7 +996,7 @@ Since the matching circuits of the cellular antennas had quite many components e
             (5,0) to[short] (5.5,0.5)
             (5,0) to[short] (5.5,-0.5);
     \end{circuitikz}
-    \caption{GPS/Wi-Fi.}
+    \caption{The matching cicuit for GPS/Wi-Fi antennas.}
     \label{fig:gpswifi_match}
 \end{figure}
 
@@ -1036,12 +1036,22 @@ With the GPS and Wi-Fi antennas added to the phone, the design project is comple
 <kuva>
 
 The addition of the GPS/Wi-Fi antennas had a minor effect on the performance of the cellular antennas. Figure \ref{fig:cellular_final_eff} shows the efficiency of these antennas after the addition of the other elements. As it can be seen, the performance targets are still met, and the most noticeable difference is basically the worse peak value of Element 1, which is still over $50\,\%$.
-
-<kuva>
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img/diversity_eff_wgps.eps}
+    \caption{The final efficiencies of the cellular antennas.}
+    \label{fig:cellular_final_eff}
+\end{figure}
 
 Project goals also had a requirement for isolation between the main and diversity cellular antennas. The target was $-15\,\db$, which practically means, that no power flows from one antenna to the other preventing radiation. Isolation of these elements is presented in Figure \ref{fig:isolation}. In the figure, various $S_{ij}$-parameters are shown, and indexes $i$ and $j$ refer to the antenna elements from or to which the power is scattered. Clearly, these antennas are well isolated as all combinations are below the target value, and generally a lot below it.
 
-<kuva>
+In the same figure, the internal isolations (or mutual couplings) of either the main or the diversity antenna are also plotted. These $S_{12}$ and $S_{45}$ curves do not break the target isolation of $-15\,\db$ except at the very highest frequencies. However, that target was only for separating the two cellular antenna systems from each others. The internal isolations are mainly below or around $-10\,\db$, which is acceptable. The only problematic part is the low band of the diversity antenna, where power is leaking between elements 4 and 5, causing lower efficiencies as seen in Figure \ref{fig:cellular_final_eff}. Element 4, which is planned to radiated only on high band, has an efficiency of $20\,\%$ in the low band also. Otherwise this would not be a problem, but this performance affects the main low band radiator of the diversity antenna.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img/isolation_match_wgps.eps}
+    \caption{Isolation of the cellular antenna elements.}
+    \label{fig:isolation}
+\end{figure}
 
 The last result to report is radiation patterns. For mobile phones, omnidirectional patterns are desired due to the fact that users should be able to communicate without a need to point their phones to a certain direction. Figures \ref{säteilykuvat} present the patterns for few frequencies on $xy$, $xz$, and $yz$-planes.
 
