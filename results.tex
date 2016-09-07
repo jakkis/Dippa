@@ -15,13 +15,22 @@ Besides efficiencies, also isolation of cellular antennas was under interest. As
 
 Generally, the design objectives are fulfilled very well, and the antennas are operating as desired. Of course, the performance can always be improved, which is discussed further in subsection \ref{sec:improvements}.
 
-\subsection{MIMO capability}
-\label{sec:mimo_cap}
-
-
 
 \subsection{General discussion}
 \label{sec:general_discussion}
+Besides analyzing the accomplished objectives, the results of this project should be compared to previous studies, and have its advantages and drawbacks evaluated. This discussion increases the scientific value of this thesis.
+
+One significant difference between this project and all the earlier presented, previously published papers is the simulation model. The used model is much more realistic and accurate, than any of the previously studied. This increases the value of these obtained results, as they correspond better to the consumer products. However, the realistic model also complicates the research process. Constructing a prototype is much harder, and the matching circuits with several components are not making it easier. Measuring a prototype antenna is an important part of the design process to confirm the simulation results, and also to see if the structure is realizable.
+
+The designed structure has a few clear advantages. The first one is the back cover. Only two of the most recent studies had a solid and slotless back cover. Typically at least one slot or opening was used to enhance radiation and simplify the problem. For this thesis, it was described to use a cover without any discontinuities. This detail together with the accuracy of the simulation model makes the environment and the case completely different to previous studies for this project, which gives a major advantage for further studies. 
+
+Secondly, using the side metals as antennas is not a new idea, but it is a general advantage, as that technique frees up the already limited space inside the phone for other subsystems. However, as the antennas are integrated to the sides, it makes the rim broken several times. This might be bad for the robustness of the phone compared to the strength of an unbroken rim. Also, the antenna elements themselves are quite large, which is fine due to the structural integration, but in case of an impact, they might be more likely to become damaged.
+
+The performance of this designed antenna system is competitive against the previous studies, regardless the structural differences of the models. The most remarkable detail is the frequency band, which in this case starts from 704 MHz. Only a couple of the earlier studies support that low frequencies. The cellular efficiencies of these antennas are at range $30-60\,\%$, which is about the same as other previously studied metal-covered handsets have. 
+
+
+\subsection{MIMO capability}
+\label{sec:mimo_cap}
 
 
 
@@ -29,7 +38,7 @@ Generally, the design objectives are fulfilled very well, and the antennas are o
 \label{sec:improvements}
 Even though the proposed design performs well, the system can still be improved. In order to realize the design and construct a prototype, one major challenge is the matching circuitry. Although the networks were simplified a lot, the topologies still have rather many components. With fewer components it is easier to control the performance, and realizing the design becomes significantly simpler. Possible solutions for this would be for example tunable capacitors. Other way could be further investigating the topology 1 proposed in section \ref{sec:sim_realistic}, and see if that design could be simplified. By looking the proposed component values, it seems not to be impossible to have only feed port and the other two elements to be reactively loaded. This would notably decrease the number of matching components, which clearly would be an improvement.
 
-Changes in the actual antenna structure should also be considered, if other solutions are not helping. One potential structure would be having multiple feeds on one single element, like proposed in \cite{valkonen_multifeed}. In that design, each feed is matched for some frequency band, and that way one element radiates at all desired frequencies. The antenna in that paper, however, was not tested in metal-covered phone, which makes it worth trying a similar design.
+Changes in the actual antenna structure should also be considered, if other solutions are not helping. One potential structure would be having multiple feeds on one single element, like was proposed in \cite{valkonen_multifeed}. In that design, each feed is matched for some frequency band, and that way one element radiates at all desired frequencies. The antenna in that paper, however, was not tested in metal-covered phone, which makes it worth trying a similar design.
 
 Minor improvements would consider the appearance of the phone, if a consumer product was manufactured. Of course the simulation model is quite harsh, and the actual phone would look nicer, but the antenna design has some visually unappealing details. For example the gaps between different antennas are not constant and are located non-symmetrically. This small matter should be investigated, since even the smallest dimensional changes might affect a lot on antenna's performance, as it was seen in the simulations.
 
