@@ -3,7 +3,7 @@
 \label{sec:ojectives}
 
 \subsection{Design objectives}
-The objective of this thesis is to study feasible antenna structures for metal-covered mobile phones. The phone should have two similar cellular antennas (main and diversity) for MIMO operation. Additionally, an antenna for GPS and Wi-Fi is to be designed. To clarify, from now on, main antenna refers to the first cellular antenna to be designed, and diversity antenna to the second one, regardless how their final performances will compare to each other. Table \ref{tab:design_goals} below presents the goals and requirements for this project.
+The objective of this thesis is to study feasible antenna structures for metal-covered mobile phones. The phone should have two similar cellular antennas (main and diversity) for MIMO operation. Additionally, two antennas to operate on GPS and Wi-Fi frequencies are to be designed. To clarify, from now on, main antenna refers to the first cellular antenna to be designed, and diversity antenna to the second one, regardless how their final performances will compare to each other. Table \ref{tab:design_goals} below presents the goals and requirements for this project.
 
 \begin{table}[H]
     \centering
@@ -15,9 +15,11 @@ The objective of this thesis is to study feasible antenna structures for metal-c
          \hline
          Reflection coefficient & $S_{11} < -5\,\db$\\
          \hline
-         Total efficiency & $\eta > 30\,\%$\\
+         Cellular efficiency & $\eta > 30\,\%$\\
          \hline
          Isolation between main and diversity antenna & $S_{21} < -15\,\db$\\
+         \hline
+         GPS/Wi-Fi efficiency & $\eta > 40\,\%$\\
          \hline\hline
          \textbf{Frequencies} & \\
          \hline
@@ -35,11 +37,75 @@ The objective of this thesis is to study feasible antenna structures for metal-c
 
 \subsection{Design strategy}
 \label{sec:process}
-Electromagnetic (EM) simulations were made in CST Microwave Studio \cite{cst}. It was used to create antenna and phone models and to calculate system's $S$-parameters. Simulations were focused on antenna's initial matching, i.e. $S_{11}$ for each antenna. The research strategy was first to find solution for the main antenna to operate on lower frequency band ($704-960\,\mega\hertz$). Lower band was designed first, since it is harder to reach the determined matching levels and efficiencies at lower frequencies. Results from previous studies have shown weaker performance at those frequencies. Also, the required antenna structures might be larger. After a reasonable performance was achieved at that band, model was configured to support also the upper frequencies ($1.71-2.69\,\giga\hertz$). When main antenna was operating properly, the same process was applied to design the diversity antenna. Final step was to add solutions for GPS and Wi-Fi antennas.
+Electromagnetic (EM) simulations were made in CST Microwave Studio \cite{cst}. It was used to create antenna and phone models, and to calculate system's $S$-parameters. Simulations were focused on antenna's initial matching, i.e. $S_{11}$ for each antenna. The procedure of testing different antenna structures was pretty straightforward: first a model was built, then simulated, and finally the obtained results were analyzed. Based on the previous findings, the model was modified aiming to wide impedance matching, and then simulated again. The first tests were done with a simple model and a simple antenna design. While the antenna structures got better, the model of the phone was also modified to be more realistic.
 
-The procedure of testing different antenna structures was pretty straightforward: first a model was built, then simulated, and finally the obtained results were analyzed. Based on the previous findings, the model was modified aiming to wide impedance matching, and then simulated again. The first tests were done with a simple model and a simple antenna design. While the antenna structures got better, the model of the phone was also modified to be more realistic.
+Antennas were designed in order of significance. The cellular antennas were considered more important, and thus they were studied first. Development process of the antennas began with the main antenna, and when it was operating properly, the same process was applied to design the diversity antenna. The final step was to add solutions for GPS and Wi-Fi antennas. Figure \ref{fig:ant_order} illustrates the proceeding order. 
 
-Designing antennas was not limited only in antenna structures. In order to reach the goals presented above, matching networks were to be designed as well. Finding usable circuit topologies was done simultaneously with EM simulations. Optenni Lab \cite{optenni} and NI AWR Design Environment \cite{awr} were used for that purpose. The $S$-parameter file obtained from CST-simulations was given to and read by these programs. Optenni searches for the best matching circuit according to given frequency band settings and amount of circuit elements. Resulted circuits were modified and fine-tuned in AWR, to reach the defined design objectives. Also, in AWR the ideal circuit elements were later replaced with Spice-models of actual components to obtain more realistic results.
+The basic research strategy was first to find solution for the main antenna to operate on the lower frequency band (LB, $704-960\,\mega\hertz$). Lower band was designed first, since it is harder to reach the determined matching levels and efficiencies at lower frequencies. Results from the previous studies have shown weaker performance at those areas. Also, the required antenna structures might be larger, which makes them more critical to be prioritized due to the already limited available space. After a reasonable performance was achieved at that band, the model was configured to support also the higher frequency band (HB, $1.71-2.69\,\giga\hertz$). Accordingly, the design of GPS/Wi-Fi antennas was started from the lowest frequency, i.e. GPS ($1.56-1.61\,\giga\hertz$), after which, the Wi-Fi frequencies ($2.4-2.484\,\giga\hertz$ and $5.15-5.875\,\giga\hertz$) were added. The process flow of designing one antenna is visualized in Figure \ref{fig:ant_design}.
+
+Before moving on the next antenna, the design constraints had to be checked. One antenna was iterated until the targets were reached (Figure \ref{fig:step}). When the antenna under development was performing according to the requirements, or at least at a decent level, the design of a another antenna was started.
+
+Designing antennas was not limited only in antenna structures. In order to reach the goals presented above, matching networks were to be designed as well. Finding usable circuit topologies was done simultaneously with EM simulations. Optenni Lab \cite{optenni} and NI AWR Design Environment \cite{awr} were used for this purpose. The $S$-parameter file obtained from CST-simulations was given to and read by these programs. Optenni searches for the best matching circuit according to given frequency band settings and amount of circuit elements. Resulted circuits were modified and fine-tuned in AWR, to reach the defined design objectives. Also, in AWR the ideal circuit elements were later replaced with Spice-models of actual components to obtain more realistic results.
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{\textwidth}
+        \begin{tikzpicture}[node distance=2cm]
+            \node (main) [antenna] {Main antenna};
+            \node (div) [antenna, right of=main, xshift=2cm] {Diversity antenna};
+            \node (gps1) [antenna, right of=div, xshift=2cm] {GPS/Wi-Fi antenna 1};
+            \node (gps2) [antenna, right of=gps1, xshift=2cm] {GPS/Wi-Fi antenna 2};
+            \draw [arrow] (main) -- (div);
+            \draw [arrow] (div) -- (gps1);
+            \draw [arrow] (gps1) -- (gps2);
+        \end{tikzpicture}
+        \caption{Design order of the required antennas.}
+        \label{fig:ant_order}
+    \end{subfigure}
+    
+    \begin{subfigure}[b]{\textwidth}
+        \begin{tikzpicture}[node distance=2cm]
+            \node (ant) [antenna] {New antenna};
+            \node (que) [query, right of=ant, xshift=2cm] {Antenna type};
+            \node (lb) [block, right of=que, xshift=0.5cm, yshift=-1.5cm] {LB};
+            \node (hb) [block, right of=lb, xshift=0.5cm] {HB};
+            \node (mc) [block, right of=hb, xshift=0.5cm] {MC};
+            \node (gps) [block, right of=que, xshift=0.5cm, yshift=1.5cm] {GPS};
+            \node (wifi24) [block, right of=gps, xshift=0.5cm] {2.4\,GHz};
+            \node (wifi5) [block, right of=wifi24, xshift=0.5cm] {5\,GHz};
+            \draw [arrow] (ant) -- (que);
+            \draw [arrow] (que) |- node[anchor=north] {cellular} (lb);
+            \draw [arrow] (lb) -- (hb);
+            \draw [arrow] (hb) -- (mc);
+            \draw [arrow] (que) |- node[anchor=south] {GPS/Wi-Fi} (gps);
+            \draw [arrow] (gps) -- (wifi24);
+            \draw [arrow] (wifi24) -- (wifi5);
+            \draw [arrow] (wifi5) -- (mc);
+            \draw [arrow] (mc) -- +(0,-1) -| (ant);
+        \end{tikzpicture}
+        \caption{Design process of an antenna.}
+        \label{fig:ant_design}
+    \end{subfigure}
+\end{figure}  
+
+\begin{figure}[H]
+    \centering
+    \ContinuedFloat
+    \begin{subfigure}[b]{\textwidth}
+        \begin{tikzpicture}[node distance=2cm]
+            \node (ant) [antenna] {Antenna to design};
+            \node (que) [query, right of=ant, xshift=2cm] {Targets reached?};
+            \node (ant2) [antenna, right of=que, xshift=3cm] {Next antenna};
+            \draw [arrow] (ant) -- (que);
+            \draw [arrow] (que) -- node[anchor=south] {yes} (ant2);
+            \draw [arrow] (que) -- +(0,-2.5)-| (ant)  node[near start,sloped,below] {no} ;
+        \end{tikzpicture}
+        \caption{A single step of the whole process.}
+        \label{fig:step}
+    \end{subfigure}
+    \caption{Flowcharts illustrating the design procedure.}
+    \label{fig:flowcharts}
+\end{figure}
 
 
 \subsection{Electromagnetic model of the mobile phone}
