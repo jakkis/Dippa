@@ -422,7 +422,7 @@ In contrary to self-resonant antennas, coupling elements are not the main radiat
 
 \subsection{Multiantenna systems}
 \label{sec:multiant}
-Mobile phones today several radio systems for different applications \cite{20ant}, and the operating frequencies of them range from hundreds of megahertz to dozens of gigahertz. They wide range of required frequencies usually demands multiple antennas. Generally, these multiantenna systems are multiport systems, which can be distinguished in a few different ways \cite{multiantenna_mimo_book}. The most intuitive one is a multielement antenna, in which each port is connected to physically distinct antenna elements (Figure \ref{fig:mea}). If a single antenna element is fed from several ports, the different antennas can be separated by different polarizations or radiation patterns (Figure \ref{fig:mma}). Additionally, a multiantenna system can also be a combination of these different types.
+Mobile phones today have several radio systems for different applications \cite{20ant}, and the operating frequencies of them range from hundreds of megahertz to dozens of gigahertz. They wide range of required frequencies usually demands multiple antennas. Generally, these multiantenna systems are multiport systems, which can be distinguished in a few different ways \cite{multiantenna_mimo_book}. The most intuitive one is a multielement antenna, in which each port is connected to physically distinct antenna elements (Figure \ref{fig:mea}). If a single antenna element is fed from several ports, the different antennas can be separated by different polarizations or radiation patterns (Figure \ref{fig:mma}). Additionally, a multiantenna system can also be a combination of these different types.
 
 \begin{figure}[H]
     \centering
@@ -434,7 +434,7 @@ Mobile phones today several radio systems for different applications \cite{20ant
             \draw (1.5,0) node[label={below:Port 2}] {};
             \draw (4,0) node[antenna]{};
             \draw (4,0) node[label={below:Port $N$}] {};
-            \draw (2.75,0) node[label={below:...}] {};
+            \draw (2.75,-0.25) node[label={below:...}] {};
         \end{circuitikz}
         \caption{Multiple separate antennas.}
         \label{fig:mea}
@@ -448,7 +448,7 @@ Mobile phones today several radio systems for different applications \cite{20ant
             \draw (-2,-1.5) -- (-1,-0.67);
             \draw (1.5,-1.5) node[label={below:Port $N$}] {};
             \draw (1.5,-1.5) -- (0.83,-0.67);
-            \draw (-0.25,-1.5) node[label={below:...}] {};
+            \draw (-0.25,-1.75) node[label={below:...}] {};
             \draw (0,0) node[label={Antenna}] {};
         \end{tikzpicture}
         \caption{Single antenna with multiple ports.}
