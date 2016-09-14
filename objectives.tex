@@ -51,10 +51,10 @@ Designing antennas was not limited only in antenna structures. In order to reach
     \centering
     \begin{subfigure}[b]{\textwidth}
         \begin{tikzpicture}[node distance=2cm]
-            \node (main) [antenna] {Main antenna};
-            \node (div) [antenna, right of=main, xshift=2cm] {Diversity antenna};
-            \node (gps1) [antenna, right of=div, xshift=2cm] {GPS/Wi-Fi antenna 1};
-            \node (gps2) [antenna, right of=gps1, xshift=2cm] {GPS/Wi-Fi antenna 2};
+            \node (main) [ant] {Main antenna};
+            \node (div) [ant, right of=main, xshift=2cm] {Diversity antenna};
+            \node (gps1) [ant, right of=div, xshift=2cm] {GPS/Wi-Fi antenna 1};
+            \node (gps2) [ant, right of=gps1, xshift=2cm] {GPS/Wi-Fi antenna 2};
             \draw [arrow] (main) -- (div);
             \draw [arrow] (div) -- (gps1);
             \draw [arrow] (gps1) -- (gps2);
@@ -65,7 +65,7 @@ Designing antennas was not limited only in antenna structures. In order to reach
     
     \begin{subfigure}[b]{\textwidth}
         \begin{tikzpicture}[node distance=2cm]
-            \node (ant) [antenna] {New antenna};
+            \node (ant) [ant] {New antenna};
             \node (que) [query, right of=ant, xshift=2cm] {Antenna type};
             \node (lb) [block, right of=que, xshift=0.5cm, yshift=-1.5cm] {LB};
             \node (hb) [block, right of=lb, xshift=0.5cm] {HB};
@@ -93,9 +93,9 @@ Designing antennas was not limited only in antenna structures. In order to reach
     \ContinuedFloat
     \begin{subfigure}[b]{\textwidth}
         \begin{tikzpicture}[node distance=2cm]
-            \node (ant) [antenna] {Antenna to design};
+            \node (ant) [ant] {Antenna to design};
             \node (que) [query, right of=ant, xshift=2cm] {Targets reached?};
-            \node (ant2) [antenna, right of=que, xshift=3cm] {Next antenna};
+            \node (ant2) [ant, right of=que, xshift=3cm] {Next antenna};
             \draw [arrow] (ant) -- (que);
             \draw [arrow] (que) -- node[anchor=south] {yes} (ant2);
             \draw [arrow] (que) -- +(0,-2.5)-| (ant)  node[near start,sloped,below] {no} ;

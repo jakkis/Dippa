@@ -424,11 +424,51 @@ In contrary to self-resonant antennas, coupling elements are not the main radiat
 \label{sec:multiant}
 Mobile phones today several radio systems for different applications \cite{20ant}, and the operating frequencies of them range from hundreds of megahertz to dozens of gigahertz. They wide range of required frequencies usually demands multiple antennas. Generally, these multiantenna systems are multiport systems, which can be distinguished in a few different ways \cite{multiantenna_mimo_book}. The most intuitive one is a multielement antenna, in which each port is connected to physically distinct antenna elements (Figure \ref{fig:mea}). If a single antenna element is fed from several ports, the different antennas can be separated by different polarizations or radiation patterns (Figure \ref{fig:mma}). Additionally, a multiantenna system can also be a combination of these different types.
 
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.49\textwidth}
+        \begin{circuitikz}
+            \draw (0,0) node[antenna]{};
+            \draw (0,0) node[label={below:Port 1}] {};
+            \draw (1.5,0) node[antenna]{};
+            \draw (1.5,0) node[label={below:Port 2}] {};
+            \draw (4,0) node[antenna]{};
+            \draw (4,0) node[label={below:Port $N$}] {};
+            \draw (2.75,0) node[label={below:...}] {};
+        \end{circuitikz}
+        \caption{Multiple separate antennas.}
+        \label{fig:mea}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+        \begin{tikzpicture}
+            \draw plot[thick,smooth, tension=.7] coordinates {(-1.17,0.17) (-1,0.83) (-1,1.17) (0.5,1) (1.33,1.17) (1.67,0.83) (1.67,0.17) (0.83,-0.67) (0,-0.17) (-1,-0.67) (-1.17,0.17)};
+            \draw (-2,1.5) node[label={above:Port 1}] {};
+            \draw (-2,1.5) -- (-1,0.83);
+            \draw (-2,-1.5) node[label={below:Port 2}] {};
+            \draw (-2,-1.5) -- (-1,-0.67);
+            \draw (1.5,-1.5) node[label={below:Port $N$}] {};
+            \draw (1.5,-1.5) -- (0.83,-0.67);
+            \draw (-0.25,-1.5) node[label={below:...}] {};
+            \draw (0,0) node[label={Antenna}] {};
+        \end{tikzpicture}
+        \caption{Single antenna with multiple ports.}
+        \label{fig:mma}
+    \end{subfigure}
+    \caption{Illustrations of multiantenna systems \cite{multiantenna_mimo_book}.}
+    \label{fig:multiantennas}
+\end{figure}
+
+Multiantenna systems, especially multielement antenas, are also known as multiple input, multiple output (MIMO) communication systems. They can enhance the capacity and bandwidth in wireless transmission \cite{multiantenna_mimo_book}, and exploit the spatial dimension of the channel, which has benefits such as robustness against fading and interference, and improve the signal power \cite{mimo_cellular_networks}. Use of multiple antennas enables transmission of several data streams simultaneously, even at the same frequency by combining diversity or beamforming techniques \cite{volakis}.
+
+For a general communication link, the signal undergoes a multipath process, where the signal is reflected or scattered from various objects on the propagation path. Due to this effect, the electromagnetic waves are received from several directions, and this causes fading that lowers the signal strength \cite{saunders,volakis}. MIMO systems take advantage of this fading, as they collect energy from all the incoming streams, and sum them up. If the antennas are uncorrelated, the fading can be overcome \cite{volakis}.
+
+Antenna diversity can indeed improve the performance of a communications system, if besides good input matching, also the mutual coupling of the antennas is minimized. Isolation of antennas is required for better efficiency, which improves the quality of the link \cite{high_order_mimo}. Envelope correlation coefficient (ECC, $\rho_e$) expresses this information \cite{ecc_paper,mimo_sibille}. ECC is the correlation between the envelopes of the signals for any two antennas of the multiantenna system \cite{mimo_sibille, high_order_mimo}. It is defined by and calculated from the field patterns of the antennas. Calculating ECC from the fields is a demanding task, and in \cite{ecc_paper} an equation to gather the information from the $S$-parameters has been derived:
 \begin{equation}
 \label{eq:ecc}
-    \rho_e = \frac{|S_{11}^*S_{12}+S_{21}^*S_{22}|^2}{(1-(|S_{11}|^2+|S_{21}|^2))(1-(|S_{22}|^2+|S_{12}|^2))}
+    \rho_e = \frac{|S_{11}^*S_{12}+S_{21}^*S_{22}|^2}{(1-(|S_{11}|^2+|S_{21}|^2))(1-(|S_{22}|^2+|S_{12}|^2))}.
 \end{equation}
-\cite{ecc_paper}
+
+This equation is valid for lossless systems, but can be used as an approximation for lossy structures, similarly to (\ref{eq:eff_aprx}). ECC is used to evaluate the MIMO capability of an multiantenna system, and a coefficient below 0.5 is considered as good performance \cite{reduce_ecc,reduce_ecc2}.
 
 
 \clearpage
