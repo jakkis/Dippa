@@ -7,7 +7,7 @@
 \label{sec:fulfilment}
 In this thesis, it was defined to design two cellular antennas to operate on both $704-960\,\mega\hertz$ and $1.71-2.69\,\giga\hertz$ frequency ranges. Additionally, two antennas to support GPS and Wi-Fi connections should be designed. Moreover, each antenna should be matched to $-5\,\db$, and have a certain efficiency. The minimum efficiencies were $30\,\%$ for cellular and $40\,\%$ for other antennas. Also, the isolation between the two cellular antennas should be at least $-15\,\db$.
 
-The final structure indeed has all four required antennas, which are all performing quite well. Obtaining the desired matching level was the most problematic part, and as was seen in the results, the target mostly is not reached. The best matching levels were achieved in the $5\,\giga\hertz$ Wi-Fi band. However, as it was explained earlier, worse matching is accepted if efficiency target is reached. As the efficiency results showed, those targets are reached by cellular antennas, and nearly reached by other antennas. The efficiencies were calculated with (\ref{eq:eff_aprx}), and thus it must be remembered that the results are only approximations. Them can be anyway considered quite accurate as the only lossy part of the simulation model was the plastic rim. 
+The final structure indeed has all four required antennas, which are all performing quite well. Obtaining the desired matching level was the most problematic part, and as was seen in the results, the target mostly is not reached. The best matching levels were achieved in the $5\,\giga\hertz$ Wi-Fi band. However, as it was explained earlier, worse matching is accepted if efficiency target is reached. As the efficiency results showed, those targets are reached by cellular antennas, and nearly reached by other antennas. The efficiencies were calculated with (\ref{eq:eff_aprx}), and thus it must be remembered that the results are only approximations. They can be anyway considered quite accurate as the only lossy parts of the simulation model were the plastic rim and the matching components. 
 
 The only antenna not reaching the efficiency target is Element 7 at $2.4\,\giga\hertz$ Wi-Fi band, having the peak efficiency only a little above the target. However, this probably would not be a problem if this antenna was used in a consumer product, as the other Wi-Fi antenna is working fine, and also the performance of the cellular antennas is good at that frequency range. If needed, one of the cellular antennas could be used also for WLAN communications. The GPS antennas, on the other hand, have proper efficiencies, but their bands are a little too narrow. Fortunately, the whole GPS band is covered as the operating frequencies of the two antennas slightly overlap.
 
@@ -32,7 +32,12 @@ The performance of this designed antenna system is competitive against the previ
 \subsection{MIMO capability}
 \label{sec:mimo_cap}
 
-
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img/ecc.eps}
+    \caption{Envelope correlation coefficient for low and high cellular bands.}
+    \label{fig:ecc}
+\end{figure}
 
 \subsection{Possible improvements \& future work}
 \label{sec:improvements}

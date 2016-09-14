@@ -420,7 +420,15 @@ In contrary to self-resonant antennas, coupling elements are not the main radiat
 %\end{sidewaystable}
 \end{comment}
 
-\subsection{MIMO}
-\label{sec:mimo}
+\subsection{Multiantenna systems}
+\label{sec:multiant}
+Mobile phones today several radio systems for different applications \cite{20ant}, and the operating frequencies of them range from hundreds of megahertz to dozens of gigahertz. They wide range of required frequencies usually demands multiple antennas. Generally, these multiantenna systems are multiport systems, which can be distinguished in a few different ways \cite{multiantenna_mimo_book}. The most intuitive one is a multielement antenna, in which each port is connected to physically distinct antenna elements (Figure \ref{fig:mea}). If a single antenna element is fed from several ports, the different antennas can be separated by different polarizations or radiation patterns (Figure \ref{fig:mma}). Additionally, a multiantenna system can also be a combination of these different types.
+
+\begin{equation}
+\label{eq:ecc}
+    \rho_e = \frac{|S_{11}^*S_{12}+S_{21}^*S_{22}|^2}{(1-(|S_{11}|^2+|S_{21}|^2))(1-(|S_{22}|^2+|S_{12}|^2))}
+\end{equation}
+\cite{ecc_paper}
+
 
 \clearpage
