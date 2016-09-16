@@ -766,7 +766,12 @@ The performance of GPS and Wi-Fi antennas is seen in Figure \ref{fig:gpswifi_per
 \label{sec:complete_structure}
 With the GPS and Wi-Fi antennas added to the phone, the design project is complete. Figure \ref{fig:complete_struct} shows an overall view of the phone and how the antennas locate on it. All the antennas are integrated to the metallic side frame, which will save some space inside the phone for other subsystems and parts of the device.
 
-<kuva>
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img/final_antennas.eps}
+    \caption{The complete structure with the locations of the antennas highlighted.}
+    \label{fig:complete_struct}
+\end{figure}
 
 The addition of the GPS/Wi-Fi antennas had a minor effect on the performance of the cellular antennas. Figure \ref{fig:cellular_final_eff} shows the efficiency of these antennas after the addition of the other elements. As it can be seen, the performance targets are still met, and the most noticeable difference is basically the worse peak value of Element 1, which is still over $50\,\%$.
 \begin{figure}[H]
@@ -786,6 +791,53 @@ In the same figure, the internal isolations (or mutual couplings) of either the 
     \label{fig:isolation}
 \end{figure}
 
-The last results to report are radiation patterns. For mobile phones, omnidirectional patterns are desired due to the fact that users should be able to communicate without a need to point their phones to a certain direction. Figures \ref{säteilykuvat} present the patterns for few frequencies on $xy$, $xz$, and $yz$-planes.
+The last results to report are radiation patterns. For mobile phones, omnidirectional patterns are desired due to the fact that users should be able to communicate without a need to point their phones to a certain direction. Figure \ref{fig:rad_patterns} present the patterns for few frequencies on $xy$, $xz$, and $yz$-planes.
 
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{img/ff_cell_xy.eps}
+        \caption{$xy$-plane}
+        \label{fig:ff_xy_cell}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{img/ff_cell_xz.eps}
+        \caption{$xz$-plane}
+        \label{fig:ff_xz_cell}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{img/ff_cell_yz.eps}
+        \caption{$yz$-plane}
+        \label{fig:ff_yz_cell}
+    \end{subfigure}
+    
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{img/ff_gpswifi_xy.eps}
+        \caption{$xy$-plane}
+        \label{fig:ff_xy_gpswifi}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{img/ff_gpswifi_xz.eps}
+        \caption{$xz$-plane}
+        \label{fig:ff_xz_gpswifi}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{img/ff_gpswifi_yz.eps}
+        \caption{$yz$-plane}
+        \label{fig:ff_yz_gpswifi}
+    \end{subfigure}
+    \caption{Radiation patterns of the designed antennas.}
+    \label{fig:rad_patterns}
+\end{figure}
+
+In the \Cref{fig:ff_xy_cell,fig:ff_xz_cell,fig:ff_yz_cell}, the continuous blue, dashed red, dash-dotted yellow, and dotted purple lines are the patterns at cellular frequencies $830\,\mega\hertz$, $1.9\,\giga\hertz$, $2.3\,\giga\hertz$, and $2.5\,\giga\hertz$, respectively. Similarly, in \Cref{fig:ff_xy_gpswifi,fig:ff_xz_gpswifi,fig:ff_yz_gpswifi} the lines in the same order represent GPS/Wi-Fi frequencies $1.575\,\giga\hertz$, $2.4\,\giga\hertz$, $5.15\,\giga\hertz$, and $5.5\,\giga\hertz$. To clarify the patterns, Figure \ref{fig:orientation} shows the orientation of the phone in the coordinate system.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img/orientation.eps}
+    \caption{Orientation of the phone in the coordinate system.}
+    \label{fig:orientation}
+\end{figure}
+
+The figures show that the pattern are not omnidirectional. However, at each of the plotted frequencies, some power is radiated to all directions, which is the most important observation of these patterns. The large number metallic parts in the phone together with the large metallic back cover make extremely difficult to achieve omnidirectionality, due to their conductive nature. Moreover, other properties of an mobile antenna are more important to focus on. By nature, the patterns of the antennas designed in this project have somewhat omnidirectional patterns, thus, it is more critical to optimize other design goals.
 \clearpage

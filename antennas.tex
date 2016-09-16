@@ -205,7 +205,7 @@ In an ideal situation, perfect matching can be obtained at a single frequency. T
 where $\Gamma(f)$ is the reflection coefficient as a function of frequency and $R$ and $C$ are the resistance and capacitance of the load, respectively. The criterion describes an upper limit of performance. Further analysis on this, which is out of the scope of this thesis, results few conclusions \cite{pozar}:
 \begin{itemize}
     \item broader bandwidth can be achieved only if reflection coefficient increases.
-    \item reflection coefficient can reach 0 only at discrete frequencies, i.e. having bandwidth of 0.
+    \item reflection coefficient can reach 0 only at discrete frequencies, i.e.\ having bandwidth of 0.
     \item if load impedance increases, matching level decreases. Therefore circuits with higher quality factor ($Q$) are harder to match than low-$Q$ circuits.
 \end{itemize}
 
@@ -357,22 +357,22 @@ Mobile terminals require wide operational bandwidth, and small antennas are typi
 \subsubsection{Dipoles and monopoles}
 \label{sec:dipole}
 
-Probably the most fundamental antenna type is dipole, which by the simplest is a transmission line with both wires bent at one end \cite{stutzman}. Dipole is often used as an example of an antenna especially in educational purposes due to its simple structure. As dipoles are resonating antennas, their operational frequency depends on their length. The most widely used one is half-wave long dipole.  By nature, dipoles are narrow band antennas, but wider bandwidth can be achieved e.g.\ by using larger wire width \cite{stutzman,balanis}. However, even if dipoles are electrically small, they are usually physically large structures, which is not favorable for mobile and handheld devices. Nevertheless, dipoles have also good features, like high efficiency and omnidirectional radiation pattern, that are wanted from mobile antennas.
+Probably the most fundamental antenna type is dipole, which by the simplest is a transmission line with both wires bent at one end \cite{stutzman}. Dipole is often used as an example of an antenna especially in educational purposes due to its simple structure. As dipoles are resonating antennas, their operational frequency depends on their length. The most widely used one is half-wave long dipole.  By nature, dipoles are narrow band antennas, but wider bandwidth can be achieved e.g.\ by using larger wire width \cite{stutzman,balanis}. However, even if dipoles are electrically small, they are usually physically large structures, which is not favorable for mobile and handheld devices. Nevertheless, dipoles have also good features, like high efficiency and omnidirectional radiation pattern, that are wanted from mobile antennas. Well performing dipole structures for mobile phones are proposed e.g.\ in \cite{dipole_example1,dipole_example2}.
 
-Besides dipoles being physically too large for mobile applications, mobile antennas are surrounded by very nearby objects, that are harmful to the antenna. Normally, these objects are ground planes that are large compared to the antenna. Conductive ground planes affect antenna's performance, especially impedance and radiation pattern \cite{stutzman}. However, monopole antennas are designed to operate in the presence of a ground plane. Monopole is basically a dipole cut in half, and fed against a ground plane \cite{stutzman}. Monopole's impedance is half of dipole's, and hence, the radiated power is also half. This yields lower average radiation intensity which gives higher directivity. Operational frequency of a monopole of course depends on the length of the antenna, similarly to dipoles, but their smaller size makes monopoles more suitable for mobile devices.
+Besides dipoles being physically too large for mobile applications, mobile antennas are surrounded by very nearby objects, that are harmful to the antenna. Normally, these objects are ground planes that are large compared to the antenna. Conductive ground planes affect antenna's performance, especially impedance and radiation pattern \cite{stutzman}. However, monopole antennas are designed to operate in the presence of a ground plane. Monopole is basically a dipole cut in half, and fed against a ground plane \cite{stutzman}. Monopole's impedance is half of dipole's, and hence, the radiated power is also half. This yields lower average radiation intensity which gives higher directivity. Operational frequency of a monopole of course depends on the length of the antenna, similarly to dipoles, but their smaller size makes monopoles more suitable for mobile devices. In \cite{monopole_example1,monopole_example2} designs for wideband monopoles to be used in handsets are presented.
 
 \subsubsection{Microstrip antennas}
 \label{sec:microstrip}
 
 Microstrip antennas (MSA) are an alternative to wire antennas. For example, dipoles can be printed as microstrip lines. Typical microstrip antenna has a printed patch on top of a substrate with a ground plane below it \cite{stutzman}. MSAs are very low profile, since substrate is thin and the patch itself normally has thickness of $0.05\lambda_0$ or less. One advantage of microstrip antennas is that they can be included in microwave integrated circuits, which decreases costs, and provides controlled-dimension construction. Patches can also be printed on flexible substrates, which enables better use of available space \cite{stutzman}.
 
-Microstrips radiate with broad beam broadside to the patch as the ground plane prevents the formation of back lobes. Challenges of patch antennas are that they are resonant antennas, which leads to narrow bandwidth. Also after fabrication, antenna cannot be re-adjusted easily. Due to the narrowband nature of this antenna type, and possibly large size, it is not very popular antenna for cellular phones \cite{stutzman}. However, Global Positioning System (GPS) is a standard feature in new mobile phones and it operates on a narrow band, and thus, microstrips with large dielectric constant substrate to reduce size are used for that purpose \cite{stutzman}.
+Microstrips radiate with broad beam broadside to the patch as the ground plane prevents the formation of back lobes. Challenges of patch antennas are that they are resonant antennas, which leads to narrow bandwidth. Also after fabrication, antenna cannot be re-adjusted easily. Due to the narrowband nature of this antenna type, and possibly large size, it is not very popular antenna for cellular phones \cite{stutzman}. However, Global Positioning System (GPS) is a standard feature in new mobile phones and it operates on a narrow band, and thus, microstrips with large dielectric constant substrate to reduce size are used for that purpose \cite{stutzman}. Mobile antennas might anyway be constructed with microstrip techniques, and commonly the patch is shaped according to other antenna type, as is done in \cite{microstrip_example1,microstrip_example2}. This might result feasible performance on a certain band.
 
 \subsubsection{Loops and slots}
 \label{sec:loop}
-Especially in receiving mode, loop antennas are a popular substitute for monopoles due to their resilience against noise \cite{balanis}. Loop antennas have poor radiation resistance, which is the reason why they are not commonly used in transmission. That can be improved by increasing the number of the turns, which of course also increases losses \cite{stutzman}. Radiation pattern of a loop antenna equals to that of magnetic dipole's.  Also, loop antenna can be mounted at any position to the mobile phone. Radiation characteristics differ a little between different orientations
+Especially in receiving mode, loop antennas are a popular substitute for monopoles due to their resilience against noise \cite{balanis}. Loop antennas have poor radiation resistance, which is the reason why they are not commonly used in transmission. That can be improved by increasing the number of the turns, which of course also increases losses \cite{stutzman}. Radiation pattern of a loop antenna equals to that of magnetic dipole's.  Also, a loop antenna can be mounted at any position to the mobile phone. Radiation characteristics differ a little between different orientations. Different loop structures for mobile communications are proposed in e.g.\ \cite{loop_example1,loop_example2,loop_example3}.
 
-Slot antennas are variants of loops. Usually an antenna of this type is a slot in a ground plane \cite{stutzman}. 
+Slot antennas are variants of loops. Usually an antenna of this type is a slot in a ground plane \cite{stutzman}. The electric field distribution of a slot is equal to a similar dipole's, and the field is directed along the normal of the slot elsewhere in its surface except the slot region itself \cite{volakis}. Slots can be fed from a waveguide, which makes these antennas popular for vehicles moving at high speeds \cite{mobile_antennas_handbook}. Typically slots operate on a narrow band, which makes them not so so popular choice for mobile devices \cite{stutzman}. However, slot antennas for mobile terminals are presented in \cite{slot_example1,slot_example2} with decent performance.
 
 \subsubsection{Planar antennas}
 \label{sec:planar}
@@ -387,38 +387,6 @@ The concept of capacitive coupling elements is explained in \cite{vainikainen_re
 
 In contrary to self-resonant antennas, coupling elements are not the main radiators of the system, as presented in \cite{villanen_cce}. The dominant wavemode of the chassis is much stronger than the same wavemode excited by the coupling element, which makes the ground plane the main radiator.
 
-\begin{comment}
-\subsubsection{Summary of antenna structures}
-\label{sec:structures}
-
-%\begin{sidewaystable}[H]
-\begin{table}[H]
-    \centering
-    \caption{Comparison and summary of typical antenna structures in mobile phones.}
-    \begin{tabular}{|c|c|c|c|c|}
-        \hline
-        Antenna type & Size & Frequencies & Efficiency & Example\\
-        \hline
-        Dipole & & & &\\
-        \hline
-        Monopole & & & &\\
-        \hline
-        Microstrip & & & &\\
-        \hline
-        Loop & & & &\\
-        \hline
-        Slot & & & &\\
-        \hline
-        PIFA & & & &\\
-        \hline
-        PILA & & & &\\
-        \hline
-        CCE & & & &\\
-        \hline
-    \end{tabular}
-\end{table}
-%\end{sidewaystable}
-\end{comment}
 
 \subsection{Multiantenna systems}
 \label{sec:multiant}
@@ -460,7 +428,7 @@ Mobile phones today have several radio systems for different applications \cite{
 
 Multiantenna systems, especially multielement antenas, are also known as multiple input, multiple output (MIMO) communication systems. They can enhance the capacity and bandwidth in wireless transmission \cite{multiantenna_mimo_book}, and exploit the spatial dimension of the channel, which has benefits such as robustness against fading and interference, and improve the signal power \cite{mimo_cellular_networks}. Use of multiple antennas enables transmission of several data streams simultaneously, even at the same frequency by combining diversity or beamforming techniques \cite{volakis}.
 
-For a general communication link, the signal undergoes a multipath process, where the signal is reflected or scattered from various objects on the propagation path. Due to this effect, the electromagnetic waves are received from several directions, and this causes fading that lowers the signal strength \cite{saunders,volakis}. MIMO systems take advantage of this fading, as they collect energy from all the incoming streams, and sum them up. If the antennas are uncorrelated, the fading can be overcome \cite{volakis}.
+In a general communication link, the signal undergoes a multipath process, where the signal is reflected or scattered from various objects on the propagation path. Due to this effect, the electromagnetic waves are received from several directions, and this causes fading that lowers the signal strength \cite{saunders,volakis}. MIMO systems take advantage of this fading, as they collect energy from all the incoming streams, and sum them up. If the antennas are uncorrelated, the fading can be overcome \cite{volakis}.
 
 Antenna diversity can indeed improve the performance of a communications system, if besides good input matching, also the mutual coupling of the antennas is minimized. Isolation of antennas is required for better efficiency, which improves the quality of the link \cite{high_order_mimo}. Envelope correlation coefficient (ECC, $\rho_e$) expresses this information \cite{ecc_paper,mimo_sibille}. ECC is the correlation between the envelopes of the signals for any two antennas of the multiantenna system \cite{mimo_sibille, high_order_mimo}. It is defined by and calculated from the field patterns of the antennas. Calculating ECC from the fields is a demanding task, and in \cite{ecc_paper} an equation to gather the information from the $S$-parameters has been derived:
 \begin{equation}

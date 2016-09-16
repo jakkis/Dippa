@@ -31,13 +31,17 @@ The performance of this designed antenna system is competitive against the previ
 
 \subsection{MIMO capability}
 \label{sec:mimo_cap}
+In a modern mobile phone, it is common to have multiple antennas for the same frequencies, i.e. to support MIMO techniques. In this project, it was defined to have MIMO capability at cellular frequencies. The simulation results presented in section \ref{sec:complete_structure} showed that the main and the diversity antenna both reached the efficiency target easily. As the structure does not have any tuners or switches, these two antennas are able to communicate simultaneously. Also, the antennas were well isolated, and thus they should not interfere with each others.
 
+As it was explained in section \ref{sec:multiant}, envelope correlation coefficient can be used to evaluate MIMO capabilty of a mobile phone besides efficiency, matching or isolation. EEC is calculated for both the low and the high band with (\ref{eq:ecc}). Again, as this structure has some losses in the plastic rim and matching components, the calculated value will only result an approximation of the coefficient, which is seen in Figure \ref{fig:ecc}. 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{img/ecc.eps}
     \caption{Envelope correlation coefficient for low and high cellular bands.}
     \label{fig:ecc}
 \end{figure}
+
+The ECC curves confirm the observations from the other results. Generally, $\rho_e\leq0.5$ is considered as good performance, and in this case the ECC is clearly below 0.1 in both bands. Moreover, the correlation is near 0 for the most of the operating bands, meaning the two antennas are completely uncorrelated. Therefore the MIMO capability of this design remarkably good, as the antennas are radiating well and not negativley affecting each others.
 
 \subsection{Possible improvements \& future work}
 \label{sec:improvements}
