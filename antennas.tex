@@ -377,15 +377,24 @@ Slot antennas are variants of loops. Usually an antenna of this type is a slot i
 \subsubsection{Planar antennas}
 \label{sec:planar}
 
-Since space for antennas is very limited in mobile phones, traditional dipoles or monopoles might be too large. However, monopoles can easily be modified to fit the size requirements, as \cite{planar_antennas, balanis} presents. Bending the antenna forms a structure called an inverted L antenna (ILA). Replacing wires with a strip changes the structure to a planar inverted L antenna (PILA), which results wider bandwidth. PILAs are, however, sensitive to changes in height ($h$) or length ($l$) of the antenna. Height lower than $0.1\lambda_0$ is considered critical since above that the antenna is rather top-loaded monopole than a PILA \cite{planar_antennas}. Also, antenna's matching improves if $h/l$-ratio is greater than $4/3$ \cite{planar_antennas}. Good matching can be maintained by adding a parasitic grounding strip near the feed point to form a planar inverted F antenna (PIFA). Even though the overall dimensions required for good performance, especially at low frequencies, might seem quite large, PIFAs and PILAs are suitable for cellular phones due to their low-profile structure and large achievable bandwidth \cite{balanis}.  
+Since space for antennas is very limited in mobile phones, traditional dipoles or monopoles might be too large. However, monopoles can easily be modified to fit the size requirements, as \cite{planar_antennas, balanis} presents. Bending the antenna forms a structure called an inverted L antenna (ILA). Replacing wires with a strip changes the structure to a planar inverted L antenna (PILA), which results wider bandwidth. PILAs are, however, sensitive to changes in height ($h$) or length ($l$) of the antenna. Height lower than $0.1\lambda_0$ is considered critical since above that the antenna is rather top-loaded monopole than a PILA \cite{planar_antennas}. Also, antenna's matching improves if $h/l$-ratio is greater than $4/3$ \cite{planar_antennas}. 
+
+Good matching can be maintained by adding a parasitic grounding strip near the feed point to form a planar inverted F antenna (PIFA). An example is illustrated in Figure \ref{fig:pifa}. Even though the overall dimensions required for good performance, especially at low frequencies, might seem quite large, PIFAs and PILAs are suitable for cellular phones due to their low-profile structure and large achievable bandwidth \cite{balanis}. Planar antennas have been used widely in mobile phones since their release due to the large modifying possibilities of the structure \cite{planar_antennas}. Wideband strucutures are presented e.g.\ in \cite{pifa_example1,pifa_example2,pila_example1}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img/pifa.eps}
+    \caption{Illustration of a planar inverted F antenna.}
+    \label{fig:pifa}
+\end{figure}
 
 \subsubsection{Capacitive coupling elements}
 \label{sec:cce}
-As all the previously presented antennas are of self-resonant type, capacitive coupling elements (CCE) are categorized as nonresonant antennas. CCEs were first introduced in \cite{vainikainen_resonator_analysis} as a possible replacement for self-resonant antennas in mobile phones. A great advantage of CCEs is that the size of an antenna can be reduced significantly, considering that self-resonant antennas require rather large amount of space at low frequencies. 
+As all the previously presented antennas are of self-resonant type, capacitive coupling elements (CCE) are categorized as nonresonant antennas. Of course the element resonates at some frequency, but with suitable matching circuits the element is made to resonate at other than its nominal frequency \cite{valkonen_cce}. Capacitive coupling elements were first introduced in \cite{vainikainen_resonator_analysis} as a possible replacement for self-resonant antennas in mobile phones. A great advantage of CCEs is that the size of an antenna can be reduced significantly, considering that self-resonant antennas require rather large amount of space at low frequencies. 
 
 The concept of capacitive coupling elements is explained in \cite{vainikainen_resonator_analysis, villanen_cce}. The basic idea behind them is to combine the wavemodes of the antenna and the chassis. This would result enhanced bandwidth for the mobile terminal. For strong coupling to the dominating characteristic wavemodes of the chassis, the maxima of electric fields of the antenna and the chassis must be close to each other. Moreover, the volume of the antenna should be used as efficiently as possible to maximize the field strength around the antenna element. PIFAs for example, are not optimal structures for this purpose. 
 
-In contrary to self-resonant antennas, coupling elements are not the main radiators of the system, as presented in \cite{villanen_cce}. The dominant wavemode of the chassis is much stronger than the same wavemode excited by the coupling element, which makes the ground plane the main radiator.
+In contrary to self-resonant antennas, coupling elements are not the main radiators of the system, as presented in \cite{villanen_cce}. The dominant wavemode of the chassis is much stronger than the same wavemode excited by the coupling element, which makes the ground plane the main radiator. With good matching circuit, it is possible to excite multiple wavemodes for broad operational band \cite{valkonen_cce}.
 
 
 \subsection{Multiantenna systems}
