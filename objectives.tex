@@ -1,6 +1,7 @@
 %\section{Tutkimusaineisto ja -menetelmät}
 \section{Design process \& methods}
 \label{sec:ojectives}
+Together with the previous section ended also the theoretical part of this thesis. From now on, everything presented is contributed by the author. This section presents the targets of this thesis in more detail, as well as the methods for answering the research question and solving the defined problems. The last part of this section contains the results from the first, preliminary simulations to gather information for the actual antenna design process.
 
 \subsection{Design objectives}
 The objective of this thesis is to study feasible antenna structures for metal-covered mobile phones. The phone should have two similar cellular antennas (main and diversity) for MIMO operation. Additionally, two antennas to operate on GPS and Wi-Fi frequencies are to be designed. To clarify, from now on, main antenna refers to the first cellular antenna to be designed, and diversity antenna to the second one, regardless how their final performances will compare to each other. Table \ref{tab:design_goals} below presents the goals and requirements for this project.
@@ -131,7 +132,7 @@ Before the precise model was taken into use, simulations were first done with a 
 The first simulations with the plain model were about gathering knowledge on how different structures perform in the presence of the metal cover. Gaining this information was critical since antennas in metal-covered mobile phones are not that much studied, as was presented in section \ref{sec:full_cover}. This preliminary study (later also pre-study) focuses on different dimensions of antennas, their locations, shapes, feed positions, and the metal cover itself. The structures of antenna elements were kept as simple as possible in order to follow the effects of each parameter in an efficient way. 
 
 
-\subsubsection{Effect of metal cover}
+\subsubsection{Effect of the metal cover}
 \label{sec:metal_effect}
 The main point of interest, as well as the main challenge, is the metal cover and how it affects the antenna's performance. To demonstrate the complexity of this design project, simulations to test the effect of the metal were run. Since this test was just an example, simulation model was kept simple. A long, L-shaped antenna completely covering one long side and one short side, with a little square on the corner was used in this test. Models are shown in Figure \ref{fig:metal_vs_nometal_model}.
 
@@ -151,9 +152,9 @@ The main point of interest, as well as the main challenge, is the metal cover an
     \label{fig:metal_vs_nometal_model}
 \end{figure}
 
-Figure \ref{fig:metal_vs_nometal} shows the results from the CST-simulation. The effect of the metal cover can be seen clearly. The blue curve has a metallic back cover while the red, dashed one does not. Looking at the low band reveals a major difference. The aim of the matching level is $-5\,\db$ and that is almost achieved when the metal cover is taken away without any external matching networks. With metal cover the antenna resonates more with narrower peaks and has no desired matching level at any frequency. 
+Figure \ref{fig:metal_vs_nometal} shows the results from the CST-simulation. The effect of the metal cover can be seen clearly. The blue curve has a metallic back cover while the red, dashed one does not. Looking at the low band reveals a major difference. The aim of the matching level $-5\,\db$ is almost achieved when the metal cover is taken away without any external matching networks. With the metal cover the antenna resonates more with narrower peaks and has no desired matching level at any frequency. 
 
-Figure \ref{fig:metal_vs_nometal_matched} presents the same simulations with 4-element matching circuit created with Optenni Lab. This time the difference is even larger. Without metal cover the desired matching level is exceeded by far. In contrary, adding matching circuit to the other case is not much of help. Even though the level is now more constant in the band, it is far from acceptable.
+Figure \ref{fig:metal_vs_nometal_matched} presents the same simulations with 4-element matching circuit created with Optenni Lab. Optenni was set to generate matching circuits of four components, with $-5\,\db$ target efficiency. This time the difference is even larger. Without metal cover the desired matching level is exceeded by far. In contrary, adding matching circuit to the other case is not much of help. Even though the level is now more constant in the band, it is far from acceptable.
 
 \begin{figure}[H]
     \centering 
@@ -182,13 +183,14 @@ The first interesting metric to investigate was the size of the antenna. This me
 \begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.49\textwidth}
-        \includegraphics[width=\textwidth]{img/ant_length_long.eps}
+        \includegraphics[width=\textwidth]{img/length_long.eps}
         \caption{Antenna located on the side of the phone.}
         \label{fig:ant_length_long}
     \end{subfigure}
+    
     \begin{subfigure}[b]{0.49\textwidth}
-        \includegraphics[width=\textwidth]{img/ant_length_short.eps}
-        \caption{Antenna located on the top of the phone.}
+        \includegraphics[width=\textwidth]{img/length_short.eps}
+        \caption{Antenna located at the end of the phone.}
         \label{fig:ant_length_short}
     \end{subfigure}
     \caption{Models used to test the effect of antenna's length.}
@@ -294,33 +296,34 @@ So far all investigated antennas have been either straight, rectangular sheets o
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}[b]{0.3\textwidth}
+    \begin{subfigure}[b]{0.49\textwidth}
         \includegraphics[width=\textwidth]{img/shape1.eps}
         \caption{Shape 1.}
         \label{fig:shape1}
     \end{subfigure}
-    \begin{subfigure}[b]{0.3\textwidth}
+    \begin{subfigure}[b]{0.49\textwidth}
         \includegraphics[width=\textwidth]{img/shape2.eps}
         \caption{Shape 2.}
         \label{fig:shape2}
     \end{subfigure}
-    \begin{subfigure}[b]{0.3\textwidth}
+    
+    \begin{subfigure}[b]{0.49\textwidth}
         \includegraphics[width=\textwidth]{img/shape3.eps}
         \caption{Shape 3.}
         \label{fig:shape3}
     \end{subfigure}
-    
-    \begin{subfigure}[b]{0.3\textwidth}
+    \begin{subfigure}[b]{0.49\textwidth}
         \includegraphics[width=\textwidth]{img/shape4.eps}
         \caption{Shape 4.}
         \label{fig:shape4}
     \end{subfigure}
-    \begin{subfigure}[b]{0.3\textwidth}
+    
+    \begin{subfigure}[b]{0.49\textwidth}
         \includegraphics[width=\textwidth]{img/shape5.eps}
         \caption{Shape 5.}
         \label{fig:shape5}
     \end{subfigure}
-    \begin{subfigure}[b]{0.3\textwidth}
+    \begin{subfigure}[b]{0.49\textwidth}
         \includegraphics[width=\textwidth]{img/shape6.eps}
         \caption{Shape 6.}
         \label{fig:shape6}

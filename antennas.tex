@@ -1,5 +1,6 @@
 \section{Mobile antennas}
 \label{sec:mobile_antennas}
+Mobile phones require antennas to communicate. This section explains the reason for that, and ensures the sufficient background knowledge for understanding this thesis. First, general properties and characteristics are introduced, including all necessary parameters and techniques used in the research of this thesis. Latter part of this section focuses on different antenna types.
 
 \subsection{Antennas in general}
 \label{sec:general_antennas}
@@ -143,14 +144,14 @@ In the electrical equivalent circuit, the antenna is connected to a generator. S
     \sub{\eta}{rad} = \frac{\sub{P}{rad}}{\sub{P}{in}} = \frac{R_r}{R_r+R_o}.
 \end{equation}
 
-Efficiency can also be approximated with system's $S$-parameters. As radiated power is considered as power lost from system, all $S$-parameters of an $N$-port system are required when determining the radiated power. For lossless system, efficiency for port $i$ can be expressed as \cite{lehtovuori_phd}:
+Efficiency can also be approximated with system's $S$-parameters. As radiated power is considered as power lost from the system, all $S$-parameters of an $N$-port system are required when determining the radiated power. For a lossless system, efficiency for port $i$ can be expressed as \cite{lehtovuori_phd}:
 \begin{equation}
 \label{eq:eff_aprx}
     \sub{\eta}{rad} = 1-\sum_{j=1}^{N}|S_{ij}|^2
 \end{equation}
 where $S_{ij}$ are the scattering parameters expressing the power flow from port $j$ to port $i$. For other than lossless systems this works only as an approximation due to e.g. substrate or ohmic losses \cite{lehtovuori_phd}.
 
-Good efficiency may be the most important property for any antenna. In transmission, that means a smaller transmit power is needed for the wanted field strength. In reception, a higher SNR can be achieved as it is proportional to efficiency. Therefore, an efficient antenna can improve link quality and battery life of handset \cite{molisch}. In an ideal situation, $\sub{\eta}{rad}=1$. As mobile antennas operate on wide range of frequencies, this is impossible to realize. %\cite{molisch}
+Good efficiency may be the most important property for any antenna. In transmission, that means a smaller transmit power is needed for the wanted field strength. In reception, a higher SNR can be achieved as it is proportional to efficiency. Therefore, an efficient antenna can improve link quality and battery life of handset \cite{molisch}. In an ideal situation, $\sub{\eta}{rad}=1$. As mobile antennas operate on wide range of frequencies, this is impossible to realize, and the typical realized efficiency can be in the range of $0.3$-$0.9$ \cite{volakis,ilvonen_phd}. %\cite{molisch}
 
 
 \subsection{Radiation characteristics}
@@ -206,7 +207,7 @@ where $\Gamma(f)$ is the reflection coefficient as a function of frequency and $
 \begin{itemize}
     \item broader bandwidth can be achieved only if reflection coefficient increases.
     \item reflection coefficient can reach 0 only at discrete frequencies, i.e.\ having bandwidth of 0.
-    \item if load impedance increases, matching level decreases. Therefore circuits with higher quality factor ($Q$) are harder to match than low-$Q$ circuits.
+    \item circuits with higher quality factor ($Q$) are harder to match than low-$Q$ circuits. $Q$ depends on $R$ and $C$ (and/or $L$, depends on the load), and if either of them increases, the circuit Q-factor increases, which complicates matching.
 \end{itemize}
 
 Matching can be achieved in several different ways, as presented in \cite{pozar}, and probably the simplest possible is \textit{L-section} matching network of two lumped elements. Figure \ref{fig:l-match} shows the two possible layouts for L-section. In both configurations, the reactive elements can have any inductor-capacitor combination, in order to match the antenna. The exact matching circuit depends on the antenna impedance. With low frequencies, up to about 2\,GHz \cite{holopainen_phd}, or small circuit size, L-section matching is feasible. Limitations of L-section come in the way when frequency or circuit size increases.
@@ -353,20 +354,21 @@ Mobile terminals require wide operational bandwidth, and small antennas are typi
 
 \subsection{Typical antenna structures in mobile phones}
 \label{sec:antenna_types}
+An antenna can be any structure, that is able to convert guided waves to free space waves. Mobile antennas operate on wide range of frequencies, and throughout the history of wireless communications, a several different types of antennas are used for various purposes. Next, some of the most common antenna types in mobile, and other, devices are introduced.
 
 \subsubsection{Dipoles and monopoles}
 \label{sec:dipole}
 
 Probably the most fundamental antenna type is dipole, which by the simplest is a transmission line with both wires bent at one end \cite{stutzman}. Dipole is often used as an example of an antenna especially in educational purposes due to its simple structure. As dipoles are resonating antennas, their operational frequency depends on their length. The most widely used one is half-wave long dipole.  By nature, dipoles are narrow band antennas, but wider bandwidth can be achieved e.g.\ by using larger wire width \cite{stutzman,balanis}. However, even if dipoles are electrically small, they are usually physically large structures, which is not favorable for mobile and handheld devices. Nevertheless, dipoles have also good features, like high efficiency and omnidirectional radiation pattern, that are wanted from mobile antennas. Well performing dipole structures for mobile phones are proposed e.g.\ in \cite{dipole_example1,dipole_example2}.
 
-Besides dipoles being physically too large for mobile applications, mobile antennas are surrounded by very nearby objects, that are harmful to the antenna. Normally, these objects are ground planes that are large compared to the antenna. Conductive ground planes affect antenna's performance, especially impedance and radiation pattern \cite{stutzman}. However, monopole antennas are designed to operate in the presence of a ground plane. Monopole is basically a dipole cut in half, and fed against a ground plane \cite{stutzman}. Monopole's impedance is half of dipole's, and hence, the radiated power is also half. This yields lower average radiation intensity which gives higher directivity. Operational frequency of a monopole of course depends on the length of the antenna, similarly to dipoles, but their smaller size makes monopoles more suitable for mobile devices. In \cite{monopole_example1,monopole_example2} designs for wideband monopoles to be used in handsets are presented.
+Besides dipoles being physically too large for mobile applications, mobile antennas are surrounded by very nearby objects, that are harmful to the antenna. Normally, these objects are ground planes that are large compared to the antenna. Conductive ground planes affect antenna's performance, especially impedance and radiation pattern \cite{stutzman}. However, monopole antennas are designed to operate in the presence of a ground plane. Monopole is basically a dipole cut in half, and fed against a ground plane \cite{stutzman}. Monopole's impedance is half of dipole's, and the radiated power is also half of a dipole's with the same current, as the radiation occurs only in one hemisphere. This yields lower average radiation intensity which gives higher directivity. Operational frequency of a monopole of course depends on the length of the antenna, similarly to dipoles, but their smaller size makes monopoles more suitable for mobile devices. In \cite{monopole_example1,monopole_example2} designs for wideband monopoles to be used in handsets are presented.
 
 \subsubsection{Microstrip antennas}
 \label{sec:microstrip}
 
 Microstrip antennas (MSA) are an alternative to wire antennas. For example, dipoles can be printed as microstrip lines. Typical microstrip antenna has a printed patch on top of a substrate with a ground plane below it \cite{stutzman}. MSAs are very low profile, since substrate is thin and the patch itself normally has thickness of $0.05\lambda_0$ or less. One advantage of microstrip antennas is that they can be included in microwave integrated circuits, which decreases costs, and provides controlled-dimension construction. Patches can also be printed on flexible substrates, which enables better use of available space \cite{stutzman}.
 
-Microstrips radiate with broad beam broadside to the patch as the ground plane prevents the formation of back lobes. Challenges of patch antennas are that they are resonant antennas, which leads to narrow bandwidth. Also after fabrication, antenna cannot be re-adjusted easily. Due to the narrowband nature of this antenna type, and possibly large size, it is not very popular antenna for cellular phones \cite{stutzman}. However, Global Positioning System (GPS) is a standard feature in new mobile phones and it operates on a narrow band, and thus, microstrips with large dielectric constant substrate to reduce size are used for that purpose \cite{stutzman}. Mobile antennas might anyway be constructed with microstrip techniques, and commonly the patch is shaped according to other antenna type, as is done in \cite{microstrip_example1,microstrip_example2}. This might result feasible performance on a certain band.
+Microstrips radiate with broad beam broadside to the patch, while the ground plane prevents the formation of back lobes. Challenges of patch antennas are that they are resonant antennas, which leads to narrow bandwidth. Also after fabrication, antenna cannot be re-adjusted easily. Due to the narrowband nature of this antenna type, and possibly large size, it is not very popular antenna for cellular phones \cite{stutzman}. However, Global Positioning System (GPS) is a standard feature in new mobile phones and it operates on a narrow band, and thus, microstrips with large dielectric constant substrate to reduce size are used for that purpose \cite{stutzman}. Mobile antennas might anyway be constructed with microstrip techniques, and commonly the patch is shaped according to other antenna type, as is done in \cite{microstrip_example1,microstrip_example2}. This might result feasible performance on a certain band.
 
 \subsubsection{Loops and slots}
 \label{sec:loop}
@@ -394,7 +396,7 @@ As all the previously presented antennas are of self-resonant type, capacitive c
 
 The concept of capacitive coupling elements is explained in \cite{vainikainen_resonator_analysis, villanen_cce}. The basic idea behind them is to combine the wavemodes of the antenna and the chassis. This would result enhanced bandwidth for the mobile terminal. For strong coupling to the dominating characteristic wavemodes of the chassis, the maxima of electric fields of the antenna and the chassis must be close to each other. Moreover, the volume of the antenna should be used as efficiently as possible to maximize the field strength around the antenna element. PIFAs for example, are not optimal structures for this purpose. 
 
-In contrary to self-resonant antennas, coupling elements are not the main radiators of the system, as presented in \cite{villanen_cce}. The dominant wavemode of the chassis is much stronger than the same wavemode excited by the coupling element, which makes the ground plane the main radiator. With good matching circuit, it is possible to excite multiple wavemodes for broad operational band \cite{valkonen_cce}.
+In contrary to self-resonant antennas, coupling elements are not the main radiators of the system, as presented in \cite{villanen_cce}. The dominant wavemode of the chassis is much stronger than the same wavemode excited by the coupling element, which makes the ground plane the main radiator. With good matching circuitry, it is possible to excite multiple wavemodes for broad operational band \cite{valkonen_cce}.
 
 
 \subsection{Multiantenna systems}
