@@ -7,7 +7,7 @@
 %% Leave first page empty
 \thispagestyle{empty}
 
-
+\begin{comment}
 \begin{itemize}
 \item[--]Tutkimuksen taustaa ja tutkimusaiheen yleisluonteinen esittely
 \item[--]Tutkimuksen tavoitteet
@@ -15,7 +15,19 @@
 \item[--]Tutkimuksen rajaus ja keskeiset käsitteet.
 \item[--]Työn rakenne
 \end{itemize}
+\end{comment}
 
+Mobile networks have been growing rapidly for the last two decades, and the same trend will continue in the near future, as the global amount of mobile subscriptions is constantly increasing and applications are more and more data intensive \cite{nokia,cisco,ericsson,gsma}. Mobile phones are not anymore used for only traditional calls but for communicating through a numerous different messaging services, social media, and other applications. Prior to the third generation mobile networks (3G), this have been impossible. 3G enlarged the channel bandwidth by factor of 25 \cite{molisch}, which enabled significantly higher data rates.
+
+After 3G, the standards of mobile communications have kept on evolving, as new applications and demands are invented. In 2008, International Telecommunications Union (ITU) announced the new requirements for mobile networks \cite{itur}. Long Term Evolution (LTE), or the fourth generation mobile networks (4G), would again multiply channel bandwidth and data rates to answer the need for faster networks. However, LTE does not fulfil the specifications, but its successor LTE-Advanced will. 4G networks use over 40 frequency bands around the world \cite{radio_electronics,molisch}, and provide 1\,Gb/s peak data transmission by utilizing techniques such as multiple input multiple output (MIMO) and carrier aggregation \cite{parkvall_lte}.
+
+If the network standards have developed a lot, same time the mobile phones have changed their shapes several times \cite{phone_evolution2,phone_evolution}. Nowadays smart phones with large touch screens are the common device. Large displays reserve a major amount of space for themselves, which sets different constraints for the placement of other subsystems. Modern mobile phones operate already on a wide range of frequencies, and it is estimated that the amount of communications systems might exceed 20 in the future \cite{20ant}. This would mean 20 different antennas in a single device, which is quite a challenge for designers, as the network standards also require a certain performance. To meet the requirements antennas should operate on multiple bands or at least be able to wideband communications \cite{lehtovuori_wideband_match}.
+
+Fortunately, antenna techniques are developing together with the networks. From long monopoles and dipoles sticking outside the handset, the antennas are currently inside the phone, or integrated to the housing of the phone \cite{saunders,molisch}. Different forms of planar antennas have been a popular choice, as they are able to operate on multiple bands \cite{anguera}. As antennas are designed to operate on multiple bands, their size and shape might become uncontrollable, which restricts performance. A potential option is a capacitive coupling element (CCE), which can be used at a wide band, requires a smaller area, and typically has a simple structure \cite{valkonen_cce2}.
+
+The purpose of this thesis is ...
+
+The structure of this thesis is as follows. In Section \ref{sec:mobile_antennas}, the required background knowledge is explained by introducing the characteristics of an antenna, methods to evaluate its performance, and presenting examples of different antenna structures. Section \ref{sec:metal_cover} reviews the latest studies on antenna structures for metal-covered handsets. The theoretical part is followed by \Cref{sec:objectives,sec:simulations,sec:analysis}, which present the main contribution by the author by explaining the research methods, presenting and finally analyzing the results from the antenna simulations, respectively. At last, the thesis is concluded in Section \ref{sec:conclusions}.
 
 %% Opinnäytteessä jokainen osa alkaa uudelta sivulta, joten \clearpage
 %%

@@ -1,9 +1,10 @@
 %\section{Tutkimusaineisto ja -menetelmät}
 \section{Design process \& methods}
-\label{sec:ojectives}
+\label{sec:objectives}
 Together with the previous section ended also the theoretical part of this thesis. From now on, everything presented is contributed by the author. This section presents the targets of this thesis in more detail, as well as the methods for answering the research question and solving the defined problems. The last part of this section contains the results from the first, preliminary simulations to gather information for the actual antenna design process.
 
-\subsection{Design objectives}
+\subsection{Design objectives \& strategy}
+\label{sec:strategy}
 The objective of this thesis is to study feasible antenna structures for metal-covered mobile phones. The phone should have two similar cellular antennas (main and diversity) for MIMO operation. Additionally, two antennas to operate on GPS and Wi-Fi frequencies are to be designed. To clarify, from now on, main antenna refers to the first cellular antenna to be designed, and diversity antenna to the second one, regardless how their final performances will compare to each other. Table \ref{tab:design_goals} below presents the goals and requirements for this project.
 
 \begin{table}[H]
@@ -35,9 +36,6 @@ The objective of this thesis is to study feasible antenna structures for metal-c
     \end{tabular}
 \end{table}
 
-
-\subsection{Design strategy}
-\label{sec:process}
 Electromagnetic (EM) simulations were made in CST Microwave Studio \cite{cst} (later CST). It was used to create antenna and phone models, and to calculate system's $S$-parameters. Simulations were focused on antenna's initial matching, i.e. $S_{11}$ for each antenna. The procedure of testing different antenna structures was pretty straightforward: first a model was built, then simulated, and finally the obtained results were analyzed. Based on the previous findings, the model was modified aiming to wide impedance matching, and then simulated again. The first tests were done with a simple model and a simple antenna design. While the antenna structures got better, the model of the phone was also modified to be more realistic.
 
 Antennas were designed in order of significance. The cellular antennas were considered more important, and thus they were studied first. Development process of the antennas began with the main antenna, and when it was operating properly, the same process was applied to design the diversity antenna. The final step was to add solutions for GPS and Wi-Fi antennas. Figure \ref{fig:ant_order} illustrates the proceeding order. 

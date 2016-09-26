@@ -1,8 +1,8 @@
-\section{Antennas in metal-covered handsets}
+\section{Metal-covered handsets}
 \label{sec:metal_cover}
 Previous section explained the physical principles of an antenna. The focus of this section is in the recent antenna research, and moreover, in designed antennas for metal-covered mobile phones. Metal-covered handheld devices are already popular, but mobile phones having metallic structure are still making their way to the markets. In this section, the possible antenna types and design techniques as well as different styles of metal covering are explained with published articles and conference proceedings. 
 
-\subsection{Handsets with metal rim}
+\subsection{Antenna techniques in metal-covered handsets}
 \label{sec:metal_rim}
 Using metal rim on the sides of a handset improves robustness and strength of the device, and also makes the appearance of the phone modern \cite{ban_dual_loop, hsu_compact, yuan_slot}. However, it affects the performance of antennas significantly. As the rim is made of metal, i.e.\ conductive material, it couples with the internal antennas and harms their radiation performance \cite{ban_dual_loop}. Presence of metal near the antenna weakens the impedance matching by adding large capacitance to antenna's input impedance, and makes it difficult to obtain the same matching level again by adjusting antenna parameters. Since matching level drops, also radiation efficiency and bandwidth decrease \cite{ban_dual_loop, hsu_compact, yuan_slot}.
 
@@ -29,9 +29,7 @@ As the display is acting as ground plane, the metal rim can be grounded with a s
 
 Different resonant modes can be obtained also with slots in the ground plane \cite{yuan_slot}. Combining slots with loops a large number of resonance modes can be achieved \cite{hsu_compact}. Each element supports several modes that can be excited simultaneously to obtain wide bandwidth. However, slots and loops require quite large space, which is already limited. Monopole antenna in the side metal itself saves space inside the phone for other applications \cite{lee_monopole, valkonen_multifeed}. Cutting gaps to the metal rim constructs a monopole antenna, which couples with the rest of the rim to cover a wide set of frequencies \cite{chen_metal_frame}. Besides these antennas integrated into the structure, IFAs are also used \cite{hepta_ifa}. %\cite{hsu_compact, yuan_slot, lee_monopole, chen_metal_frame}
 
-\subsection{Full metal-covered handsets}
-\label{sec:full_cover}
-From the metal rim on the sides of the phone, the next step is metallic back cover. Similarly to handsets with metal rim, metallic back cover improves robustness but deteriorates the performance of antennas. However, the harmful effects of full metal back cover are so strong, that many of the antenna solutions in the recent studies have slots in the cover (Figure \ref{fig:metal_covers}). In those studies antennas are either PIFAs, or monopoles or the slots themselves \cite{wu_pier, son_wideband_mimo, wu_tunable, zhong_pier}. 
+From the metal rim on the sides of the phone, the next step is metallic back cover, and full metal housing. Similarly to handsets with metal rim, metallic back cover improves robustness but deteriorates the performance of antennas. However, the harmful effects of full metal back cover are so strong, that many of the antenna solutions in the recent studies have slots in the cover (Figure \ref{fig:metal_covers}). In those studies antennas are either PIFAs, or monopoles or the slots themselves \cite{wu_pier, son_wideband_mimo, wu_tunable, zhong_pier}. 
 
 Few studies have still shown promising antenna designs for handsets with full metal back cover. These designs are based on PIFAs or L-shaped strips, but they require a part of the metal rim to be removed \cite{chen_compact_lte, wu_pier}. These modifications make the handset not fully metal-covered, but as the metallic back cover is the main challenge in these cases, the proposed solutions are usable as they have achieved at least 40\,\% efficiency in the operating bands. %\cite{chen_compact_lte, wu_pier}
 
@@ -60,25 +58,28 @@ Few studies have still shown promising antenna designs for handsets with full me
 
 \subsection{Key aspects in previous studies}
 \label{sec:key_aspects}
-More interesting matter in the previously studied antenna solutions is the technical details like operational frequencies and matching techniques, rather than positioning of antennas. As can be expected of today's mobile devices, all solutions are for LTE networks. Still, only antennas proposed in \cite{stanley_lte_mimo, son_wideband_mimo, chen_compact_lte, chen_metal_frame,valkonen_multifeed} support LTE bands operating at $700-800\,\mega\hertz$. These solutions tend to have average of $40\,\%$ efficiency in the low band. 
+More interesting matter in the previously studied antenna solutions is the technical details like operational frequencies and matching techniques, rather than positioning of antennas. \Cref{tab:metal_rim_comp,tab:metal_cover_comp} list the key details of each previously studied antenna for metal-rimmed or metal-covered phone, respectively. As can be expected of today's mobile devices, all solutions are for LTE networks. Still, only antennas proposed in \cite{stanley_lte_mimo, son_wideband_mimo, chen_compact_lte, chen_metal_frame,valkonen_multifeed} support LTE bands operating at $700-800\,\mega\hertz$. These solutions tend to have average of $40\,\%$ efficiency in the low band. 
 
 As majority of proposed solutions operate at frequencies $800-906\,\mega\hertz$ and $1.7-2.7\,\giga\hertz$, the performance of antennas in these ranges is obviously better. Typical efficiencies on average for lower frequencies are around $50-70\,\%$ and for the high band $60-80\,\%$ \cite{ban_dual_loop,chen_compact_lte,son_wideband_mimo,chen_metal_frame,zhong_pier}. Effect of user's hand or head is also measured in \cite{zhong_pier, chen_metal_frame,ban_dual_loop,reconf_narrow,hybrid,hepta_ifa}. The effect is significant since efficiencies drop to average of $10-30\,\%$ in all supported bands. 
 
+A common factor in nearly all of the referenced designs, is that the antennas require almost the whole width of the device. Only \cite{wu_pier,wu_tunable} have clearly smaller antennas. Usually the total volume occupied by the antenna is rather small, but the occupied area might be problematic in a design point of view. Few designs have encountered this by integrating antennas into the metallic structures, like in \cite{chen_metal_frame,lee_monopole,wu_tunable,zhong_pier}. This saves space inside the phone for other subsystems, and enables possibly larger elements to cover also the lowest frequencies. Also \cite{valkonen_multifeed} proposes an antenna structure, that could be integrated into the metal rim, but however, in the study the measurements do not include any metal covers.
+
 Handsets with metal covers and/or frames create a challenging operational environment for antennas. Besides the physical structure of an antenna, matching circuits have a major impact on final performance. Typically matching is done with lumped elements, and common amount of them is two or three for each antenna \cite{stanley_lte_mimo, zhong_pier, wu_pier}. Matching circuits improve isolation between elements leading to better element efficiency, as well as efficiency of the whole system. Even though wide band matching is desirable, it might be hard to achieve with fixed matching network. As resonance tends to occur in narrow peaks, digitally tunable capacitors (DTC) are used in antennas presented in \cite{chen_compact_lte,wu_tunable} to obtain good matching level over the whole band. To improve matching even further, few designs use band-stop \cite{lee_monopole, wu_pier} or band-pass \cite{chen_metal_frame} filters, or reactive loading \cite{chen_compact_lte, chen_metal_frame} to improve antenna's bandwidth.
 
-The common feeding mechanism in different solutions is single-feed \cite{wu_tunable, chen_metal_frame, lee_monopole, chen_compact_lte,hepta_ifa}. That is especially for designs with one element, but also for multiple elements. Designed slot or hybrid antennas have only one feeding point, and signal couples from the fed element to the others \cite{son_wideband_mimo,hsu_compact,zhong_pier,yuan_slot}. Also dual-loop antennas presented in \cite{stanley_lte_mimo,ban_dual_loop,hybrid} have just one feed for both loops. However, in that case both loops are fed. 
+The common feeding mechanism in different solutions is single-feed \cite{wu_tunable, chen_metal_frame, lee_monopole, chen_compact_lte,hepta_ifa}. That is especially for designs with one element, but also for multiple elements. Designed slot or hybrid antennas have only one feeding point, and signal couples from the fed element to the others \cite{son_wideband_mimo,hsu_compact,zhong_pier,yuan_slot}. Dual-loop antennas presented in \cite{stanley_lte_mimo,ban_dual_loop,hybrid} are excited to their wavemodes by a single feed.
 
-Multiple feeds are used only in designs that have also other elements than slots or loops, or have the same antenna structure copied to the other end of the phone. Clearly, in those situations each element or structure is single-fed, but total number of feeds is plural \cite{stanley_lte_mimo, son_wideband_mimo,reconf_narrow}. In \cite{valkonen_multifeed}, the design has only one antenna, but that is fed from two locations. Both feeds have their own matching circuits, and one them operates at low band while the other at high band. This method results terrific, wide band matching levels, and at least $55\,\%$ total efficiency.
+Multiple feeds are used only in designs that have also other elements than slots or loops, or have the same antenna structure copied to the other end of the phone. Clearly, in those situations each element or structure is single-fed, but total number of feeds is plural \cite{stanley_lte_mimo, son_wideband_mimo,reconf_narrow}. In \cite{valkonen_multifeed}, the design has only one antenna, but that is fed from two locations. Both feeds have their own matching circuits, and one of them operates at the low band while the other at the high band. This method results terrific, wide band matching levels, and at least $55\,\%$ total efficiency.
 
 In LTE networks, one way to increase bandwidth and throughput is applying MIMO techniques in data transmission. However, MIMO operations are not that much studied for metal-covered phones. First design, seen in \cite{son_wideband_mimo}, has two similar antenna structures in both ends of the phone consisting complex monopole and planar inverted F antennas. This structure provides full MIMO capability for all operating frequencies, although antennas' efficiencies are only ca.\ $20\,\%$ at the lowest supported frequency of $746\,\mega\hertz$. The second MIMO solution proposed in \cite{stanley_lte_mimo} has a dual-loop antenna between ground plane and side metal frame, and a capacitive coupling element (CCE) antenna. Since the CCE antenna operates only on upper frequencies ($1710-2690\,\mega\hertz$) and does not cover the lower band, the design does not have full MIMO capability. The best multiantenna perfomance is reported in \cite{reconf_narrow}. This design has a loop antenna coupled with T-shaped monopole in both ends of the phone. Additionally, both antennas have a PIN diode for reconfiguring the operating bands. The efficiencies of each antenna in each state of the diode are above $45\,\%$ for all frequencies.
 
-
+Many of the proposed antenna structures are located at one end of the handset \cite{hsu_compact,yuan_slot,hybrid,lee_monopole,valkonen_multifeed,chen_metal_frame,hepta_ifa,chen_compact_lte}. All of these designs could be modified to support MIMO by copying the antenna to the other end of the phone.
 
 \begin{sidewaystable}[H]
 %\begin{table}[H]
 \centering
 \caption{Comparison of previously studied antennas in metal-rimmed phones. * denotes the dimension is not available.}
-\begin{tabular}{|M{0.03\textheight}|M{0.11\textheight}|M{0.1\textheight}|M{0.11\textheight}|M{0.1\textheight}|M{0.06\textheight}|M{0.15\textheight}|>{\Centering\hspace*{0pt}}M{0.18\textheight}|}
+\label{tab:metal_rim_comp}
+\begin{tabular}{|M{0.03\textheight}|M{0.11\textheight}|M{0.11\textheight}|M{0.11\textheight}|M{0.1\textheight}|M{0.06\textheight}|M{0.15\textheight}|>{\Centering\hspace*{0pt}}M{0.18\textheight}|}
     \hline
     \textbf{Ref.} & \textbf{Type} & \textbf{Volume [$\milli\meter^3$]} & \textbf{Ground plane [$\milli\meter^2$]} &\textbf{$f$ [$\mega\hertz$]} & \textbf{$\eta$ [\%]} & \textbf{Matching network} & \textbf{Notes}\\
     \hline
@@ -100,7 +101,7 @@ In LTE networks, one way to increase bandwidth and throughput is applying MIMO t
     \hline
     \cite{chen_metal_frame} & Monopole & $70\times5\times5$ & $130\times70$ & $698-960$, $1710-2690$ & $50-70$ & Four elements + two component band-pass filter + one component reactive loading & Rim with slots. Antenna integrated to the rim.\\
     \hline
-    \cite{hepta_ifa} & IFA & $70\times8\times5\times0.8$ & $132\times70$ & $824-960$, $1710-2690$ & $55-80$ & N/A & Rim with slots\\
+    \cite{hepta_ifa} & IFA & $70\times8\times0.8$ & $132\times70$ & $824-960$, $1710-2690$ & $55-80$ & N/A & Rim with slots\\
     \hline
 \end{tabular}
 %\end{table}
@@ -110,7 +111,8 @@ In LTE networks, one way to increase bandwidth and throughput is applying MIMO t
 %\begin{table}[H]
 \centering
 \caption{Comparison of previously studied antennas in metal-covered phones. * denotes the dimension is not available.}
-\begin{tabular}{|M{0.03\textheight}|M{0.11\textheight}|M{0.1\textheight}|M{0.11\textheight}|M{0.1\textheight}|M{0.07\textheight}|M{0.15\textheight}|M{0.18\textheight}|}
+\label{tab:metal_cover_comp}
+\begin{tabular}{|M{0.03\textheight}|M{0.11\textheight}|M{0.11\textheight}|M{0.11\textheight}|M{0.1\textheight}|M{0.07\textheight}|M{0.15\textheight}|M{0.18\textheight}|}
     \hline
     \textbf{Ref.} & \textbf{Type} & \textbf{Volume [$\milli\meter^3$]} & \textbf{Ground plane [$\milli\meter^2$]} & \textbf{$f$ [$\mega\hertz$]} & \textbf{$\eta$ [\%]} & \textbf{Matching network} & \textbf{Notes}\\
     \hline
