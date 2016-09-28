@@ -67,14 +67,13 @@ Antennas radiate because of accelerated charges \cite{stutzman}. Acceleration ca
         \caption{Radiates.}
         \label{fig:osc}
     \end{subfigure}
-    
-    \caption{Examples of charges producing radiation. Re-illustrated from \cite{saunders, balanis}.}
+    \caption{Examples of charges producing radiation. Re-illustration from \cite{saunders, balanis}.}
     \label{fig:charges}
 \end{figure}
 
-These described situations are the most elementary examples of radiation. In real world the normal case is steady-state charge oscillating, usually sinusoidally, and the oscillation frequency equals to the radiation frequency \cite{stutzman}. Once accelerated charges have started a wave, they are not needed anymore. Wave can sustain itself by closing electric field lines on themselves, since there are no charges present. %\cite{stutzman}
+These described situations are the most elementary examples of radiation. In real world the normal case is a steady-state charge oscillating, usually sinusoidally, and the oscillation frequency equals to the radiation frequency \cite{stutzman}. Once accelerated charges have started a wave, they are not needed anymore. Wave can sustain itself by closing electric field lines on themselves, since there are no charges present. %\cite{stutzman}
 
-Maxwell discovered that fields surrounding a transmission line, are guided by the line itself \cite{stutzman}. In open-ended transmission line a standing wave is formed by the interaction between the incident wave and reflections. The standing wave has zero current at the end of the line and nulls every half wave length from there. The current flowing in transmission line wire are headed in opposite directions, which creates strong, constructive interference of electric and magnetic fields between the wires. Bending quarter-wave long parts from the ends of both wires outwards exposes the reinforced fields to open space. In the formed half-wavelength dipole antenna the currents are flowing to the same direction and the maximum of its current distribution lies in between the halves \cite{stutzman}. Thus, antenna is a structure that radiates. %\cite{stutzman}
+Maxwell have discovered that fields surrounding a transmission line, are guided by the line itself \cite{stutzman}. In open-ended transmission line a standing wave is formed by the interaction between the incident wave and reflections. The standing wave has zero current at the end of the line and nulls every half wave length from there. The current flowing in transmission line wire are headed in opposite directions, which creates strong, constructive interference of electric and magnetic fields between the wires. Bending quarter-wave long parts from the ends of both wires outwards exposes the reinforced fields to open space. In the formed half-wavelength dipole antenna the currents are flowing to the same direction and the maximum of its current distribution lies in between the halves \cite{stutzman}. Thus, antenna is a structure that radiates. %\cite{stutzman}
 
 %when used
 Radiated waves propagate away from the antenna, to all directions, although not uniformly as antennas do not have any guiding structures in contrast to transmission lines \cite{stutzman}. Antennas are usually rather used than transmission lines when either the operating frequency is high or distance between transmitter and receiver is large. Increment of either of those increases costs and signal losses of transmission lines, which often makes antennas and wireless transmission preferable choice. %\cite{stutzman}
@@ -84,7 +83,7 @@ Radiated waves propagate away from the antenna, to all directions, although not 
 \label{sec:small_antennas}
 Mobile antennas are typical examples of small antennas. Small antennas can be defined a few different ways \cite{modern_small_antennas}. \emph{Electrically small antennas (ESA)} are not necessarily small in size, but they are small compared to wavelength. An ESA can be surrounded with a sphere of radius $r\leq\frac{\lambda_0}{2\pi}$, where $\lambda_0$ is the free space wavelength at operating frequency. An antenna can also be \emph{physically small (PSA)} if its measured dimensions are small. PSAs do not have any exact definition, rather than a sensual view of smallness. For this thesis, the main focus is on electrically small antennas.
 
-As it was mentioned previously in section \ref{sec:general_antennas}, antennas radiate on a certain frequency, called resonance frequency ($f_0$). The wavelength $\lambda_0$ is related to the frequency via propagation speed, which in free space is the speed of light $c$ \cite{stutzman}:
+As it was mentioned previously in Section \ref{sec:general_antennas}, antennas radiate on a certain frequency, called resonance frequency ($f_0$). The wavelength $\lambda_0$ is related to the frequency via propagation speed, which in free space is the speed of light $c$ \cite{stutzman}:
 \begin{equation}
 \label{eq:fcl}
     f_0 = \frac{c}{\lambda_0}.
@@ -315,7 +314,6 @@ Usually applications, such as mobile antennas, require wider band of frequencies
     \label{fig:3elem_match}
 \end{figure}
 
-
 Besides matching with reactive elements, also transmission line stubs can be used \cite{pozar}. Stub can be either shorted or open-ended, and in parallel or in series with the feed line. One advantage of \textit{single-stub tuning} is that it can be manufactured along with transmission line media. Parallel stubs are useful with microstrip lines and series stubs with coplanar waveguides or slotlines.
 
 While matching with a single stub, the matching level depends on distance from the antenna and the length of the stub. By choosing the length of the stub correctly, any reactance or susceptance can be obtained. %\cite{pozar}
@@ -381,7 +379,7 @@ Slot antennas are variants of loops. Usually an antenna of this type is a slot i
 
 Since space for antennas is very limited in mobile phones, traditional dipoles or monopoles might be too large. However, monopoles can easily be modified to fit the size requirements, as \cite{planar_antennas, balanis} presents. Bending the antenna forms a structure called an inverted L antenna (ILA). Replacing wires with a strip changes the structure to a planar inverted L antenna (PILA), which results wider bandwidth. PILAs are, however, sensitive to changes in height ($h$) or length ($l$) of the antenna. Height lower than $0.1\lambda_0$ is considered critical since above that the antenna is rather top-loaded monopole than a PILA \cite{planar_antennas}. Also, antenna's matching improves if $h/l$-ratio is greater than $4/3$ \cite{planar_antennas}. 
 
-Good matching can be maintained by adding a parasitic grounding strip near the feed point to form a planar inverted F antenna (PIFA). An example is illustrated in Figure \ref{fig:pifa}. Even though the overall dimensions required for good performance, especially at low frequencies, might seem quite large, PIFAs and PILAs are suitable for cellular phones due to their low-profile structure and large achievable bandwidth \cite{balanis}. Planar antennas have been used widely in mobile phones since their release due to the large modifying possibilities of the structure \cite{planar_antennas}. Wideband strucutures are presented e.g.\ in \cite{pifa_example1,pifa_example2,pila_example1}.
+Good matching can be maintained by adding a parasitic grounding strip near the feed point to form a planar inverted F antenna (PIFA). An example is illustrated in Figure \ref{fig:pifa}. Even though the overall dimensions required for good performance, especially at low frequencies, might seem quite large, PIFAs and PILAs are suitable for cellular phones due to their low-profile structure and large achievable bandwidth \cite{balanis}. Planar antennas have been used widely in mobile phones since their release due to the large modifying possibilities of the structure \cite{planar_antennas}. Wideband structures are presented e.g.\ in \cite{pifa_example1,pifa_example2,pila_example1}.
 
 \begin{figure}[H]
     \centering
