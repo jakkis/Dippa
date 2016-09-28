@@ -8,7 +8,7 @@ This sections contains the majority of the work for this thesis. The design prob
 
 \subsection{Conceptualizing the main antenna}
 \label{sec:conceptualizing}
-The basic concept of the main antenna was created on the ground of the findings of the dimension study. The main antenna should be located mainly on the short side of the phone and construct of simple shapes. Its elements should be rather short and they can be banded over the corner of the phone. Also, it was noticed that slots might improve bandwidth, and thus, could be used to cover both defined frequency sets. 
+After the pre-studies, the actual concept for the main antenna is based on the design introduced in \cite{kimmo}. The findings from the pre-study also support that approach. The main antenna should be located mainly on the short side of the phone and construct of simple shapes. Its elements should be rather short and they can be bended over the corner of the phone. Also, it was noticed that slots might improve bandwidth, and thus, could be used to cover both defined frequency sets. 
 
 The main antenna was decided to consist of three elements. Two of them were L-shaped strips bending over the corners of the phone. The last element was a U-shaped sheet on the frontside of the phone, above the display. Back cover was used as a ground plane since it was earlier found to be better choice than the display. At first, this structure was single-fed, and the feed was connected between the U-shaped element and the ground plane. Figure \ref{fig:main_concept} shows the structure of this concept, and Figure \ref{fig:main_location} gives a better view of the location of the antenna.
 
@@ -28,12 +28,12 @@ The main antenna was decided to consist of three elements. Two of them were L-sh
     \label{fig:main_antenna1}
 \end{figure}
 
-The underlying idea of this structure is to have strong mutual coupling between the three antenna elements, which would hopefully improve the operational bandwidth of the system. Elements were placed very close to each others to have better coupling effect the gap between the U-shaped and the L-shaped elements being only $0.5\,\milli\meter$. The same gap width was also used between the barbs of the U-antenna and the display, and to separate the L-elements from the feed pin.
+The underlying idea of this structure is to have a strong mutual coupling between the three antenna elements, which would hopefully improve the operational bandwidth of the system. The elements were placed very close to each others to have better coupling effect. The gap between the U-shaped and the L-shaped elements is only $0.5\,\milli\meter$. The same gap width was also used between the barbs of the U-antenna and the display, and to separate the L-elements from the feed pin.
 
 
 \subsubsection{Initial concept}
 \label{sec:initial_concept}
-This concept was improved and modified further via a number of simulation iterations. Between the different simulation rounds, the structures and dimensions were modified the same way as it was done in the preliminary study. The main values of interest are illustrated in Figure \ref{fig:main_concept}, and their initial values can be seen from Table \ref{tab:initial_concept}. Besides these parameters, also location of the feed and the gaps between the elements were tested. 
+This concept was improved and modified further via a number of simulation iterations. Between the different simulation rounds, the structures and dimensions were modified the same way as it was done in the preliminary study. The main values of interest are illustrated in Figure \ref{fig:main_concept}, and their initial values can be seen from Table \ref{tab:initial_concept}. Besides these parameters, also location of the feed and the different gaps between the elements were tested. 
 \begin{table}[H]
     \centering
     \caption{Initial values for the main antenna concept.}
@@ -63,7 +63,7 @@ This concept was improved and modified further via a number of simulation iterat
     \end{tabular}
 \end{table}
 
-Already the first simulation showed very promising results, as can be seen from Figure \ref{fig:concept_ini}. Shape of the response in the low band is exactly what was desired: wide and smooth. However, the results were not all positive. The matching level in the low band is only about $-2\,\db$, and the high band is terrible. The first conclusion of this result is that either symmetric structure is not optimal or the dimensions of the different parts are not what they are supposed to be.
+Already the first simulation in Figure \ref{fig:concept_ini} shows very promising results. Shape of the response in the low band is exactly what was desired: wide and smooth. However, the results were not all positive. The matching level in the low band is only about $-2\,\db$, and the high band is terrible. The first conclusion of this result is that either symmetric structure is not optimal or the dimensions of the different parts are not what they are supposed to be.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{img/concept_ini.eps}
@@ -74,7 +74,7 @@ Already the first simulation showed very promising results, as can be seen from 
 
 \subsubsection{Iteration of dimensions}
 \label{sec:dimension iteration}
-The structure was first modified by changing the dimensional parameters. For now, the system was still kept symmetric to preserve simplicity. The changed dimensions were the lengths of the metal sheets beside the display ($l_6$), lengths of the antennas on the sides of the phone ($l_1$, $l_4$) and the width of all the side antennas ($w_1$).  All these parameters were tested separately by the same principles used in the preliminary study, but in more detail. As the observations were similar to the ones preliminary study, only the best results are presented. Table \ref{tab:concept2} lists the best values for these parameters found in the three cases. Cases A, B, and C refer to changing $l_6$, $l_1$ and $l_4$, or $w_1$, respectively. 
+The structure was first modified by changing the dimensional parameters. For now, the system was still kept symmetric to preserve simplicity. The changed dimensions were the lengths of the metal sheets beside the display ($l_6$), lengths of the antennas on the sides of the phone ($l_1$, $l_4$) and the width of all the side antennas ($w_1$).  All these parameters were tested separately by the same principles used in the preliminary study, but in more detail. As the observations were similar to the ones in the preliminary study, only the best results are presented. Table \ref{tab:concept2} lists the best values for these parameters found in the three cases. Cases A, B, and C refer to changing $l_6$, $l_1$ and $l_4$, or $w_1$, respectively. 
 \begin{table}[H]
     \centering
     \caption{Tested dimensions. All values are in millimeters.}
@@ -94,9 +94,9 @@ The structure was first modified by changing the dimensional parameters. For now
     \end{tabular}
 \end{table}
 
-The values of tested dimensions ranged from both larger than the initial value to smaller than that. The Table \ref{tab:concept2} above shows that the best values are smaller than the initial one for all parameters. The results especially for $l_1$, $l_4$, and $l_6$ agree with the findings from the pre-study: better low band is achieved with smaller element on the side. $w_6$ however is smaller than the initial width but provides better results, even though the pre-study showed the opposite. In this case, as it was in the pre-study, the variations in the matching level between the different widths were marginal, but the chosen $4\,\milli\meter$ provided the smoothest response in the low band.
+The values of tested dimensions ranged from both larger than the initial value to smaller than that. The Table \ref{tab:concept2} above shows that the best values are smaller than the initial one for all parameters. The results especially for $l_1$, $l_4$, and $l_6$ agree with the findings from the pre-study: better low band is achieved with smaller element on the side. $w_1$ however is smaller than the initial width but provides better results, even though the pre-study showed the opposite. In this case, as it was in the pre-study, the variations in the matching level between the different widths were marginal, but the chosen $4\,\milli\meter$ provided the smoothest response in the low band.
 
-Figure \ref{fig:concept2} shows the best results of the three test cases compared with the initial situation. It can be seen clearly, that each modification have improved system's performance in the low band. Although the focus is in the low band, the high band should not be forgotten. In that area, the overall performance did not improve as the structure was modified. 
+Figure \ref{fig:concept2} shows the best results of the three test cases compared with the initial situation. Each modification have improved system's performance in the low band. Although the focus is in the low band, the high band should not be forgotten. In that area, the overall performance did not improve as the structure was modified. 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{img/concept2.eps}

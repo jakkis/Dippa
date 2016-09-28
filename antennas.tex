@@ -1,6 +1,6 @@
 \section{Mobile antennas}
 \label{sec:mobile_antennas}
-Mobile phones require antennas to communicate. This section explains the reason for that, and ensures the sufficient background knowledge for understanding this thesis. First, general properties and characteristics are introduced, including all necessary parameters and techniques used in the research of this thesis. Latter part of this section focuses on different antenna types.
+Mobile phones require antennas to communicate. This section introduces the general properties and characteristics of mobile antennas, including all necessary parameters and techniques used in the research of this thesis. Latter part of this section focuses on different antenna types, that are used in mobile devices.
 
 \subsection{Antennas in general}
 \label{sec:general_antennas}
@@ -401,7 +401,7 @@ In contrary to self-resonant antennas, coupling elements are not the main radiat
 
 \subsection{Multiantenna systems}
 \label{sec:multiant}
-Mobile phones today have several radio systems for different applications \cite{20ant}, and the operating frequencies of them range from hundreds of megahertz to dozens of gigahertz. They wide range of required frequencies usually demands multiple antennas. Generally, these multiantenna systems are multiport systems, which can be distinguished in a few different ways \cite{multiantenna_mimo_book}. The most intuitive one is a multielement antenna, in which each port is connected to physically distinct antenna elements (Figure \ref{fig:mea}). If a single antenna element is fed from several ports, the different antennas can be separated by different polarizations or radiation patterns (Figure \ref{fig:mma}). Additionally, a multiantenna system can also be a combination of these different types.
+Mobile phones today have several radio systems for different applications \cite{20ant}, and the operating frequencies of them range from hundreds of megahertz to few gigahertz, in the future even to dozens of gigahertz \cite{20ant}. The wide range of required frequencies usually demands multiple antennas. Generally, these multiantenna systems are multiport systems, which can be distinguished in a few different ways \cite{multiantenna_mimo_book}. The most intuitive one is a multielement antenna, in which each port is connected to physically distinct antenna elements (Figure \ref{fig:mea}). If a single antenna element is fed from several ports, the different antennas can be separated by different polarizations or radiation patterns (Figure \ref{fig:mma}). Additionally, a multiantenna system can also be a combination of these different types.
 
 \begin{figure}[H]
     \centering
@@ -437,7 +437,7 @@ Mobile phones today have several radio systems for different applications \cite{
     \label{fig:multiantennas}
 \end{figure}
 
-Multiantenna systems, especially multielement antenas, are also known as multiple input, multiple output (MIMO) communication systems. They can enhance the capacity and bandwidth in wireless transmission \cite{multiantenna_mimo_book}, and exploit the spatial dimension of the channel, which has benefits such as robustness against fading and interference, and improve the signal power \cite{mimo_cellular_networks}. Use of multiple antennas enables transmission of several data streams simultaneously, even at the same frequency by combining diversity or beamforming techniques \cite{volakis}.
+Multiantenna systems, especially multielement antennas operating at the same frequencies, are also known as multiple input, multiple output (MIMO) communication systems. They can enhance the capacity and bandwidth in wireless transmission \cite{multiantenna_mimo_book}, and exploit the spatial dimension of the channel, which has benefits such as robustness against fading and interference, and improve the signal power \cite{mimo_cellular_networks}. Use of multiple antennas enables transmission of several data streams simultaneously, even at the same frequency by combining diversity or beamforming techniques \cite{volakis}.
 
 In a general communication link, the signal undergoes a multipath process, where the signal is reflected or scattered from various objects on the propagation path. Due to this effect, the electromagnetic waves are received from several directions, and this causes fading that lowers the signal strength \cite{saunders,volakis}. MIMO systems take advantage of this fading, as they collect energy from all the incoming streams, and sum them up. If the antennas are uncorrelated, the fading can be overcome \cite{volakis}.
 
@@ -447,7 +447,7 @@ Antenna diversity can indeed improve the performance of a communications system,
     \rho_e = \frac{|S_{11}^*S_{12}+S_{21}^*S_{22}|^2}{(1-(|S_{11}|^2+|S_{21}|^2))(1-(|S_{22}|^2+|S_{12}|^2))}.
 \end{equation}
 
-This equation is valid for lossless systems, but can be used as an approximation for lossy structures, similarly to (\ref{eq:eff_aprx}). ECC is used to evaluate the MIMO capability of an multiantenna system, and a coefficient below 0.5 is considered as good performance \cite{reduce_ecc,reduce_ecc2}.
+This equation is valid for lossless systems, but it can be used as an approximation for lossy structures, similarly to (\ref{eq:eff_aprx}). ECC is used to evaluate the MIMO capability of an multiantenna system, and a coefficient below 0.5 is considered as good performance \cite{reduce_ecc,reduce_ecc2}.
 
 
 \clearpage
