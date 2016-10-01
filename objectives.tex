@@ -36,7 +36,7 @@ The objective of this thesis is to study feasible antenna structures for metal-c
     \end{tabular}
 \end{table}
 
-Electromagnetic (EM) simulations are made in CST Microwave Studio \cite{cst} (later CST). It is used to create antenna and phone models, and to calculate system's $S$-parameters. Simulations are focused on antenna's initial matching, i.e. $S_{ii}$ for each antenna. The procedure of testing different antenna structures is pretty straightforward: first a model is built, then simulated, and finally the obtained results are analyzed. Analysis focuses on the resonance frequencies, bandwidths, and matching levels. If the combination of these three parameters looks promising (e.g.\ sufficient levels and rather wide band), a matching circuit is constructed to enhance the performance. Based on the previous findings, the model is modified aiming to wide impedance matching, and then simulated again. The first tests are done with a simple model and a simple antenna design. While the antenna structures are getting better, the model of the phone is also modified to be more realistic.
+Electromagnetic (EM) simulations are made in CST Microwave Studio \cite{cst} (later CST). It is used to create antenna and phone models, and to calculate system's $S$-parameters. Simulations are focused on antenna's initial matching, i.e.\ $S_{ii}$ for each antenna. The procedure of testing different antenna structures is pretty straightforward: first a model is built, then simulated, and finally the obtained results are analyzed. Analysis focuses on the resonance frequencies, bandwidths, and matching levels. If the combination of these three parameters looks promising (e.g.\ sufficient levels and rather wide band), a matching circuit is constructed to enhance the performance. Based on the previous findings, the model is modified aiming to wide impedance matching, and then simulated again. The first tests are done with a simple model and a simple antenna design. While the antenna structures are getting better, the model of the phone is also modified to be more realistic.
 
 Antennas are designed in order of significance. The cellular antennas are considered more important as they operate on the lowest frequencies, and therefore require the largest space. Thus, they are studied first. Development process of the antennas begins with the main antenna, and when it is operating properly, the same process will be applied to design the diversity antenna. The final step is to add solutions for GPS and Wi-Fi antennas. Figure \ref{fig:ant_order} illustrates the proceeding order. 
 
@@ -44,7 +44,7 @@ The basic research strategy is first to find solution for the main antenna to op
 
 Before moving on the next antenna, the design constraints have to be checked. One antenna is iterated until the targets are reached (Figure \ref{fig:step}). When the antenna under development is performing according to the requirements, or at least at a decent level, the design of an another antenna can start.
 
-Designing antennas is not limited only in antenna structures. In order to reach the goals presented above, matching networks must be designed as well. Finding usable circuit topologies is done simultaneously with the EM simulations. Optenni Lab \cite{optenni} and NI AWR Design Environment \cite{awr} (later AWR) are used for this purpose. The $S$-parameter file obtained from CST-simulations is given to and read by these programs. Optenni Lab searches for the best matching circuit according to given frequency band settings and amount of circuit elements. Resulted circuits are modified and fine-tuned in AWR, to reach the defined design objectives. Also, in AWR the ideal circuit elements are later replaced with models of actual components to obtain more realistic results.
+Designing antennas is not limited only in antenna structures. In order to reach the goals presented above, matching circuits (MC) must be designed as well. Finding usable topologies is done simultaneously with the EM simulations. Optenni Lab \cite{optenni} and NI AWR Design Environment \cite{awr} (later AWR) are used for this purpose. The $S$-parameter file obtained from CST-simulations is given to and read by these programs. Optenni Lab searches for the best matching network according to given frequency band settings and amount of circuit elements. Resulted circuits are modified and fine-tuned in AWR, to reach the defined design objectives. Also, in AWR the ideal circuit elements are later replaced with models of actual components to obtain more realistic results.
 
 \begin{figure}[H]
     \centering
@@ -118,7 +118,7 @@ Besides the antennas, also the phone has to be modeled electromagnetically. For 
     \vspace{-7pt}
     \centering
     \includegraphics[width=0.51\textwidth]{img/cad.eps}
-    \caption{A 3D-model of a smart phone.}
+    \caption{A 3D-model of a smartphone.}
     \label{fig:cad}
 \end{figure}
 
@@ -126,7 +126,7 @@ Before the precise model is taken into use, simulations are first done with a pl
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{img/basic_structure.eps}
-    \caption{Simplified, basic model of a mobile phone to be used in the first phase of the simulations.}
+    \caption{A simplified, basic model of a mobile phone to be used in the first phase of the simulations.}
     \label{fig:basic_structure}
 \end{figure}
 
@@ -135,9 +135,9 @@ Before the precise model is taken into use, simulations are first done with a pl
 The first simulations with the plain model are about gathering knowledge on how different structures perform in the presence of the metal cover. Gaining this information is critical since antennas in metal-covered mobile phones are not that much studied, as is presented in Section \ref{sec:metal_rim}. This preliminary study (later also pre-study) focuses on different dimensions of antennas, their locations, shapes, feed positions, and the metal cover itself. The structures of antenna elements are kept as simple as possible in order to follow the effects of each parameter in an efficient way. 
 
 
-\subsubsection{Effect of the metal cover}
+\subsubsection{The effect of the metal cover}
 \label{sec:metal_effect}
-The main point of interest, as well as the main challenge, is the metal cover and how it affects the antenna's performance. To demonstrate the challenge of this project, simulations to test the effect of the metal are run. Since this test is just an example, the simulation model is kept simple. A long, L-shaped antenna completely covering one long side and one short side, with a little square on the corner is used in this test. Models are shown in Figure \ref{fig:metal_vs_nometal_model}.
+The main point of interest is the metal cover and how it affects the antenna's performance. To demonstrate the challenge of this project, simulations to test the effect of the metal are run. Since this test is just an example, the simulation model is kept simple. A long, L-shaped antenna completely covering one long and one short side with a little square in the corner is used. Models are shown in Figure \ref{fig:metal_vs_nometal_model}.
 
 \begin{figure}[H]
     \centering
@@ -151,7 +151,7 @@ The main point of interest, as well as the main challenge, is the metal cover an
     \caption{Without metal cover.}
     \label{fig:nometal_cover}
     \end{subfigure}
-    \caption{Simulation models used to test the effect of metal cover. An antenna element is on the side of the phone.}
+    \caption{The simulation models used to test the effect of a metal cover. An antenna element is on the side of the phone.}
     \label{fig:metal_vs_nometal_model}
 \end{figure}
 
@@ -179,20 +179,20 @@ Figure \ref{fig:metal_vs_nometal_matched} presents the same simulations with a f
 \clearpage
 \subsubsection{Size of an antenna}
 \label{sec:antenna_size}
-As mentioned earlier in Section \ref{sec:strategy}, antennas are designed and developed in the EM simulator. Each simulated design provides information that is useful for the following iterations. 
+As mentioned earlier in Section \ref{sec:strategy}, the antennas are designed and developed in the EM simulator. Each simulated design provides information that is useful for the following iterations. 
 
 The first interesting metric to investigate is the size of the antenna. The length ($l$) and width ($w$) of the antenna are modified. The tested antennas are $2\,\milli\meter$ wide metal strips either on the long or the short side of the phone (see Figures \ref{fig:ant_length_long} and \ref{fig:ant_length_short}, respectively). In both cases everything else is kept constant except the length of antenna. 
 
 \begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.49\textwidth}
-        \includegraphics[width=\textwidth]{img/length_long.eps}
+        \includegraphics[width=\textwidth]{img/ant_length_long.eps}
         \caption{Antenna located on the side of the phone.}
         \label{fig:ant_length_long}
     \end{subfigure}
     
     \begin{subfigure}[b]{0.49\textwidth}
-        \includegraphics[width=\textwidth]{img/length_short.eps}
+        \includegraphics[width=\textwidth]{img/ant_length_short.eps}
         \caption{Antenna located at the end of the phone.}
         \label{fig:ant_length_short}
     \end{subfigure}
