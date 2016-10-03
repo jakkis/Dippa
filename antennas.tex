@@ -92,7 +92,7 @@ At resonance, a standing wave is formed at the antenna \cite{stutzman}. Since th
 
 The three important characteristics of an electrically small mobile antenna are size, efficiency, and bandwidth, which are all interconnected \cite{holopainen_phd}. Wider bandwidth can be achieved with a larger antenna, which is not desirable in a modern mobile phone. Decreasing efficiency might increase bandwidth, but it would also decrease handset's battery life. Thus, improving one of these parameters is possible by worsening the others. The important challenge in small antenna design is to find a good trade-off between the three parameters for each application.
 
-Antennas used in handsets and other handheld devices operate in demanding environment. Orientation of the phone is rather random, especially in standby mode. Signal between terminal and base station propagates in every way from line-of-sight to wide multipath arrival angles. Signal strength has to be adequate to counter fading from human head and hand. Hand-effect is a major problem for mobile antennas. Studies have shown that up $70\,\%$ of the radiated power might get absorbed into user's hands \cite{valkonen_phd}. Generally, the requirements for mobile antennas can be listed in the following way \cite{saunders, lehtovuori_phd}:
+Antennas used in handsets and other handheld devices operate in demanding environment. Orientation of the phone is rather random, especially in standby mode. Signal between terminal and base station propagates in every way from line-of-sight to wide multipath arrival angles. Signal strength has to be adequate to counter fading from human head and hand. Hand-effect is a major problem for mobile antennas. Studies have shown that up to $70\,\%$ of the radiated power might get absorbed into user's hands \cite{valkonen_phd}. Generally, the requirements for mobile antennas can be listed in the following way \cite{saunders, lehtovuori_phd}:
 \begin{enumerate}
     \item \textit{Radiation pattern:} Due to the randomly changing orientation of the phone, omnidirectional pattern in azimuth is desirable, as well as wide beamwidth vertically. Though, the precise pattern is not that important given the propagation environment and the proximity of the user.
     \item \textit{Input impedance:} Considering the number of used frequency bands today, phones have wide operational bandwidths. The antenna should be well matched to the source at all required bands.
@@ -152,7 +152,7 @@ Good efficiency may be the most important property for any antenna. An efficient
 
 \subsection{Radiation characteristics}
 \label{sec:pattern}
-Radiation pattern shows the far-field radiation properties of an antenna \cite{balanis, stutzman}. It tells the strength and phase of radiation in certain direction with respect to an isotropic radiator of same energy \cite{balanis}. Isotropic radiator is physically unrealizable, but it is used as a reference of radiation characteristics due its definition: lossless antenna radiating equally to all directions \cite{balanis}. More realistic type is directional antenna \cite{balanis}, which radiates significantly more efficiently in some direction than in others. Special type of this pattern is referred as omnidirectional \cite{balanis}, which has a nondirectional pattern in a given plane (usually azimuth plane) and directional in an orthogonal plane (usually elevation plane).
+Radiation pattern shows the far-field radiation properties of an antenna \cite{balanis, stutzman}. It tells the strength and phase of radiation in certain direction with respect to an isotropic radiator radiating the same energy \cite{balanis}. Isotropic radiator is physically unrealizable, but it is used as a reference of radiation characteristics due its definition: lossless antenna radiating equally to all directions \cite{balanis}. More realistic type is directional antenna \cite{balanis}, which radiates significantly more energy in some direction than in others. Special type of this pattern is referred to as omnidirectional \cite{balanis}, which has a nondirectional pattern in a given plane (usually azimuth plane) and directional in an orthogonal plane (usually elevation plane).
 
 Usually the pattern is expressed as a function of the directional coordinates: azimuth angle $\phi$ and elevation angle $\theta$. Strengths of radiated electric or magnetic fields in the far-field are referred to field patterns, while the power density of them is power pattern. Often radiation patterns \cite{stutzman} are normalized to their maximum values
 \begin{equation}
@@ -189,6 +189,7 @@ As the primary objective of an antenna is to convert waves bounded to transmissi
 \label{eq:matching2}
     R_s-\j X_s &= R_a+\j X_a.
 \end{align}
+
 For a perfectly matched antenna, reflection coefficient is zero. Reflection coefficient $\Gamma$ \cite{stutzman} is defined followingly
 \begin{equation}
 \label{eq:reflection_coeff}
@@ -199,7 +200,7 @@ In an ideal situation, perfect matching can be obtained at a single frequency. T
 \begin{equation}
     \int_0^\infty\ln\frac{1}{|\Gamma(f)|}df\leq\frac{\pi}{RC},
 \end{equation}
-where $\Gamma(f)$ is the reflection coefficient as a function of frequency and $R$ and $C$ are the resistance and capacitance of the load, respectively. The criterion describes an upper limit of performance. Further analysis on this, which is out of the scope of this thesis, results few conclusions \cite{pozar}:
+where $\Gamma(f)$ is the reflection coefficient as a function of frequency and $R$ and $C$ are the resistance and capacitance of the load, respectively. The criterion describes an upper limit of performance. Further analysis on this, which is out of the scope of this thesis, results in a few conclusions \cite{pozar}:
 \begin{itemize}
     \item broader bandwidth can be achieved only if reflection coefficient increases.
     \item reflection coefficient can reach 0 only at discrete frequencies, i.e.\ having bandwidth of 0.
@@ -315,7 +316,7 @@ Besides matching with reactive elements, also transmission line stubs can be use
 
 While matching with a single stub, the matching level depends on distance from the antenna and the length of the stub \cite{pozar}. By choosing the length of the stub correctly, any reactance or susceptance can be obtained.
 
-A major disadvantage with single-stub tuning is the distance between the antenna and the stub, especially when adjustable matching is desired. When matching is done for a single frequency, this should not be a problem. However, using a \textit{double-stub tuner} might help with tunable matching solution. It has two stubs at fixed locations, which makes the distance between the stubs and from the antenna constants. The first stub may even be connected directly to the antenna. Although, a double-stub tuner is not able to match all antenna impedances \cite{pozar}.
+A major disadvantage with single-stub tuning is the distance between the antenna and the stub, especially when adjustable matching is desired. When matching is done for a single frequency, this should not be a problem. However, using a \textit{double-stub tuner} might help with tunable matching solution. It has two stubs at fixed locations, which makes the distance between the stubs and from the antenna constants. The first stub may even be connected directly to the antenna. Nevertheless, a double-stub tuner is not able to match all antenna impedances \cite{pozar}.
 
 
 \subsection{Bandwidth}
@@ -349,7 +350,7 @@ Mobile terminals require wide operational bandwidth, and small antennas are typi
 
 \subsection{Typical antenna structures in mobile phones}
 \label{sec:antenna_types}
-An antenna can be any structure, which is able to convert guided waves to free space waves. Mobile antennas operate on wide range of frequencies, and throughout the history of wireless communications, a several different types of antennas are used for various purposes. Next, some of the most common antenna types in mobile, and other, devices are introduced.
+An antenna can be any structure, which is able to convert guided waves to free space waves. Mobile antennas operate on wide range of frequencies, and throughout the history of wireless communications, several different types of antennas are used for various purposes. Next, some of the most common antenna types in mobile, and other, devices are introduced.
 
 \subsubsection{Dipoles and monopoles}
 \label{sec:dipole}
@@ -363,7 +364,7 @@ Besides dipoles being physically too large for mobile applications, mobile anten
 
 Microstrip antennas (MSA) are an alternative to wire antennas. For example, dipoles can be printed as microstrip lines. Typical microstrip antenna has a printed patch on top of a substrate with a ground plane below it \cite{stutzman}. MSAs have a very low profile, since substrate is thin and the patch itself normally has thickness of $0.05\lambda_0$ or less. One advantage of microstrip antennas is that they can be included in microwave integrated circuits, which decreases costs, and provides controlled-dimension construction. Patches can also be printed on flexible substrates, which enables better use of available space \cite{stutzman}.
 
-Microstrips radiate with broad beam broadside to the patch, while the ground plane prevents the formation of back lobes. A drawbacks of patch antennas is their resonant nature, which leads to narrow bandwidth. Also after fabrication, antenna cannot be re-adjusted easily. Due to the narrowband nature of this antenna type, and possibly large size, it is not very popular antenna for cellular phones \cite{stutzman}. However, Global Positioning System (GPS) is a standard feature in new mobile phones and it operates on a narrow band, and thus, microstrips with large dielectric constant substrate to reduce size are used for that purpose \cite{stutzman}. Mobile antennas might anyway be constructed with microstrip techniques, and commonly the patch is shaped according to other antenna type, as is done in \cite{microstrip_example1,microstrip_example2}. This might result feasible performance on a certain band.
+Microstrips radiate with broad beam broadside to the patch, while the ground plane prevents the formation of back lobes. A drawbacks of patch antennas is their resonant nature, which leads to narrow bandwidth. Also after fabrication, antenna cannot be re-adjusted easily. Due to the narrowband nature of this antenna type, and possibly large size, it is not very popular antenna for cellular phones \cite{stutzman}. However, Global Positioning System (GPS) is a standard feature in new mobile phones and it operates on a narrow band, and thus, microstrips with large dielectric constant substrate to reduce size are used for that purpose \cite{stutzman}. Mobile antennas might anyway be constructed with microstrip techniques, and commonly the patch is shaped according to other antenna type, as is done in \cite{microstrip_example1,microstrip_example2}. This might result in feasible performance on a certain band.
 
 \subsubsection{Loops and slots}
 \label{sec:loop}
@@ -396,7 +397,7 @@ In contrary to self-resonant antennas, coupling elements are not the main radiat
 
 \subsection{Multiantenna systems}
 \label{sec:multiant}
-Mobile phones today have several radio systems for different applications, and the operating frequencies of them range from hundreds of megahertz to few gigahertz, in the future even to dozens of gigahertz \cite{20ant}. The wide range of required frequencies usually demands multiple antennas. Generally, these multiantenna systems are multiport systems, which can be distinguished in a few different ways \cite{multiantenna_mimo_book}. The most intuitive one is a multielement antenna, in which each port is connected to physically distinct antenna elements (Figure \ref{fig:mea}). If a single antenna element is fed from several ports, the different antennas can be separated by different polarizations or radiation patterns (Figure \ref{fig:mma}). Additionally, a multiantenna system can also be a combination of these different types.
+Mobile phones today have several radio systems for different applications, and the operating frequencies of them range from hundreds of megahertz to few gigahertz, in the future even to dozens of gigahertz \cite{20ant}. The wide range of required frequencies usually demands for multiple antennas. Generally, these multiantenna systems are multiport systems, which can be distinguished in a few different ways \cite{multiantenna_mimo_book}. The most intuitive one is a multielement antenna, in which each port is connected to physically distinct antenna elements (Figure \ref{fig:mea}). If a single antenna element is fed from several ports, the different antennas can be separated by different polarizations or radiation patterns (Figure \ref{fig:mma}). Additionally, a multiantenna system can also be a combination of these different types.
 
 \begin{figure}[H]
     \vspace{-10pt}
