@@ -1,14 +1,14 @@
 %\section{Simulaatiot}
 \section{Antenna simulations}
 \label{sec:simulations}
-This section contains the majority of the work for this thesis. The design problem is approached with two models of various complexity, and the antenna structure is developed in an organized way. Different subsections explain and present the results of different phases of the simulation process. Finally, all pieces are put together and the complete structure is formed.
+This section contains the majority of the work done for this thesis. The design problem is approached with two models of various complexity, and the antenna structure is developed in an organized way. Different subsections explain and present the results of different phases of the simulation process. Finally, all pieces are put together and the complete structure is formed.
 
 
 \subsection{Conceptualizing the main antenna}
 \label{sec:conceptualizing}
-After the pre-studies, the actual concept for the main antenna is based on the design introduced in \cite{kimmo}. The findings from the pre-study also support the chosen approach. The main antenna should be located mainly on the short side of the phone and construct of simple shapes. Its elements should be rather short and they can be bended over the corner of the phone. Also, it is noticed that slots might improve bandwidth, and thus, could be used to cover both defined frequency sets. 
+After the pre-studies, the actual concept for the main antenna is based on the design introduced in \cite{kimmo}. The findings from the pre-study also support the chosen approach. The main antenna should be located mainly on the short side of the phone and construct of simple shapes. Its elements should be rather short and they can be bended over the corner of the phone. Also, it is noticed that slots might improve bandwidth, and thus, they can be used to cover both defined frequency sets. 
 
-So, the main antenna is decided to consist of three elements. Two of them are L-shaped strips bending over the corners of the phone. The third element is a U-shaped sheet on the frontside of the phone, above the display. Back cover is used as a ground plane since it is earlier found to be better choice than the display. At first, this structure is single-fed, and the feed is connected between the U-shaped element and the ground plane. Figure \ref{fig:main_concept} shows the structure of this concept, and Figure \ref{fig:main_location} gives a better view of the location of the antenna.
+So, the main antenna is decided to consist of three elements. Two of them are L-shaped strips bending over the corners of the phone. The third element is a U-shaped sheet above the display on the frontside of the phone. Back cover is used as an RF-ground since it is earlier found to be better choice than the display. At first, this structure is single-fed, and the feed is connected between the U-shaped element and the ground plane. Figure \ref{fig:main_concept} shows the structure of this concept, and Figure \ref{fig:main_location} gives a better view of the location of the antenna.
 
 \begin{figure}[H]
     \centering
@@ -31,10 +31,10 @@ The underlying idea of this structure is to have a strong mutual coupling betwee
 
 \subsubsection{Initial concept}
 \label{sec:initial_concept}
-The concept is improved and modified further via a number of simulation iterations. Between the different simulation rounds, the structures and dimensions are modified the same way as it is done in the preliminary study. The main values of interest are highlighted in Figure \ref{fig:main_concept}, and their initial values can be seen from Table \ref{tab:initial_concept}. Besides these parameters, also the location of the feed and the different gaps between the elements are tested. 
+The concept is improved and modified further via a number of simulation rounds. Between the simulations, the structures and dimensions are modified the same way as it is done in the preliminary study. The main values of interest are highlighted in Figure \ref{fig:main_concept}, and their initial values can be seen from Table \ref{tab:initial_concept}. Besides these parameters, also the location of the feed and the different gaps between the elements are tested. 
 \begin{table}[H]
     \centering
-    \caption{Initial values for the main antenna concept.}
+    \caption{The initial values for the main antenna concept.}
     \label{tab:initial_concept}
     \begin{tabular}{|c|c|}
         \hline
@@ -61,7 +61,7 @@ The concept is improved and modified further via a number of simulation iteratio
     \end{tabular}
 \end{table}
 
-Already the first simulation in Figure \ref{fig:concept_ini} shows very promising results. Shape of the response in the low band is exactly what is desired: wide and smooth. However, the results are not all positive. The matching level in the low band is only about $-2\,\db$, and even worse in the high band. The first conclusion of this result is that either symmetric structure is not optimal or the dimensions of the different parts are not what they are supposed to be.
+Already the first simulation in Figure \ref{fig:concept_ini} shows very promising results. Shape of the response in the low band is exactly what is desired: wide and smooth. However, the results are not all positive. The matching level in the low band is only about $-2\,\db$, and even worse in the high band. The first conclusion of this result is that either symmetric structure is not optimal, or the dimensions of the different parts are not what they are supposed to be.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{img/concept_ini.eps}
@@ -72,7 +72,7 @@ Already the first simulation in Figure \ref{fig:concept_ini} shows very promisin
 
 \subsubsection{Iteration of dimensions}
 \label{sec:dimension iteration}
-The structure is first modified by changing the dimensional parameters. For now, the system is still kept symmetric to preserve simplicity. The changed dimensions are the lengths of the metal sheets beside the display ($l_6$), lengths of the antennas on the sides of the phone ($l_1$, $l_4$) and the width of all the side antennas ($w_1$). All these parameters are tested separately by the same principles that are used in the preliminary study, but in more detail. As the observations are similar to the ones in the preliminary study, only the best results are reported. Table \ref{tab:concept2} lists the best values for these parameters found in the three cases. Cases A, B, and C refer to changing $l_6$, $l_1$ and $l_4$, or $w_1$, respectively. 
+The structure is first modified by changing the dimensional parameters. For now, the system is still kept symmetric to preserve simplicity. The changed dimensions are the lengths of the metal sheets beside the display ($l_6$), lengths of the antennas on the sides of the phone ($l_1$, $l_4$) and the width of all the side antennas ($w_1$). All these parameters are tested separately to follow the effects efficiently. As the observations are similar to the ones made in the preliminary study, only the best results are reported. Table \ref{tab:concept2} lists the best values for these parameters found in the three cases. Cases A, B, and C refer to changing $l_6$, $l_1$ and $l_4$, or $w_1$, respectively. 
 \begin{table}[H]
     \centering
     \caption{Tested dimensions. All values are in millimeters.}
@@ -92,9 +92,9 @@ The structure is first modified by changing the dimensional parameters. For now,
     \end{tabular}
 \end{table}
 
-The values of tested dimensions range from both larger than the initial value to smaller than that. Table \ref{tab:concept2} above shows that the best values are smaller than the initial one for all parameters. The results especially for $l_1$, $l_4$, and $l_6$ agree with the findings from the pre-study: better low band is achieved with smaller element on the side. $w_1$ however is smaller than the initial width but provides better results, even though the pre-study shows the opposite. In this case, as it is in the pre-study, the variations in the matching level between the different widths are marginal, but the chosen $4\,\milli\meter$ provided the smoothest response in the low band.
+The values of the tested dimensions range from both larger than the initial value to smaller than that. Table \ref{tab:concept2} above shows that the best values are smaller than the initial one for all parameters. The results especially for $l_1$, $l_4$, and $l_6$ agree with the findings from the pre-study: better low band is achieved with smaller element on the side. $w_1$ however is smaller than the initial width but provides better results, even though the pre-study shows the opposite. In this case, as it is in the pre-study, the variations in the matching level between the different widths are marginal, but the chosen $4\,\milli\meter$ provided the smoothest response in the low band.
 
-Figure \ref{fig:concept2} shows the best results of the tested three cases compared with the initial situation. Each modification have improved system's performance in the low band. Although the focus is still in the low band, the high band should not be forgotten. In that area, the overall performance has not improved as the structure is modified. 
+Figure \ref{fig:concept2} shows the best results of the tested three cases compared with the initial situation. Each modification have improved system's performance in the low band. Although the focus is still in the low band, the high band should not be forgotten. In that range, the overall performance has not improved as the structure is modified. 
 \begin{figure}[H]
     \vspace{-5pt}
     \centering
@@ -107,25 +107,27 @@ Since the response of Case C in the low band is wide and below $-2\,\db$, a matc
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{img/concept2_match.eps}
+    \vspace{-5pt}
     \caption{The simulation results of Case C with different matching circuits.}
     \label{fig:concept2_match}
-    \vspace{-10pt}
+    \vspace{-12pt}
 \end{figure}
 
 Since a suitable matching network could not be found for this structure, it means that the antennas should be modified more. One option would be to create two parallel matching circuits, one for the low band and the other for the high band. This however would increase the complexity of the system, which is undesired. Other possible solution could be modifying the antenna structures to be asymmetric, which is the preferable choice of the two options.
 
-
+\vspace{-5pt}
 \subsubsection{Asymmetric structures}
 \label{sec:asymmetric_structures}
-Asymmetric structures are tested with four different cases. Case D has an offset in the location of the feed, which causes the top-parts of the L-shaped elements to have different lengths. In Case E, the antenna parts on the sides of the phone are of different length. For Case F, the feed is transferred to the corner of an L-shaped element and in Case G, the feed is offsetted from the previous location.
+\vspace{-3pt}
+Asymmetric structures are tested with four different cases. Case D has an offset in the location of the feed, which causes the top-parts of the L-shaped elements to have different lengths. In Case E, the antenna parts on the sides of the phone are of different length. For Case F, the feed is transferred to the corner of an L-shaped element, and in Case G, the feed is offsetted from the previous location.
 
 Again, only the best structures are presented of each case. Table \ref{tab:concept3} shows the changes in dimensions done in Cases D and E. In the best scenario of Case D the amount of offset is $3.5\,\milli\meter$ to the left, and in Case G $5\,\milli\meter$ to the right. 
 \begin{table}[H]
-    \vspace{-6pt}
+    \vspace{-5pt}
     \centering
     \caption{Dimensional changes made to create asymmetry. All values are in millimeters.}
     \label{tab:concept3}
-    \vspace{-5pt}
+    \vspace{-7pt}
     \begin{tabular}{|c|c|c|}
         \hline
         \textbf{Dimension} & \textbf{Case D} & \textbf{Case E}\\
@@ -152,68 +154,77 @@ Figure \ref{fig:concept_offsets} illustrates the structural changes of Cases D-G
     \end{subfigure}
     \begin{subfigure}[b]{0.49\textwidth}
         \includegraphics[width=\textwidth]{img/concept_l_feed.eps}
-        \caption{Feed in the L-shaped element.}
+        \caption{The feed placed in the L-shaped element.}
         \label{fig:concept_l_feed}
     \end{subfigure}
     \caption{The changes in antenna structure in Cases D-G.}
     \label{fig:concept_offsets}
+    \vspace{-10pt}
 \end{figure}
 
-Similarly to the cases with symmetric structures, the performance of the antenna system improved as the test cases proceeded, like Figure \ref{fig:concept3} represents. Matching in the low band is still wide and levels have increased. Besides that, also upper band is showing major enhancements, especially in Cases F and G. Matching levels are fair at the whole band. The only drawback is that the response in the high band exhibits many narrow nearby resonances, which might be a problem when generating matching circuits.
+Similarly to the cases with symmetric structures, the performance of the antenna system improves as the test cases proceed, like Figure \ref{fig:concept3} represents. Matching in the low band is still wide and levels have increased. Besides that, also the high band is showing major enhancements, especially in Cases F and G. Matching levels are fair over the whole band. The only drawback is that the response in the high band exhibits many narrow nearby resonances, which might be a problem when generating matching circuits.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{img/concept3.eps}
     \caption{The best results from different asymmetric structures.}
     \label{fig:concept3}
+    \vspace{-10pt}
 \end{figure}
 
-A matching network is generated also for the antenna of Case G. Optenni Lab is set to construct matching circuits for either low band, high band, or both bands with the target level of $-5\,\db$. Each topology has three components. Responses can be seen from Figure \ref{fig:concept3_match}. Surprisingly, the responses are more or less identical, even with the one without matching circuits. In the low band, a little more bandwidth is obtained when the antenna is matched, however, the matching level is still much worse than the target. In the high band, all topologies provide better matching but the target level is not completely reached. One curious observation is that Optenni Lab resulted the same topology for matching only low band or both bands. It can be concluded that the environment is very challenging for designing low band antennas, and moreover, matching them.
+A matching network is generated also for the antenna of Case G. Optenni Lab is set to construct matching circuits for either low band, high band, or both bands with the target level of $-5\,\db$. Each topology has three components. Responses can be seen from Figure \ref{fig:concept3_match}. Surprisingly, the responses are more or less identical, even with the one without matching circuits. In the low band, a little more bandwidth is obtained when the antenna is matched, however, the matching level is still much worse than the target. In the high band, all topologies provide better matching, but the target level is not completely reached. One curious observation is that Optenni Lab resulted in the same topology for matching only low band or both bands. It can be concluded that the environment is very challenging for designing low band antennas, and moreover, matching them.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{img/concept3_match.eps}
+    \vspace{-5pt}
+    \includegraphics[width=0.49\textwidth]{img/concept3_match.eps}
     \caption{Impedance matching results for Case G with different matching topologies.}
     \label{fig:concept3_match}
+    \vspace{-15pt}
 \end{figure}
 
 Accordingly, the antenna concept requires some asymmetry in the structure, and also is quite precise of its dimensions. Next, the element above the display is modified. Case H changes the gap between the U-shaped element and the top of the phone from $0.5\,\milli\meter$ to $1\,\milli\meter$, which is seen as $w_2$ decreasing to $4.5\,\milli\meter$. The most radical modification is seen in Case I, where the barbs of the U-shaped element are removed, and only a straight metallic sheet is left (later referred as an I-shaped element). Figure \ref{fig:concept_i_shape} shows the updated structure.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{img/concept_i_shape.eps}
-    \caption{Antenna structure with the larger gap between elements from Case H and I-element from Case I.}
+    \vspace{-12pt}
+    \includegraphics[width=0.49\textwidth]{img/concept_i_shape.eps}
+    \caption{Antenna structure with a larger gap between the elements from Case H and I-element from Case I.}
     \label{fig:concept_i_shape}
+    \vspace{-10pt}
 \end{figure}
+
 
 Figure \ref{fig:concept4} shows the best results of Cases H and I, compared to Case G of the previous round of tests. Transforming the U-element to an I-element is a good change. Even though the low band is a little off the required frequencies, achieved bandwidth is wider and smoother than in any test so far. Progress has also happened in the high band, where the response is not that peaky anymore. Instead, the overall shape is not as resonating as before, and matching levels are mainly better.
 \begin{figure}[H]
+    \vspace{-5pt}
     \centering
-    \includegraphics[width=0.5\textwidth]{img/concept4.eps}
-    \caption{Simulation results from Cases H and I.}
+    \includegraphics[width=0.47\textwidth]{img/concept4.eps}
+    \vspace{-3pt}
+    \caption{The simulation results from Cases H and I.}
     \label{fig:concept4}
-    \vspace{-12pt}
+    \vspace{-15pt}
 \end{figure}
 
 \subsubsection{Antenna structure with multiple feeds}
 \label{sec:multiple_feeds}
-The conceptualizing phase is concluded by testing a structure with multiple feeds. So far, all structures in the pre-study and conceptualizing tests have had one only feeding port. As this currently studied structure consists of three separate but closely located elements, adding feeds to each of them is simple. This kind of system would result a few advantages. First, the mutual coupling effect might be stronger and enable larger achievable bandwidth. Second, matching the elements may be simpler since each feeding port can be assigned with its own set of frequencies. However, this will increase the complexity of the whole system.
+\vspace{-3pt}
+The conceptualizing phase is concluded by testing a structure with multiple feeds. So far, all structures in the pre-study and conceptualizing tests have had one only feeding port. As this currently studied structure consists of three separate but closely located elements, adding feeds to each of them is simple. This kind of system would result in a few advantages. First, the mutual coupling effect might be stronger and enable larger achievable bandwidth. Second, matching the elements may be simpler since each feeding port can be assigned with its own set of frequencies. However, this will increase the complexity of the whole system.
 
-Figure \ref{fig:concept_3feeds_struct} shows the modified structure for this test. Now the system has actually three antennas, named Element 1, 2, and 3, that are organized as marked in the figure. The results are presented in Figure \ref{fig:concept_3feeds_res}. The matching of the low band nearly reaches the requirements as only a small set of frequencies is uncovered. The performance of the high band is not as good, but still promising and the levels of Element 1 are mainly adequate keeping in mind that the antennas do not have any matching circuits yet. Also, in a multiport system, the matching levels of each individual port are not as informative as with single ports. As power flows also between ports, the system might be very inefficient, and not radiate at all.
+Figure \ref{fig:concept_3feeds_struct} shows the modified structure for this test. Now the system has actually three antennas, named Element 1, 2, and 3, that are organized as marked in the figure. The results are presented in Figure \ref{fig:concept_3feeds_res}. The matching of the low band nearly reaches the requirements as only a small set of frequencies is uncovered. The performance of the high band is not as good, but still promising, and the levels of Element 1 are mainly adequate keeping in mind that the antennas do not have any matching circuits yet. Also, in a multiport system, the matching levels of each individual port are not as informative as with single ports. As power flows also between ports, the system might be very inefficient, and not radiate at all.
 \begin{figure}[H]
     \centering
-    \vspace{-10pt}
-    \begin{subfigure}[b]{0.49\textwidth}
+    \vspace{-8pt}
+    \begin{subfigure}[b]{0.47\textwidth}
         \includegraphics[width=\textwidth]{img/concept_3feed_struct.eps}
+        %\vspace{-2pt}
         \caption{Structure.}
         \label{fig:concept_3feeds_struct}
     \end{subfigure}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \ContinuedFloat 
-    \begin{subfigure}[b]{0.49\textwidth}
+    \begin{subfigure}[b]{0.47\textwidth}
         \includegraphics[width=\textwidth]{img/concept_3feeds.eps}
+        %\vspace{-2pt}
         \caption{Results.}
         \label{fig:concept_3feeds_res}
     \end{subfigure}
+    \vspace{-5pt}
     \caption{Antenna simulation with three feeds.}
     \label{fig:concept_3feeds}
 \end{figure}
@@ -227,35 +238,31 @@ As mentioned in Section \ref{sec:phone}, a mechanically very accurate 3D-model o
 The simplified model is presented in Figure \ref{fig:realistic_model1} highlighting all the required details except the battery, which is underneath the middle frame. Figure \ref{fig:realistic_model2} illustrates the dimensions of the antenna structure. The different parts are labeled equally to the conceptualizing phase to keep the two models comparable.
 \begin{figure}[H]
     \centering
-    \begin{subfigure}[b]{0.5\textwidth}
+    \begin{subfigure}[b]{0.49\textwidth}
         \includegraphics[width=\textwidth]{img/realistic_model1.eps}
-        \caption{Simplified model of a mobile phone.}
+        \caption{The simplified model of a mobile phone.}
         \label{fig:realistic_model1}
     \end{subfigure}
-%\end{figure}
-%\begin{figure}[H]
-%    \centering
-%    \ContinuedFloat
-
-    \begin{subfigure}[b]{0.5\textwidth}
+    \begin{subfigure}[b]{0.49\textwidth}
         \includegraphics[width=\textwidth]{img/realistic_model2.eps}
-        \caption{Structural dimensions of the main antenna.}
+        \caption{Structural dimensions.}
         \label{fig:realistic_model2}
     \end{subfigure}
-    \caption{Illustrations of the realistic model and the antenna structure.}
+    \caption{Illustrations of the realistic model and the main antenna structure.}
     \label{fig:realistic_model}
-    \vspace{-10pt}
+    %\vspace{-10pt}
 \end{figure}
 
 Simulations with the accurate phone model begin by transferring the best structure from the plain model simulations to the realistic model. Besides the amount of details in the new model, the only differences are the widths of the antennas ($w_1$ and $w_2$) and the feeding structure. The value of $w_1$ is pretty much determined by the actual 3D-model of a phone and $w_2$ has to be thinner since wider antenna would block the front camera. Other dimensions stay the same as the values of Case E listed in Table \ref{tab:concept3} earlier.
 
-Antennas are fed from the middle frame. As previous tests have shown, the back cover should be used as a ground plane, and therefore the middle frame is connected with grounding pins to the back cover. This choice would be more suitable for a consumer product and a prototype could be built easier this way. 
+Antennas are fed from the middle frame. As previous tests have shown, the back cover should be used as a ground plane, and therefore the middle frame is connected with grounding pins to the back cover. This choice would be more suitable for a consumer product, and a prototype could be built easier this way. 
 
-Figure \ref{fig:main_orig} shows the effect of a more realistic environment on antennas. Comparing with Figure \ref{fig:concept_3feeds_res}, the matching levels for Elements 2 and 3 are a lot better, though this is mainly due to strong mutual coupling. Increased amount of metallic structures in the model causes the currents to distribute differently, which is seen as a different response than in Figure \ref{fig:concept_3feeds_res}. Anyway, this proves the antenna concept to be usable for this project.
+Figure \ref{fig:main_orig} shows the effect of a more realistic environment on antennas. Comparing with Figure \ref{fig:concept_3feeds_res}, the matching levels for Elements 2 and 3 are a lot better, though this is mainly due to strong mutual coupling. The increased amount of metallic structures in the model causes the currents to distribute differently, which is seen as a different response than in Figure \ref{fig:concept_3feeds_res}. Anyway, this proves the antenna concept to be usable for this project.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{img/main_orig.eps}
-    \caption{Original matching levels of the concept antenna in realistic environment.}
+    \vspace{-4pt}
+    \caption{The original matching levels of the concept antenna in realistic environment.}
     \label{fig:main_orig}
     \vspace{-10pt}
 \end{figure}
@@ -263,19 +270,20 @@ Figure \ref{fig:main_orig} shows the effect of a more realistic environment on a
 
 \subsubsection{Main antenna}
 \label{sec:main_antenna}
-The antenna structure is tested the same way as is the plain model. As the structure is discovered to perform well in the plain model tests in both the low and the high band, it is believed that complete reconstruction would not be needed for the realistic model. Only dimensions of the antenna elements and positions of the feeds are optimized. The final structure is shown in Figure \ref{fig:main_final} and the dimensions of each element are listed in Table \ref{tab:main_final}. Now, the L-shaped antennas are integrated into the metal rim on the side. The rim is not unbroken, and the gaps are $4.43\,\milli\meter$ on the sides and $2\,\milli\meter$ on the top. Clearance between the I-antenna and the L-antennas is $0.6\,\milli\meter$ at the end of the phone and $1.5\,\milli\meter$ in the sides.
+The antenna structure is tested the same way as is the plain model. As the structure is discovered to perform well in both the low and the high band, a complete reconstruction is not needed. Only dimensions of the antenna elements and positions of the feeds are optimized. The final structure is shown in Figure \ref{fig:main_final} and the dimensions of each element are listed in Table \ref{tab:main_final}. Now, the L-shaped antennas are integrated into the metal rim on the side. The rim is not unbroken, and the gaps are $4.43\,\milli\meter$ on the sides and $2\,\milli\meter$ on the top. Clearance between the I-antenna and the L-antennas is $0.6\,\milli\meter$ at the end of the phone and $1.5\,\milli\meter$ in the sides.
 \begin{figure}[H]
     \centering
+    \vspace{-5pt}
     \includegraphics[width=0.5\textwidth]{img/main_final.eps}
+    \vspace{-20pt}
     \caption{The final structures of the main antenna.}
     \label{fig:main_final}
 \end{figure}
-
-More significant changes are made in the feeds. Besides adjusting their positions, they are after all moved to be connected to the back cover instead of the middle frame. Even though the middle frame is grounded from several locations, connecting the feeds to the back cover gives larger bandwidth. However, this feeding structure is considerably more difficult to realize due to the limited space. The feeding pin is connected to the cover in the narrow area between the middle frame and the plastic rim, which does not leave much room for matching components or feeding cables in the real design.
 \begin{table}[H]
     \centering
     \caption{The dimensions of the final antenna structure.}
     \label{tab:main_final}
+    \vspace{-5pt}
     \begin{tabular}{|c|c|}
         \hline
         \textbf{Dimension} & \textbf{Value [$\milli\meter$]}\\
@@ -297,9 +305,12 @@ More significant changes are made in the feeds. Besides adjusting their position
     \end{tabular}
     \vspace{-10pt}
 \end{table}
+
+More significant changes are made in the feeds. Besides adjusting their positions, they are after all moved to be connected to the back cover instead of the middle frame. Even though the middle frame is grounded from several locations, connecting the feeds to the back cover gives larger bandwidth. However, this feeding structure is considerably more difficult to realize due to the limited space. The feeding pin is connected to the cover in the narrow area between the middle frame and the plastic rim, which does not leave much room for matching components or feeding cables in the real design.
+
 At this point also matching networks will gain more focus. Based on the plain model simulations, the desired matching level of $-5\,\db$ or efficiency of $30\,\%$ for the whole operating bands will not be reached without external matching circuits, and that finding a good matching network is not an easy task.
 
-As mentioned earlier, the purpose of having three elements close to each other is to have strong coupling between them to achieve wider operational band. However, this coupling effect also complicates matching the antennas. In many cases, the reflection coefficients of each element are very similar with at least one of the other elements. Figure \ref{fig:main_final_res} shows the similarity of Elements 2 and 3. A huge band is obtained with substantial matching level by either of the elements. The mutual coupling between the antenna elements is shown in Figure \ref{fig:main_final_res_coup}. The figure presents the $S_{ij}$-parameters of the antenna system where indexes $i$ and $j$ refer to the respective antenna elements. The mutual coupling is strong between elements 2 and 3 in the low band, and this caused the elements to behave the same way while adding matching circuits. In other words, even if the matching level was suitable, nothing would radiate since all the power flows to the other ports. Due to this harmful effect the structure is modified throughout the simulations to have asymmetry between the elements and their behavior, but the differences are not significant, and therefore the problem has to be solved with good matching circuits.
+As mentioned earlier, the purpose of having three elements close to each other is to have strong coupling between them to achieve wider operational band. However, this coupling effect also complicates matching the antennas. In many cases, the reflection coefficients of each element are very similar with at least one of the other elements. Figure \ref{fig:main_final_res} shows the similarity of Elements 2 and 3. A huge band is obtained with substantial matching level by either of the elements. The mutual coupling between the antenna elements is shown in Figure \ref{fig:main_final_res_coup}. The figure presents the $S_{ij}$-parameters of the antenna system, where indexes $i$ and $j$ refer to the respective antenna elements. The mutual coupling is strong between Elements 2 and 3 in the low band, and this causes the elements to behave the same way while adding matching circuits. In other words, even if the matching level was suitable, nothing would radiate since all the power flows to the other ports. Due to this harmful effect the structure is modified throughout the simulations to have asymmetry between the elements and their behavior, but the differences are not significant, and therefore the problem has to be solved with good matching circuits.
 
 \begin{figure}[H]
     \centering
@@ -318,9 +329,9 @@ As mentioned earlier, the purpose of having three elements close to each other i
     \label{fig:main_res}
 \end{figure}
 
-For matching the antennas, the method is to mismatch other elements from the operational band to reduce the unwanted coupling, and then match the radiating element. This is done with the help of antenna's impedance plots on the Smith chart. Location on the chart shows whether a capacitance or an inductance should be added to the circuit. With the help of Optenni Lab many different topologies and goals for matching can be tested quickly. The actual design and optimization of matching networks is done in NI AWR Design Environment.
+For matching the antennas, the method is to mismatch other elements from the operational band to reduce the unwanted coupling, and then match the radiating element. This is done with the help of antenna's impedance plots on the Smith chart. Location on the chart shows whether a capacitance or an inductance should be added to the circuit. With the help of Optenni Lab, many different topologies and goals for matching can be tested quickly. The actual design and optimization of matching networks is done in AWR.
 
-Though a goal for matching level has been defined for this thesis, the target for efficiency is thought to be more important. Even if antennas are nearly perfectly matched, they might be very inefficient and thus, will not radiate. So, it is more critical to fulfill the goal for efficiency, although it means that matching level probably will not be sufficient. After many different matching circuits tested, two promising topologies are found. The first option, presented in Figure \ref{fig:main_antenna_matching_circuits_opt1}, has four components for each antenna element, and the only radiating element is Element 3. The other two are blocked and used only to increase bandwidth through coupling. The second possible design is shown in Figure \ref{fig:main_antenna_matching_circuits_opt2}. This topology oppositely blocks Element 3, and Element 2 radiates in the low band and Element 1 in the high band. From now on, matching circuits of Figures \ref{fig:main_antenna_matching_circuits_opt1} and \ref{fig:main_antenna_matching_circuits_opt2} are referred to as Topologies 1 and 2, respectively.
+Though a goal for the matching level has been defined for this thesis, the target for efficiency is thought to be more important. Even if antennas are nearly perfectly matched, they might be very inefficient and thus, will not radiate. So, it is more critical to fulfill the goal for efficiency, although it means that matching level probably will not be sufficient. After many different matching circuits tested, two promising topologies are found. The first option, presented in Figure \ref{fig:main_antenna_matching_circuits_opt1}, has four components for each antenna element, and the only radiating element is Element 3. The other two are blocked and used only to increase bandwidth through coupling. The second possible design is shown in Figure \ref{fig:main_antenna_matching_circuits_opt2}. This topology oppositely blocks Element 3, and Element 2 radiates in the low band and Element 1 in the high band. From now on, the matching circuits of Figures \ref{fig:main_antenna_matching_circuits_opt1} and \ref{fig:main_antenna_matching_circuits_opt2} are referred to as Topologies 1 and 2, respectively.
 
 \begin{figure}[H]
     \centering
@@ -431,9 +442,10 @@ Though a goal for matching level has been defined for this thesis, the target fo
     \label{fig:main_antenna_matching_circuits_opt2}
 \end{figure}
 
-Efficiencies for Topologies 1 and 2 are presented in Figures \ref{fig:main_eff_top1} and \ref{fig:main_eff_top2}, respectively. Topology 1 gives higher maximum efficiencies, but Topology 2 covers the operational bands better. Topology 2 covers the low band totally, and only a small amount of the highest frequencies is below the required efficiency of $30\,\%$. The minimum of that part is ca.\ $27.5\,\%$ which can be considered close enough at this point. Other thing to support continuing with Topology 2 is the shape of the curves, which are much smoother than with Topology 1. Smoother curves provide more stable efficiency throughout the band, which leads to improved overall performance. All three elements are not shown in the figures, as one or two elements are blocked with matching circuits.
+\vspace{-20pt}
+The efficiencies for Topologies 1 and 2 are presented in Figures \ref{fig:main_eff_top1} and \ref{fig:main_eff_top2}, respectively. Topology 1 gives higher maximum efficiencies, but Topology 2 covers the operational bands better. Topology 2 covers the low band totally, and only a small set of the highest frequencies is below the required efficiency of $30\,\%$. The minimum of that part is ca.\ $27.5\,\%$, which can be considered close enough at this point. Other thing to support continuing with Topology 2 is the shape of the curves, which are much smoother than with Topology 1. Smoother curves provide more stable efficiency throughout the band, which leads to improved overall performance. All three elements are not shown in the figures, as one or two elements are blocked with matching circuits.
 
-In the next steps, Element 1 will be used for communications in the high band ($1.71-2.69\,\giga\hertz$), and Element 2 in the low band ($704-906\,\mega\hertz$). Having distinct elements for different bands is also one reason supporting the use of Topology 2. The performance can now be optimized in more organized way, and the whole structure is simpler to understand.
+In the next steps, Element 1 will be used for communications in the high band ($1.71$--$2.69\,\giga\hertz$), and Element 2 in the low band ($704$--$960\,\mega\hertz$). Having distinct elements for different bands is also one reason supporting the use of Topology 2. The performance can now be optimized in more organized way, and the whole structure is simpler to understand.
 
 \begin{figure}[H]
     \centering
@@ -447,11 +459,11 @@ In the next steps, Element 1 will be used for communications in the high band ($
         \caption{Topology 2.}
         \label{fig:main_eff_top2}
     \end{subfigure}
-    \caption{Efficiencies for main antenna with the two different matching networks.}
+    \caption{The efficiencies for the main antenna with the two different matching networks.}
     \label{fig:main_eff}
 \end{figure}
 
-Now the main antenna has a decent performance in both the low and the high band covering them both almost completely. The matching levels with these circuits are presented in Figure \ref{fig:main_final_res_match}. The levels are below the target level, but that can be considered to be acceptable as long as the efficiency requirement is fulfilled. The levels are anyhow fair, especially in the low band. Figure \ref{fig:main_final_res_match_coup} shows, that adding the matching circuits helped with the mutual coupling problem as the Element 3 is completely blocked. The antenna is able to radiate on a wide range of frequencies, as Figure \ref{fig:main_eff_top2} showed.  
+Now the main antenna has a decent performance in both the low and the high band covering them both almost completely. The matching levels with these circuits are presented in Figure \ref{fig:main_final_res_match}. The levels are below the target level, but that can be considered to be acceptable as long as the efficiency requirement is fulfilled. The levels are anyhow fair, especially in the low band. Figure \ref{fig:main_final_res_match_coup} shows, that adding the matching circuits helped with the mutual coupling problem as the Element 3 is completely blocked. The antenna is able to radiate on a wide range of frequencies, as Figure \ref{fig:main_eff_top2} shows.  
 \begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.49\textwidth}
@@ -471,14 +483,14 @@ Now the main antenna has a decent performance in both the low and the high band 
 
 \subsubsection{Diversity antenna}
 \label{sec:diversity}
-The phone is specified to have two cellular antennas, operating at the same set of frequencies in order to have MIMO capability. Since the diversity antenna should have similar performance as the main one, the same structure is used also for this antenna. The main antenna is rotated $180\degree$ and placed to the other end of the phone. However, due to the USB-port and the touchpad buttons, exactly the same structure cannot be used, but the basic concept remains the same.
+The phone is specified to have two cellular antennas, operating at the same set of frequencies in order to be MIMO capable. Since the diversity antenna should have similar performance as the main one, the same structure is used also for this antenna. The main antenna is rotated $180\degree$ and placed to the other end of the phone. However, due to the USB-port and the touchpad buttons, exactly the same structure cannot be used, but the basic concept remains the same.
 
-The dimensions of this antenna required only a little fine-tuning, as the main antenna is already an optimized structure. Figure \ref{fig:div_final} shows the final structure of the diversity antenna and the values of the labeled dimensions are listed in Table \ref{tab:div_final}. The most noticeable difference is the locations of the feeds. The differences between the distinct ends of the phone caused the optimal feed locations to be different. 
+Since the main antenna is already an optimized structure, only a little fine-tuning is required for the diversity antenna. Figure \ref{fig:div_final} shows the final structure of the diversity antenna, and the values of the labeled dimensions are listed in Table \ref{tab:div_final}. The most noticeable difference is the locations of the feeds. The differences between the distinct ends of the phone cause the optimal feed locations to be different. 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.48\textwidth]{img/diversity_final.eps}
-    \caption{Structure of the diversity antenna.}
+    \includegraphics[width=0.50\textwidth]{img/diversity_final.eps}
     \vspace{-5pt}
+    \caption{The structure of the diversity antenna.}
     \label{fig:div_final}
 \end{figure}
 \begin{table}[H]
@@ -508,7 +520,7 @@ The dimensions of this antenna required only a little fine-tuning, as the main a
     \end{tabular}
 \end{table}
 
-Due to the similarity to the main antenna, the same matching topologies are applied, and only the component values are optimized. Figure \ref{fig:div_match} shows the circuits with the component values for each element.
+Due to the similarity to the main antenna, the same matching topologies are applied, and only the component values are reoptimized. Figure \ref{fig:div_match} shows the circuits with the component values for each element.
 \begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.4\textwidth}
@@ -564,21 +576,24 @@ Due to the similarity to the main antenna, the same matching topologies are appl
     \vspace{-10pt}
 \end{figure}
 
-Figure \ref{fig:div_match_orig} shows that the same matching topologies are usable also for this antenna system. The target level is not reached at either of the bands, but on average the levels are decent. The most interesting discovery is that the main antenna is affected only a little by the diversity antenna. The basic shape of the response is the same and only the sharp spikes have disappeared. 
-\begin{figure}[H]
-    \vspace{-10pt}
-    \centering
-    \includegraphics[width=0.5\textwidth]{img/diversity_match_orig.eps}
-    \caption{Matching levels of the diversity antenna.}
-    \label{fig:div_match_orig}
-\end{figure}
+Figure \ref{fig:div_match_orig} shows that the same matching topologies are usable also for this system. The target level is not reached at either of the bands, but on average the levels are decent. The most interesting discovery is that the main antenna is affected only a little by the diversity antenna. The basic shape of the response is the same and only the sharp spikes have disappeared. 
 
-Efficiency of the system behaves the same way, as Figure \ref{fig:div_eff_orig} presents. Both antennas more or less reach the target efficiency over the whole bands. As the antenna structures are now complete, the focus in the design of cellular antennas is passed to the matching circuits. Even though the existing topologies operate fine, they are far too complex. The number of components should be reduced for better understanding of the system, and also for easier realization of the system.
+The efficiency of the system behaves the same way, as Figure \ref{fig:div_eff_orig} presents. Both antennas more or less reach the target efficiency over the whole bands. As the antenna structures are now complete, the focus in the design of cellular antennas is passed to the matching circuits. Even though the existing topologies operate fine, they are far too complex. The number of components should be reduced for better understanding of the system, and also for easier realization of the system.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{img/diversity_eff_ideal_orig.eps}
-    \caption{The efficiencies of the main and the diversity antennas.}
-    \label{fig:div_eff_orig}
+    \begin{subfigure}[b]{0.49\textwidth}
+        \includegraphics[width=\textwidth]{img/diversity_match_orig.eps}
+        \caption{Matching levels.}
+        \label{fig:div_match_orig}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+        \includegraphics[width=\textwidth]{img/diversity_eff_ideal_orig.eps}
+        \caption{Efficiencies.}
+        \label{fig:div_eff_orig}
+    \end{subfigure}
+    \caption{The performance of the cellular antennas.}
+    \label{fig:div_performance_orig}
+    \vspace{-15pt}
 \end{figure}
 
 \subsection{Improving the matching circuits}
@@ -586,7 +601,7 @@ Efficiency of the system behaves the same way, as Figure \ref{fig:div_eff_orig} 
 
 Having four circuit components for each antenna element is a lot, especially when the system totally has six elements. Finding matching circuits with fewer components would be beneficial for a couple of reasons. First, the total complexity of the system reduces, and that way the behavior of each component and element can be understood more thoroughly. Second, the system is more cost-effective and manufacturable when realized. 
 
-By taking a new look at the designed matching circuits, it can be noticed that there are some unnecessary components. Large capacitors or small inductors behave electrically like short circuits, and likewise, small capacitors or large inductors like open circuits. Applying these electrical equivalences to the designed topologies, and running simulations to obtain more suitable component values to preserve the performance levels. Figure \ref{fig:simplified_circuits} shows the significantly simplified circuits. As the original component values are quite similar in the main and the diversity antenna, the same modifications can be applied for both of them. The most curious change is that Elements 3 and 6 are not fed anymore, but they are reactively loaded (Figure \ref{fig:simple_match_36}). As these elements are not used for radiation, but to enhance the performance of other elements, this new matching topology does not cause any problems. 
+By taking a new look at the designed matching circuits, it can be noticed that there are some unnecessary components. Large capacitors or small inductors behave electrically like short circuits, and likewise, small capacitors or large inductors like open circuits. These electrical equivalences are applied to the designed topologies, and the new circuits are resimulated to obtain more suitable component values to preserve the performance levels. Figure \ref{fig:simplified_circuits} shows the significantly simplified topologies. As the original component values are quite similar in the main and the diversity antenna, the same modifications can be applied for both of them. The most curious change is that Elements 3 and 6 are not fed anymore, but they are reactively loaded (Figure \ref{fig:simple_match_36}). As these elements are not used for radiation, but to enhance the performance of other elements, this new matching topology does not cause any problems. 
 
 \begin{figure}[H]
     \centering
@@ -635,7 +650,7 @@ By taking a new look at the designed matching circuits, it can be noticed that t
     \vspace{-10pt}
 \end{figure}
 
-The new component values are shown in Table \ref{tab:match} later on. With the new topologies, the antennas have slightly worse performance than with the complex ones, which can be seen if \Cref{fig:div_eff_ideal,fig:div_ideal_match} are compared with \Cref{fig:div_match_orig,fig:div_eff_orig}. However, as the differences are so small and the requirement for efficiency is still nearly met, these new topologies can be considered better due to the reduced complexity.
+The new component values are shown in Table \ref{tab:match} later on. With the new topologies, the antennas have slightly worse performance than with the complex ones, which can be seen if \Cref{fig:div_eff_ideal,fig:div_ideal_match} are compared with \Cref{fig:div_match_orig,fig:div_eff_orig}. However, as the differences are so small, and the requirement for efficiency is still nearly met, these new topologies can be considered better due to the reduced complexity.
 \begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.49\textwidth}
@@ -648,12 +663,11 @@ The new component values are shown in Table \ref{tab:match} later on. With the n
         \caption{Matching.}
         \label{fig:div_ideal_match}
     \end{subfigure}
-    \caption{Antenna performances with simplified matching networks.}
+    \caption{Antenna performance after simplifying the matching networks.}
     \label{fig:div_eff}
-    \vspace{-10pt}
 \end{figure}
 
-So far all the matching components have been ideal capacitors or inductors. In order to have a better view of the actual performance of these antennas, the components are replaced with realistic models of capacitors and inductors manufactured by Murata \cite{murata}. The used components are chosen from GQM1884 \cite{murata_c} and LQP03 \cite{murata_l} series. Component values are listed in Table \ref{tab:match}, together with the previously mentioned ideal components. Realistic component models have internal parasitic capacitances and inductances, and introduce losses to the circuit. These features affect the performance of an antenna, which is the reason for differences in component values between ideal and realistic models.
+So far all the matching components have been ideal capacitors or inductors. In order to have a better view of the actual performance of these antennas, the components are replaced with realistic models of capacitors and inductors manufactured by Murata \cite{murata}. The used components are chosen from GQM1884 \cite{murata_c} and LQP03 \cite{murata_l} series. Their values are listed in Table \ref{tab:match}, together with the previously mentioned ideal components. Realistic component models have internal parasitic capacitances and inductances, and introduce losses to the circuit. These features affect the performance of the antennas, which is the reason for differences in component values between the ideal and the realistic models.
 \begin{table}[H]
     \centering
     \caption{Component values for the matching circuits of Figure \ref{fig:simplified_circuits}.}
@@ -680,8 +694,9 @@ So far all the matching components have been ideal capacitors or inductors. In o
          \hline
     \end{tabular}
 \end{table}
+\vspace{10pt}
 
-Changing from ideal components to realistic ones has a major effect on the performance of the antennas. Due to the losses of the lumped elements the antennas' matching levels improved significantly. The plots of Figure \ref{fig:div_real} show that both antennas are operating on a wide band on good levels, and fulfilling the requirements for efficiency. On average the efficiencies are around $40\,\%$ on the low band and around $50\,\%$ on the high band. Moreover, the matching levels on the whole bands are on average below $-3\,\db$, which is clearly better than any designed antenna in this project has reached so far.
+Changing from ideal components to realistic ones has a major effect on the performance of the antennas. Due to the losses of the lumped elements the antennas' matching levels are improved significantly. The plots of Figure \ref{fig:div_real} show that both antennas are operating on a wide band on good levels, and fulfilling the requirements for efficiency. On average the efficiencies are around $40\,\%$ in the low band and around $50\,\%$ in the high band. Moreover, the matching levels over the whole bands are on average below $-3\,\db$, which is clearly better than any designed antenna in this project has reached so far.
 
 \begin{figure}[H]
     \centering
@@ -695,22 +710,24 @@ Changing from ideal components to realistic ones has a major effect on the perfo
         \caption{Efficiencies.}
         \label{fig:div_eff_real}
     \end{subfigure}
-    \caption{Performance of the cellular antennas with realistic matching components.}
+    \caption{The performance of the cellular antennas with realistic matching components.}
     \label{fig:div_real}
+    \vspace{-7pt}
 \end{figure}
 
-With the above presented results, the design of cellular antennas is finished. In the next part the whole design process is finalized with antennas for GPS and Wi-Fi.
+With the above presented results, the design of cellular antennas is finished. In the next part, the whole design process is finalized with antennas for GPS and Wi-Fi.
 
+\vspace{-10pt}
 \subsection{Finalizing the design}
 \label{sec:sim_final}
 
-As the cellular antennas are integrated to the side metals at the ends of the phone, the most logical and the only possible locations for GPS and Wi-Fi antennas are the metals on the long sides of the handset. With this placement of these antennas the metallic side frame would be utilized nearly completely for communications purposes.
+As the cellular antennas are integrated into the side metals at the ends of the phone, the most logical and the only possible locations for GPS and Wi-Fi antennas are the metals on the long sides of the handset. With this placement of these antennas the metallic side frame would be utilized nearly completely for communications purposes.
 
 \vspace{-8pt}
 \subsubsection{GPS and Wi-Fi antennas}
 \label{sec:gpswifi}
 \vspace{-2pt}
-As Wi-Fi operates on higher frequencies ($2.4\,\giga\hertz$ and $5\,\giga\hertz$ bands), the required antenna element can be rather short. However, GPS uses lower frequency, $1.575\,\giga\hertz$, and thus requires a longer antenna. The structure is desired to be kept as simple as possible, and therefore the I-shaped elements for GPS and Wi-Fi are combined by a $0.5\,\milli\meter$ slot. The feed is placed on the shorter part and currents couple from that to the other one. To improve the available bandwidth, the antennas are enlarged in width, and part of them is bended to lie on the front face of the handset. The structure is illustrated in Figure \ref{fig:gps_struct}.
+As Wi-Fi operates on higher frequencies ($2.4\,\giga\hertz$ and $5\,\giga\hertz$ bands), the required antenna element can be rather short. However, GPS uses lower frequency, $1.575\,\giga\hertz$, and thus requires a longer antenna. The structure is desired to be kept as simple as possible, and therefore the I-shaped elements for GPS and Wi-Fi are combined by a $0.5\,\milli\meter$ slot. The feed is placed on the shorter part and currents couple from that to the other one. To improve the available bandwidth, the antennas are enlarged in width, and a part of them is bended to lie on the front face of the handset. The structure is illustrated in Figure \ref{fig:gps_struct}.
 \begin{figure}[H]
     \centering
     \vspace{-10pt}
@@ -723,8 +740,8 @@ As Wi-Fi operates on higher frequencies ($2.4\,\giga\hertz$ and $5\,\giga\hertz$
 The other required antenna is implemented on the metal frame on the opposite side of the phone. The two antennas have only a small dimensional difference, which is listed along the other labeled dimensions in Table \ref{tab:gps_struct}. Element 7 refers to the antenna seen in the figure above, and Element 8 is on the other side of the phone.
 \begin{table}[H]
     \centering
-    \vspace{-5pt}
-    \caption{Dimensions of the GPS/Wi-Fi antennas.}
+    \vspace{-10pt}
+    \caption{The dimensions of the GPS/Wi-Fi antennas.}
     \label{tab:gps_struct}
     \vspace{-7pt}
     \begin{tabular}{|c|c|c|}
@@ -746,7 +763,7 @@ The other required antenna is implemented on the metal frame on the opposite sid
 Since the matching circuits of the cellular antennas have quite many components even after the simplification, it is decided that L-section matching would be used for GPS and Wi-Fi antennas. It is found out that series capacitor and parallel inductor provide the desired matching for these antennas. Topology is seen in Figure \ref{fig:gpswifi_match}. The realistic component values are $C_3=2\,\pico\farad$ and $L_6=6.8\,\nano\henry$ for both elements.
 \begin{figure}[H]
     \centering
-    \vspace{-20pt}
+    \vspace{-10pt}
     \begin{circuitikz}
         \draw  
             (2,0) to[short, o-] (3,0)
@@ -761,7 +778,7 @@ Since the matching circuits of the cellular antennas have quite many components 
     \vspace{-15pt}
 \end{figure}
 
-The performance of GPS and Wi-Fi antennas is seen in Figure \ref{fig:gpswifi_perf}. Matching levels are shown in \Cref{fig:wifilow_match,fig:wifihi_match} respectively for GPS and $2.4\,\giga\hertz$ Wi-Fi, and $5\,\giga\hertz$ Wi-Fi. Similarly to cellular antennas, the target matching level of $-5\,\db$ is not fully reached over the whole band for both antennas. However, the efficiencies are much better and the target of $40\,\%$ is mainly reached, as \Cref{fig:wifilow_eff,fig:wifihi_eff} present. The only exception is the other $2.4\,\giga\hertz$ Wi-Fi antenna, which just barely peaks to $40\,\%$. Also neither of the GPS antennas does not cover the whole $1.575\,\giga\hertz$ band, but since the phone is equipped with two of those, the band is covered completely.
+The performance of GPS and Wi-Fi antennas is seen in Figure \ref{fig:gpswifi_perf}. Matching levels are shown in \Cref{fig:wifilow_match,fig:wifihi_match} respectively for GPS and $2.4\,\giga\hertz$ Wi-Fi, and $5\,\giga\hertz$ Wi-Fi. Similarly to cellular antennas, the target matching level of $-5\,\db$ is not fully reached over the whole band for both antennas. However, the efficiencies are much better and the target of $40\,\%$ is mainly reached, as \Cref{fig:wifilow_eff,fig:wifihi_eff} present. The only exception is the other $2.4\,\giga\hertz$ Wi-Fi antenna, which just barely peaks to $40\,\%$. Also, neither of the GPS antennas does not cover the whole $1.575\,\giga\hertz$ band, but since the phone is equipped with two of those, the band is covered completely.
 \begin{figure}[H]
 \vspace{-5pt}
     \centering
@@ -787,7 +804,7 @@ The performance of GPS and Wi-Fi antennas is seen in Figure \ref{fig:gpswifi_per
         \label{fig:wifihi_eff}
     \end{subfigure}
     \vspace{-7pt}
-    \caption{GPS/Wi-Fi performance.}
+    \caption{The performance of the GPS/Wi-Fi antennas.}
     \label{fig:gpswifi_perf}
     \vspace{-10pt}
 \end{figure}
@@ -795,73 +812,71 @@ The performance of GPS and Wi-Fi antennas is seen in Figure \ref{fig:gpswifi_per
 
 \subsubsection{Complete structure}
 \label{sec:complete_structure}
-With the GPS and Wi-Fi antennas added to the phone, the design project is now complete. Figure \ref{fig:complete_struct} shows an overall view of the phone and how the antennas locate on it. All the antennas are integrated to the metallic side frame, which will save some space inside the phone for other subsystems and parts of the device.
+With the GPS and Wi-Fi antennas added to the phone, the design project is now complete. Figure \ref{fig:complete_struct} shows an overall view of the phone and how the antennas locate on it. All the antennas are integrated into the metallic side frame, which will save some space inside the phone for other subsystems and parts of the device.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{img/final_antennas.eps}
-    \caption{The complete structure with the locations of the antennas highlighted.}
+    \includegraphics[width=0.57\textwidth]{img/final_antennas.eps}
+    \caption{The complete structure highlighting the locations of the antennas.}
     \label{fig:complete_struct}
 \end{figure}
 
 The addition of the GPS/Wi-Fi antennas has a minor effect on the performance of the cellular antennas. Figure \ref{fig:cellular_final_eff} shows the efficiency of these antennas after the addition of the other elements. The performance targets are still met, and the most noticeable difference is basically the worse peak value of Element 1, which is still over $50\,\%$.
+
+Project goals also have a requirement for the isolation between the main and the diversity antennas. The target level is $-15\,\db$, which practically means that no power flows from one antenna to the other. The isolation between the elements of the cellular antennas is presented in Figure \ref{fig:isolation}. In the figure, various $S_{ij}$-parameters are shown, and indexes $i$ and $j$ refer to the antenna elements from or to which the power is scattered. Clearly, these antennas are well isolated as all combinations are below the target value.
+
+In the same figure, the internal isolations (or mutual couplings) of either the main or the diversity antenna are also plotted. These $S_{12}$ and $S_{45}$ curves do not reach the target isolation of $-15\,\db$ except at the very highest frequencies. However, that target is only for separating the main and diversity antenna from each other. The internal isolations are mainly below or around $-10\,\db$, which is acceptable. The only problematic part is the low band of the diversity antenna, where power is leaking between Elements 4 and 5, causing lower efficiencies as seen in Figure \ref{fig:cellular_final_eff}. Element 4, which is planned to radiate only on the high band, has an efficiency of $20\,\%$ in the low band as well. Otherwise this would not be a problem, but this performance affects the main low band radiator of the diversity antenna.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{img/diversity_eff_wgps.eps}
-    \caption{The final efficiencies of the cellular antennas.}
-    \label{fig:cellular_final_eff}
-\end{figure}
-
-Project goals also have a requirement for the isolation between the main and diversity cellular antennas. The target level is $-15\,\db$, which practically means, that no power flows from one antenna to the other. The isolation between the elements of the cellular antennas is presented in Figure \ref{fig:isolation}. In the figure, various $S_{ij}$-parameters are shown, and indexes $i$ and $j$ refer to the antenna elements from or to which the power is scattered. Clearly, these antennas are well isolated as all combinations are below the target value, and generally a lot below it.
-
-In the same figure, the internal isolations (or mutual couplings) of either the main or the diversity antenna are also plotted. These $S_{12}$ and $S_{45}$ curves do not reach the target isolation of $-15\,\db$ except at the very highest frequencies. However, that target is only for separating the main and diversity antenna from each other. The internal isolations are mainly below or around $-10\,\db$, which is acceptable. The only problematic part is the low band of the diversity antenna, where power is leaking between Elements 4 and 5, causing lower efficiencies as seen in Figure \ref{fig:cellular_final_eff}. Element 4, which is planned to radiate only on the high band, has an efficiency of $20\,\%$ in the low band also. Otherwise this would not be a problem, but this performance affects the main low band radiator of the diversity antenna.
-\begin{figure}[H]
-    \centering
-    \vspace{-10pt}
-    \includegraphics[width=0.47\textwidth]{img/isolation_match_wgps.eps}
-    \vspace{-7pt}
-    \caption{Isolation of the cellular antenna elements.}
-    \label{fig:isolation}
-    \vspace{-15pt}
+    \begin{subfigure}[b]{0.49\textwidth}
+        \includegraphics[width=\textwidth]{img/diversity_eff_wgps.eps}
+        \caption{Efficiencies.}
+        \label{fig:cellular_final_eff}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+        \includegraphics[width=\textwidth]{img/isolation_match_wgps.eps}
+        \caption{Isolation.}
+        \label{fig:isolation}
+    \end{subfigure}
+    \caption{The final performance of the cellular antennas.}
+    \label{fig:cell_perf_final}
 \end{figure}
 
 The last results to be reported are the radiation patterns. For mobile phones, omnidirectional patterns are desired due to the fact that users should be able to communicate without a need to point their phones to a certain direction. Figure \ref{fig:rad_patterns} presents the patterns for a few frequencies on $xy$, $xz$, and $yz$-planes. To clarify the patterns, Figure \ref{fig:orientation} shows the orientation of the phone in the coordinate system.
 
 \begin{figure}[H]
-    \vspace{-9pt}
     \centering
-    \begin{subfigure}[b]{0.26\textwidth}
+    \begin{subfigure}[b]{0.3\textwidth}
         \includegraphics[width=\textwidth]{img/ff_cell_xy.eps}
         \caption{$xy$-plane}
         \label{fig:ff_xy_cell}
     \end{subfigure}
-    \begin{subfigure}[b]{0.26\textwidth}
+    \begin{subfigure}[b]{0.3\textwidth}
         \includegraphics[width=\textwidth]{img/ff_cell_xz.eps}
         \caption{$xz$-plane}
         \label{fig:ff_xz_cell}
     \end{subfigure}
-    \begin{subfigure}[b]{0.26\textwidth}
+    \begin{subfigure}[b]{0.3\textwidth}
         \includegraphics[width=\textwidth]{img/ff_cell_yz.eps}
         \caption{$yz$-plane}
         \label{fig:ff_yz_cell}
     \end{subfigure}
     
-    \begin{subfigure}[b]{0.26\textwidth}
+    \begin{subfigure}[b]{0.3\textwidth}
         \includegraphics[width=\textwidth]{img/ff_gpswifi_xy.eps}
         \caption{$xy$-plane}
         \label{fig:ff_xy_gpswifi}
     \end{subfigure}
-    \begin{subfigure}[b]{0.26\textwidth}
+    \begin{subfigure}[b]{0.3\textwidth}
         \includegraphics[width=\textwidth]{img/ff_gpswifi_xz.eps}
         \caption{$xz$-plane}
         \label{fig:ff_xz_gpswifi}
     \end{subfigure}
-    \begin{subfigure}[b]{0.26\textwidth}
+    \begin{subfigure}[b]{0.3\textwidth}
         \includegraphics[width=\textwidth]{img/ff_gpswifi_yz.eps}
         \caption{$yz$-plane}
         \label{fig:ff_yz_gpswifi}
     \end{subfigure}
-    \vspace{-5pt}
     \caption{Radiation patterns of the designed antennas. In \Cref{fig:ff_xy_cell,fig:ff_xz_cell,fig:ff_yz_cell}, the continuous blue, dashed red, dash-dotted yellow, and dotted purple lines are the patterns at cellular frequencies $830\,\mega\hertz$, $1.9\,\giga\hertz$, $2.3\,\giga\hertz$, and $2.5\,\giga\hertz$, respectively. Accordingly, in \Cref{fig:ff_xy_gpswifi,fig:ff_xz_gpswifi,fig:ff_yz_gpswifi} the lines in the same order represent GPS/Wi-Fi frequencies $1.575\,\giga\hertz$, $2.4\,\giga\hertz$, $5.15\,\giga\hertz$, and $5.5\,\giga\hertz$. }
     \label{fig:rad_patterns}
     \vspace{-10pt}
@@ -869,10 +884,10 @@ The last results to be reported are the radiation patterns. For mobile phones, o
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{img/orientation.eps}
-    \caption{Orientation of the phone in the coordinate system.}
+    \includegraphics[width=0.47\textwidth]{img/orientation.eps}
+    \caption{The orientation of the phone in the coordinate system.}
     \label{fig:orientation}
 \end{figure}
 
-The figures show that the patterns are not totally omnidirectional. However, at each of the plotted frequencies, some power is radiated to all directions, which is the most important observation of these patterns. Furthermore, the best omnidirectionality is achieved in $xz$-plane, which is the most relevant one considering the orientation of the phone in the coordinate system, and how the device is held in talking position. Like Section \ref{sec:key_aspects} presents, previously studied structures have a good omnidirectionality, especially the ones with metal cover. However, this proposed structure has the continuous metal as a back cover, which distinguishes the designs from each other. The large number of metallic parts in the phone together with the large metallic back cover make it extremely difficult to achieve omnidirectionality, due to their conductive nature. Moreover, the other properties of a mobile antenna are more important to focus on during the design process. By nature, the designed antennas have somewhat omnidirectional patterns, and thus, it is more critical to optimize other design goals.
+The figures show that the patterns are not totally omnidirectional. However, at each of the plotted frequencies, some power is radiated to all directions, which is the most important observation of these patterns. Furthermore, the best omnidirectionality is achieved in $xz$-plane, which is the most relevant one considering the orientation of the phone in the coordinate system, and how the device is held in talking position. Like Section \ref{sec:key_aspects} presents, the previously studied structures have a good omnidirectionality, especially the ones with a metal cover. However, this proposed structure has the continuous metal as the back cover, which distinguishes the designs from each other. The large number of metallic parts in the phone together with the large metallic back cover make it extremely difficult to achieve omnidirectionality, due to their conductive nature. Moreover, the other properties of a mobile antenna are more important to focus on during the design process. By nature, the designed antennas have somewhat omnidirectional patterns, and thus, it is more critical to optimize other design goals.
 \clearpage

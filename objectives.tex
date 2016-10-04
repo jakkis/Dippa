@@ -1,11 +1,11 @@
 %\section{Tutkimusaineisto ja -menetelmät}
-\section{Design process \& methods}
+\section{Design process and methods}
 \label{sec:objectives}
 After introducing the former results of metal-covered handsets, the focus moves now to the new results achieved in this thesis work. This section presents the targets of this thesis in more detail, as well as the methods for answering the research question and solving the defined problems. The last part of this section contains the results from the first, preliminary simulations to gather information for the actual antenna design process.
 
-\subsection{Design objectives \& strategy}
+\subsection{Design objectives and strategy}
 \label{sec:strategy}
-The objective of this thesis is to study feasible antenna structures for metal-covered mobile phones. The phone should have two similar cellular antennas (main and diversity) for MIMO operation. Additionally, two antennas to operate on GPS and Wi-Fi frequencies are to be designed. To clarify, from now on, main antenna refers to the first cellular antenna to be designed, and diversity antenna to the second one, regardless how their final performances will compare to each other. Table \ref{tab:design_goals} below presents the goals and requirements for this project defined by AAC Technologies.
+The objective of this thesis is to study feasible antenna structures for metal-covered mobile phones. The phone should have two similar cellular antennas (main and diversity) for MIMO operation. Additionally, two antennas to operate on GPS and Wi-Fi frequencies are to be designed. To clarify, from now on, the main antenna refers to the first cellular antenna to be designed, and the diversity antenna to the second one, regardless how their final performances will compare to each other. Table \ref{tab:design_goals} below presents the goals and requirements for this project defined by AAC Technologies.
 
 \begin{table}[H]
     \centering
@@ -25,26 +25,26 @@ The objective of this thesis is to study feasible antenna structures for metal-c
          \hline\hline
          \textbf{Frequencies} & \\
          \hline
-         Main cellular antenna & $0.704-0.960\,\giga\hertz, 1.71-2.69\,\giga\hertz$\\
+         Main cellular antenna & $0.704$--$0.960\,\giga\hertz$, $1.71$--$2.69\,\giga\hertz$\\
          \hline
-         Diversity cellular antenna & $0.704-0.960\,\giga\hertz, 1.71-2.69\,\giga\hertz$\\
+         Diversity cellular antenna & $0.704$--$0.960\,\giga\hertz$, $1.71$--$2.69\,\giga\hertz$\\
          \hline
-         GPS antenna & $1.56-1.61\,\giga\hertz$\\
+         GPS antenna & $1.56$--$1.61\,\giga\hertz$\\
          \hline
-         Wi-Fi antenna & $2.4-2.484\,\giga\hertz, 5.15-5.875\,\giga\hertz$\\
+         Wi-Fi antenna & $2.4$--$2.484\,\giga\hertz$, $5.15$--$5.875\,\giga\hertz$\\
          \hline
     \end{tabular}
 \end{table}
 
-Electromagnetic (EM) simulations are made in CST Microwave Studio \cite{cst} (later CST). It is used to create antenna and phone models, and to calculate system's $S$-parameters. Simulations are focused on antenna's initial matching, i.e.\ $S_{ii}$ for each antenna. The procedure of testing different antenna structures is pretty straightforward: first a model is built, then simulated, and finally the obtained results are analyzed. Analysis focuses on the resonance frequencies, bandwidths, and matching levels. If the combination of these three parameters looks promising (e.g.\ sufficient levels and rather wide band), a matching circuit is constructed to enhance the performance. Based on the previous findings, the model is modified aiming to wide impedance matching, and then simulated again. The first tests are done with a simple model and a simple antenna design. While the antenna structures are getting better, the model of the phone is also modified to be more realistic.
+Electromagnetic (EM) simulations are made in CST Microwave Studio \cite{cst} (later CST). It is used to create antenna and phone models, and to calculate system's $S$-parameters. Simulations are focused on antenna's initial matching, i.e.\ $S_{ii}$ for each antenna. The procedure of testing different antenna structures is straightforward: first a model is built, then simulated, and finally the obtained results are analyzed. Analysis focuses on the resonance frequencies, bandwidths, and matching levels. If the combination of these three parameters looks promising (e.g.\ sufficient levels and a rather wide band), a matching circuit is constructed to enhance the performance. Based on the previous findings, the model is modified aiming to wideband impedance matching, and then simulated again. The first tests are done with a simple model and a simple antenna design. While the antenna structures are getting better, the model of the phone is also modified to be more realistic.
 
-Antennas are designed in order of significance. The cellular antennas are considered more important as they operate on the lowest frequencies, and therefore require the largest space. Thus, they are studied first. Development process of the antennas begins with the main antenna, and when it is operating properly, the same process will be applied to design the diversity antenna. The final step is to add solutions for GPS and Wi-Fi antennas. Figure \ref{fig:ant_order} illustrates the proceeding order. 
+The antennas are designed in order of significance. The cellular antennas are considered more important as they operate on the lowest frequencies, and therefore require the largest space. Thus, they are studied first. The development process of the antennas begins with the main antenna, and when it is operating properly, the same process will be applied to design the diversity antenna. The final step is to find solutions for GPS and Wi-Fi. Figure \ref{fig:ant_order} illustrates the proceeding order. 
 
-The basic research strategy is first to find solution for the main antenna to operate on the low band (LB, $704-960\,\mega\hertz$). Lower band is designed first, since it is harder to reach the determined matching levels and efficiencies at lower frequencies. Results from the previous studies have shown weaker performance at those areas. Also, the required antenna structures are larger, which makes them more critical to be prioritized due to the already limited space available. After a reasonable performance is achieved at that band, the model will be configured to support also the high band (HB, $1.71-2.69\,\giga\hertz$). Accordingly, the design of GPS/Wi-Fi antennas is started from the lowest frequency, i.e.\ GPS ($1.56-1.61\,\giga\hertz$), after which, the Wi-Fi frequencies ($2.4-2.484\,\giga\hertz$ and $5.15-5.875\,\giga\hertz$) are added. The process flow of designing one antenna is visualized in Figure \ref{fig:ant_design}.
+The basic research strategy is first to find a structure for the main antenna to operate on the low band (LB, $704$--$960\,\mega\hertz$). Lower band is designed first, since it is harder to reach the determined matching levels and efficiencies at lower frequencies. Results from the previous studies have shown weaker performance at that range. Also, the required antenna structures are larger, which makes them more critical to be prioritized due to the already limited space available. After a reasonable performance is achieved at that band, the model will be modified to support also the high band (HB, $1.71$--$2.69\,\giga\hertz$). Accordingly, the design of GPS/Wi-Fi antennas is started from the lowest frequency, i.e.\ GPS ($1.56$--$1.61\,\giga\hertz$), after which, the Wi-Fi frequencies ($2.4$--$2.484\,\giga\hertz$ and $5.15$--$5.875\,\giga\hertz$) are implemented. The process flow of designing one antenna is visualized in Figure \ref{fig:ant_design}.
 
-Before moving to the next antenna, the design constraints have to be checked. One antenna is iterated until the targets are reached (Figure \ref{fig:step}). When the antenna under development is performing according to the requirements, or at least at a decent level, the design of an another antenna can start.
+Before moving to the next antenna, the design constraints have to be checked. One antenna is iterated until the targets are reached (Figure \ref{fig:step}). When the antenna under development is performing according to the requirements, or at least at a decent level, the design of another antenna can start.
 
-Designing antennas is not limited only to antenna structures. In order to reach the goals presented above, matching circuits (MC) must be designed as well. Finding usable topologies is done simultaneously with the EM simulations. Optenni Lab \cite{optenni} and NI AWR Design Environment \cite{awr} (later AWR) are used for this purpose. The $S$-parameter file obtained from CST-simulations is given to and read by these programs. Optenni Lab searches for the best matching network according to given frequency band settings and amount of circuit elements. Resulted circuits are modified and fine-tuned in AWR, to reach the defined design objectives. Also, the ideal circuit elements are later replaced with models of actual components in AWR to obtain more realistic results.
+Designing antennas is not limited only to antenna structures. In order to reach the goals presented above, matching circuits (MC) must be designed as well. Finding usable topologies is done simultaneously with the EM simulations. Optenni Lab \cite{optenni} and NI AWR Design Environment \cite{awr} (later AWR) are used for this purpose. The $S$-parameter file obtained from the CST-simulations is given to and read by these programs. Optenni Lab searches for the best matching network according to given frequency band settings and amount of circuit elements. Resulted circuits are modified and fine-tuned in AWR, to reach the defined design objectives. Also, the ideal circuit elements are later replaced with models of actual components in AWR to obtain more realistic results.
 
 \begin{figure}[H]
     \centering
@@ -112,7 +112,7 @@ Designing antennas is not limited only to antenna structures. In order to reach 
 \vspace{-15pt}
 \subsection{Electromagnetic model of the mobile phone}
 \label{sec:phone}
-Besides the antennas, also the phone has to be modeled electromagnetically. For this project it is specified to use a mechanically accurate model, shown in Figure \ref{fig:cad}, which is provided by AAC Technologies as well. However, this model is too detailed for research purposes, and thus it will be modified, which is explained more in Section \ref{sec:sim_realistic}. The model anyway consists of a metallic back cover and side frame, plastic structure, and some subsystems of a phone. Metallic parts, and all of the subsystems and other parts are modeled as perfect electric conductors (PEC) to reduce simulation times. The plastic rim is the only non-metallic part of the model.
+Besides the antennas, also the phone has to be modeled electromagnetically. For this project, it is specified to use a mechanically accurate model, shown in Figure \ref{fig:cad}, which is provided by AAC Technologies as well. However, this model is too detailed for research purposes, and thus it will be modified, which is explained more in Section \ref{sec:sim_realistic}. The model consists of a metallic back cover and side frame, plastic structure, and some subsystems of a phone. All parts except the plastic rim are modeled as perfect electric conductors (PEC) to reduce simulation times.
 
 \begin{figure}[H]
     \vspace{-7pt}
@@ -122,7 +122,7 @@ Besides the antennas, also the phone has to be modeled electromagnetically. For 
     \label{fig:cad}
 \end{figure}
 
-Before the precise model is taken into use, simulations are first done with a plain model. Basically, that is a PEC-sheet for back cover, and an FR4-substrate with another PEC-sheet to model the display. Figure \ref{fig:basic_structure} illustrates the first phase model with the key dimensions of the phone marked into it. The antennas are built to the empty sides of the model, and eventually they would be integrated to the side frame of the accurate model. The simple model is used until a promising structure for the main antenna is found. 
+Before the precise model is taken into use, simulations are first done with a plain model. Basically, that is a PEC-sheet for the back cover, and an FR4-substrate with another PEC-sheet to model the display. Figure \ref{fig:basic_structure} illustrates the first phase model with the key dimensions of the phone marked into it. The antennas are built to the empty sides of the model, and eventually they would be integrated into the side frame of the accurate model. The simple model is used until a promising structure for the main antenna is found. 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{img/basic_structure.eps}
@@ -132,14 +132,14 @@ Before the precise model is taken into use, simulations are first done with a pl
 
 \subsection{Preliminary antenna study}
 \label{sec:pre_study}
-The first simulations with the plain model are about gathering knowledge on how different structures perform in the presence of the metal cover. Gaining this information is critical since antennas in metal-covered mobile phones are not that much studied, as is presented in Section \ref{sec:metal_rim}. This preliminary study (later also pre-study) focuses on different dimensions of antennas, their locations, shapes, feed positions, and the metal cover itself. The structures of antenna elements are kept as simple as possible in order to follow the effects of each parameter in an efficient way. 
+The first simulations with the plain model are about gathering knowledge on how different structures perform in the presence of the metal cover. Gaining this information is critical since antennas in metal-covered mobile phones are not that much studied, as is presented in Section \ref{sec:metal_rim}. This preliminary study (later also pre-study) focuses on different dimensions of antennas, their locations, shapes, feed positions, and the metal cover itself. The structures of the antenna elements are kept as simple as possible in order to follow the effects of each parameter in an efficient way. 
 
 
 \subsubsection{The effect of the metal cover}
 \label{sec:metal_effect}
-The main point of interest is the metal cover and how it affects the antenna's performance. To demonstrate the challenge of this project, simulations to test the effect of the metal are run. Since this test is just an example, the simulation model is kept simple. A long, L-shaped antenna completely covering one long and one short side with a little square in the corner is used. Models are shown in Figure \ref{fig:metal_vs_nometal_model}.
+The main point of interest is the metal cover, and how it affects the antenna's performance. To demonstrate the challenge of this project, simulations to test the effect of the metal are run. Since this test is just an example, the simulation model is kept simple. A long, L-shaped antenna completely covering one long and one short side with a little square in the corner is used. Models are shown in Figure \ref{fig:metal_vs_nometal_model}.
 
-\begin{figure}[H]
+\begin{figure}[!ht]
     \centering
     \begin{subfigure}[b]{0.49\textwidth}
     \includegraphics[width=\textwidth]{img/metal_cover.eps}
@@ -151,13 +151,13 @@ The main point of interest is the metal cover and how it affects the antenna's p
     \caption{Without metal cover.}
     \label{fig:nometal_cover}
     \end{subfigure}
-    \caption{The simulation models used to test the effect of a metal cover. An antenna element is on the side of the phone.}
+    \caption{The simulation models used to test the effect of the metal cover. An antenna element is on the side of the phone.}
     \label{fig:metal_vs_nometal_model}
 \end{figure}
 
 Figure \ref{fig:metal_vs_nometal} shows clearly the effect of the metal cover. At the low band, the results reveal a major difference. The aim of the matching level $-5\,\db$ is almost achieved when the metal cover is taken away without any external matching networks. With the metal cover the antenna resonates more with narrower peaks and has no desired matching level at any frequency. 
 
-Figure \ref{fig:metal_vs_nometal_matched} presents the same simulations with a four-element matching circuit designed with Optenni Lab. The software is set to generate matching circuits of four components, with $-5\,\db$ target efficiency. This time the difference is even larger. Without metal cover the desired matching level is exceeded by far. In contrary, adding matching circuit to the other case is not much of help. Even though the level is now more constant in the band, it is far from acceptable, and the difference of these cases is about $8\,\db$.
+Figure \ref{fig:metal_vs_nometal_matched} presents the same simulations with a four-element matching circuit designed with Optenni Lab. The software is set to generate matching circuits of four components, with $-5\,\db$ target efficiency. This time the difference is even larger. Without the metal cover the desired matching level is exceeded by far. In contrary, adding matching circuit to the other case is not much of help. Even though the level is now more constant in the band, it is far from acceptable, and the difference of these cases is about $8\,\db$.
 
 \begin{figure}[H]
     \centering 
@@ -171,12 +171,12 @@ Figure \ref{fig:metal_vs_nometal_matched} presents the same simulations with a f
         \caption{Matched antennas.}
         \label{fig:metal_vs_nometal_matched}
     \end{subfigure}
-    \caption{Effect of the metal back cover on antenna performance.}
+    \caption{The effect of the metallic back cover on antenna performance.}
     \label{fig:metal_vs_nometal_results}
 \end{figure}
 
 
-\clearpage
+%\clearpage
 \subsubsection{Size of an antenna}
 \label{sec:antenna_size}
 As mentioned earlier in Section \ref{sec:strategy}, the antennas are designed and developed in the EM simulator. Each simulated design provides information that is useful for the following iterations. 
@@ -187,22 +187,22 @@ The first interesting metric to investigate is the size of the antenna. The leng
     \centering
     \begin{subfigure}[b]{0.49\textwidth}
         \includegraphics[width=\textwidth]{img/ant_length_long.eps}
-        \caption{Antenna located on the side of the phone.}
+        \caption{An antenna located on the side of the phone.}
         \label{fig:ant_length_long}
     \end{subfigure}
-    
     \begin{subfigure}[b]{0.49\textwidth}
         \includegraphics[width=\textwidth]{img/ant_length_short.eps}
-        \caption{Antenna located at the end of the phone.}
+        \caption{An antenna located at the end of the phone.}
         \label{fig:ant_length_short}
     \end{subfigure}
     \caption{Models used to test the effect of antenna's length.}
     \label{fig:ant_length_model}
 \end{figure}
 
-Figure \ref{fig:ant_length_result} shows the effect of antenna length with five different values in both cases. Especially in the low band, none of these antennas is suitable. Anyhow, few observations can be made from these simulations. Figure \ref{fig:ant_length_long_res} reveals that the resonance of the longest antenna is the weakest and shorter antennas are better matched near the low band. Shortest tested antenna, having length of $20\,\milli\meter$, has the most promising performance in the high band.
+Figure \ref{fig:ant_length_result} shows the effect of antenna length with five different values in both cases. Especially in the low band, none of these antennas is suitable. Anyhow, few observations can be made. Figure \ref{fig:ant_length_long_res} reveals that the resonance of the longest antenna is the weakest and shorter antennas are better matched near the low band. Shortest tested antenna, having length of $20\,\milli\meter$, has the most promising performance in the high band.
 
-Effects of antenna's length are quite similar, if antenna is placed on the top end of the phone, like Figure \ref{fig:ant_length_short_res} presents. Again, none of the tested lengths fits for the low band, but this time the length does not make as clear difference. Each of the tested lengths has strong resonances near the low band at slightly different frequencies. Comparing the two cases at the low band, it seems that antenna located at the end of the phone operates better, and larger elements are slightly better than smaller ones.
+The effect is quite similar, if the antenna is placed on the top end of the phone, like Figure \ref{fig:ant_length_short_res} presents. Again, none of the tested lengths fits for the low band, but this time the length does not make as clear difference. Each of the tested lengths has strong resonances near the low band at slightly different frequencies. Comparing the two cases at the low band, it seems that antenna located at the end of the phone operates better, and larger elements are slightly better than smaller ones.
+
 \begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.49\textwidth}
@@ -212,52 +212,50 @@ Effects of antenna's length are quite similar, if antenna is placed on the top e
     \end{subfigure}
     \begin{subfigure}[b]{0.49\textwidth}
         \includegraphics[width=\textwidth]{img/ant_length_short_res.eps}
-        \caption{Antenna located on the top of the phone.}
+        \caption{Antenna located at the end of the phone.}
         \label{fig:ant_length_short_res}
     \end{subfigure}
     \caption{The effect of antenna's length.}
     \label{fig:ant_length_result}
 \end{figure}
 
-The other issue affecting the size of an antenna besides length is its width. The impact of width is tested with the same structure that is used to test the effect of length, when the antenna is placed on the top of the phone. Antenna's length is also $70\,\milli\meter$ in this case. As Figure \ref{fig:width_res} presents, the effect of the width is quite minimal. Wider element gives a little bit better bandwidth in the both desired operational bands, but difference is not significant. Despite the similarity of the results, larger bandwidth is more achievable with wider elements. Only it must be remembered, that the space for antennas is very limited on the sides of the phone, and thus, antennas cannot be much wider.
+The other issue affecting the size of an antenna besides length is its width. The impact of width is tested with the same structure that is used to test the effect of length, when the antenna is placed at the end of the phone. Antenna's length is also $70\,\milli\meter$ in this case. As Figure \ref{fig:width_res} presents, the effect of the width is quite minimal. Wider element gives a little bit better bandwidth in the both desired operational bands, but the difference is not significant. Despite the similarity of the results, larger bandwidth is more achievable with wider elements. Only it must be remembered, that the space for antennas is very limited on the sides of the phone, and thus, antennas cannot be much wider.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{img/width_res.eps}
-    \caption{Effect of the width of an antenna.}
+    \includegraphics[width=0.50\textwidth]{img/width_res.eps}
+    \caption{The effect of the width of an antenna.}
     \label{fig:width_res}
 \end{figure}
 
-
 \subsubsection{Location of the feed}
 \label{sec:feed}
-Besides the size of an antenna, another interesting parameter is the location of the feed. This is tested with the same structure that is used to test the impact of the metallic back cover except for the small block on the corner, shown in Figure \ref{fig:metal_cover} earlier. Feeds are located in two ways: either on the long or the short side, like in Figures \ref{fig:ant_length_long} and \ref{fig:ant_length_short}, respectively. The feed is placed between the antenna and the ground plane, or the display in this case, and four different locations are tested on each side. The first position is in the corner of the ground plane, and the last is at the center of it. Between these are two positions at equal distances, denoted as ground 1/3 and ground 2/3.
+Besides the size of an antenna, another interesting parameter is the location of the feed. This is tested with the same structure that is used to test the impact of the metallic back cover except for the small block on the corner, shown in Figure \ref{fig:metal_cover} earlier. Feeds are located in two ways: either on the long or the short side, like in Figures \ref{fig:ant_length_long} and \ref{fig:ant_length_short}, respectively. The feed is placed between the antenna and the ground plane, i.e.\ the display, and four different locations are tested on each side. The first position is in the corner of the ground plane, and the last is at the center of it. Between these are two positions at equal distances, denoted as ground 1/3 and ground 2/3.
 
-Figures \ref{fig:feed_pos_side_res} and \ref{fig:feed_pos_top_res} show the simulation results for feed on the long side and feed on top, respectively. Both of these graphs yield the same conclusion: for the low band, feed provides more promising operation when located at the corner of the ground plane. For the high band, feed location is the most promising when it is shifted away from the corner, and is located on the top side of the phone.
+Figures \ref{fig:feed_pos_side_res} and \ref{fig:feed_pos_top_res} show the simulation results for the feed on the long side and at the end, respectively. Both of these graphs yield the same conclusion: in the low band, the most promising performance is achieved when the feed is located in the corner of the RF-ground. In the high band, the best location for the feed is near the corner on the top side of the phone.
 
 \begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.49\textwidth}
         \includegraphics[width=\textwidth]{img/feed_pos_side_res.eps}
-        \caption{Antenna located on the side of the phone.}
+        \caption{Antenna on the side of the phone.}
         \label{fig:feed_pos_side_res}
     \end{subfigure}
     \begin{subfigure}[b]{0.49\textwidth}
         \includegraphics[width=\textwidth]{img/feed_pos_top_res.eps}
-        \caption{Antenna located on the top of the phone.}
+        \caption{Antenna at the end of the phone.}
         \label{fig:feed_pos_top_res}
     \end{subfigure}
     \caption{The effect of the location of the feed.}
     \label{fig:feed_effect}
 \end{figure}
 
-
 \subsubsection{Position and shape of an antenna}
 \label{sec:position_shape}
 
-Positioning of the antenna is as well worth testing. In this test, a $70\,\milli\meter$-long element is bent over a corner to form an L-shaped structure. The total length of this element is the same as is one option in testing the effect of length, to have comparability. The antenna is positioned in one corner of the phone in four different ways presented in Table \ref{tab:l_structures}. The lengths on each side are kept the same, and positioning is changed by rotating the element. The feed is placed in the corner of the ground plane, and is oriented along either the long or the short side. Figure \ref{fig:l_shape_model} illustrates the model. In this illustration the feed is placed on the long side of the phone.
+Positioning of the antenna is worth testing as well. In this test, a $70\,\milli\meter$-long element is bent over a corner to form an L-shaped structure. The total length of this element is the same as is used earlier to have comparability. The antenna is positioned in one corner of the phone in four different ways presented in Table \ref{tab:l_structures}. The lengths on each side are kept the same, and positioning is changed by rotating the element. The feed is placed in the corner of the ground plane and is oriented along either the long or the short side. Figure \ref{fig:l_shape_model} illustrates the model. In this illustration the feed is placed on the long side of the phone.
 
-Results are presented in Figure \ref{fig:l_shape_res}. The nature of each curve is very similar, especially other structures but A, that are almost identical below ca. $2.3\,\giga\hertz$. As these three structures have quite strong resonance above $1\,\giga\hertz$, the curve of Structure A is showing promising wideband performance. Although the good band is just above the low band, where performance of each setup is very weak, this test shows that wide band matching might be achievable with L-shaped elements in the corners.
+Results are presented in Figure \ref{fig:l_shape_res}. The nature of each curve is very similar, especially other structures but A, that are almost identical below ca.\ $2.3\,\giga\hertz$. As these three structures have quite strong resonance above $1\,\giga\hertz$, the curve of Structure A is showing promising wideband performance. Although the good band is just above the low band, where performance of each setup is very weak, this test shows that wide band matching might be achievable with L-shaped elements in the corners.
 
 \begin{table}[H]
     \centering
@@ -282,7 +280,7 @@ Results are presented in Figure \ref{fig:l_shape_res}. The nature of each curve 
     \centering
     \begin{subfigure}[b]{0.49\textwidth}
         \includegraphics[width=\textwidth]{img/L_shape.eps}
-        \caption{Model of an L-shaped antenna.}
+        \caption{The model of an L-shaped antenna.}
         \label{fig:l_shape_model}
     \end{subfigure}
     \begin{subfigure}[b]{0.49\textwidth}
@@ -294,7 +292,7 @@ Results are presented in Figure \ref{fig:l_shape_res}. The nature of each curve 
     \label{fig:l_shape}
 \end{figure}
 
-So far all investigated antennas have been either straight, rectangular sheets or L-shaped elements. Modifying the shape more might enable exciting different resonant modes. Figure \ref{fig:shape_models} shows six shapes of different complexity implemented at the end of the handset. All the tested structures are fed from the same corner of the ground plane. To make it clear, the antennas of Shapes 4, 5, and 6 (\Cref{fig:shape4,fig:shape5,fig:shape6}, respectively) are $0.5\,\milli\meter$ apart from the cover.
+So far all investigated antennas have been either straight and rectangular, or L-shaped elements. Modifying the shape more might enable exciting different resonant modes. Figure \ref{fig:shape_models} shows six shapes of different complexity implemented at the end of the handset. All the tested structures are fed from the same corner of the ground plane. To make it clear, the antennas of Shapes 4, 5, and 6 (\Cref{fig:shape4,fig:shape5,fig:shape6}, respectively) are $0.5\,\milli\meter$ apart from the cover.
 
 \begin{figure}[H]
     \centering
@@ -330,7 +328,7 @@ So far all investigated antennas have been either straight, rectangular sheets o
         \caption{Shape 6.}
         \label{fig:shape6}
     \end{subfigure}
-    \caption{Different shapes for antenna located at the end of the phone.}
+    \caption{Different shapes for the antenna located at the end of the phone.}
     \label{fig:shape_models}
 \end{figure}
 
@@ -344,50 +342,57 @@ Results in Figure \ref{fig:shape} show that for the low band, Shape 4 has the be
     \vspace{-12pt}
 \end{figure}
 
-As is shown in earlier Figure \ref{fig:metal_rim}, typical locations for antennas are the areas above and below the display of the phone. Therefore, an antenna element is placed in that area, as illustrated in Figure \ref{fig:front_model}, and compared to a similar element located at the end of the phone, like shown in Figure \ref{fig:shape1}. Figure \ref{fig:front_res} shows that the difference between these two locations is minimal. The shapes of the responses are nearly identical in the low frequencies, and they follow the same pattern in the higher band. Matching levels at the low band are bad and a little bit off the desired range, but the bandwidth is quite wide. In the high band, the element on the front gives good matching on two sub-bands, and is promising in the rest of the band as well.
+As is shown in earlier Figure \ref{fig:metal_rim}, typical locations for antennas are the areas above and below the display of the phone. Therefore, an antenna element is placed in that area, as illustrated in Figure \ref{fig:front_model}, and compared to a similar element located at the end of the phone, like shown in Figure \ref{fig:shape1}. Figure \ref{fig:front_res} shows that the difference between these two locations is minimal. The shapes of the responses are nearly identical in the low band, and they follow the same pattern in the high band. Matching levels at the low band are bad and a little bit off the desired range, but the bandwidth is quite wide. In the high band, the element on the front gives good matching on two sub-bands, and is promising in the rest of the band as well.
 
 \begin{figure}[H]
     \vspace{-7pt}
     \centering
     \begin{subfigure}[b]{0.49\textwidth}
         \includegraphics[width=\textwidth]{img/front.eps}
-        \caption{Model of a frontside antenna element.}
+        \caption{The model of a frontside antenna element.}
         \label{fig:front_model}
     \end{subfigure}
     \begin{subfigure}[b]{0.49\textwidth}
         \includegraphics[width=\textwidth]{img/front_res.eps}
-        \caption{Results from simulations.}
+        \caption{Results from the simulations.}
         \label{fig:front_res}
     \end{subfigure}
     \caption{An antenna element on the front side of the phone.}
     \label{fig:front_elem}
 \end{figure}
 
-In addition to straight elements, slots can be added to elements to introduce new wave modes. This test has the same antenna as presented in Figure \ref{fig:metal_cover}, with one or two slots on the sides. The first slot on the long side, at $20\,\milli\meter$ from the end, and second is on the short side at the same distance from the end of the element. Both slots are $2\,\milli\meter$ wide. The first added slot is shown in Figure \ref{fig:slot}.
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\textwidth]{img/slot.eps}
-    \caption{An antenna element with a slot in it.}
-    \label{fig:slot}
-\end{figure}
+In addition to straight elements, slots can be added to elements to introduce new wave modes. This test has the same antenna as presented in Figure \ref{fig:metal_cover}, with one or two slots on the sides. The first slot is on the long side, at $20\,\milli\meter$ from the end, and the second is on the short side at the same distance from the end of the element. Both slots are $2\,\milli\meter$ wide. The first added slot is shown in Figure \ref{fig:slot}.
 
-Adding one slot creates strong and very narrow peak resonance at the low band, as can be seen in Figure \ref{fig:slot_res}. The second slot gives slightly wider bandwidth, but decreases matching level compared to a case with  zero or one slot.
+Adding one slot creates strong and very narrow resonance peak at the low band, as can be seen in Figure \ref{fig:slot_res}. The second slot gives slightly wider bandwidth, but decreases the matching level compared to a case with zero or one slot.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{img/slot_res.eps}
-    \caption{The effect of slots in the antenna element.}
-    \label{fig:slot_res}
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/slot.eps}
+        \caption{The model of a slot.}
+        \label{fig:slot}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+        \includegraphics[width=\textwidth]{img/slot_res.eps}
+        \caption{The simulation results.}
+        \label{fig:slot_res}
+    \end{subfigure}
+    \vspace{-5pt}
+    \caption{Slots included in the antenna element.}
+    \label{fig:slot_effect}
+    \vspace{-15pt}
 \end{figure}
 
 \subsubsection{Ground plane}
 \label{sec:ground_plane}
-The last parameter to investigate in pre-study is the effect of ground plane. So far phone's display has been used as a ground plane, but since the back cover is also large metallic plate, that could be used for that as well. The test setup is the same as is seen in Figure \ref{fig:metal_cover}. Only the feed is moved between the iterations. Figure \ref{fig:ground_plane} shows the impact. When the feed is moved to locate between the back cover and the antenna element, the response is slightly more resonating, but has wider bandwidths and generally better matching levels. One possible explanation for this behavior might rely on the sizes of the two planes. When the display is used as a ground plane, the larger back cover interacts with the EM-fields stronger and therefore is more harmful for the antennas. If the feed is grounded to the back cover, the disturbing element is then smaller and negative effects are not as strong.
+The last parameter to investigate in the pre-study is the effect of ground plane. So far phone's display has been used as an RF-ground, but since the back cover is also large metallic plate, that could be used for that purpose as well. The test setup is the same as is seen in Figure \ref{fig:metal_cover}. Only the feed is moved between the iterations. Figure \ref{fig:ground_plane} shows the impact. When the feed is moved to locate between the back cover and the antenna element, the response is slightly more resonating, but has wider bandwidths and generally better matching levels. One possible explanation for this behavior might rely on the sizes of the two planes. When the display is used as a ground plane, the larger back cover interacts more with the EM-fields and therefore is more harmful for the antennas. If the feed is grounded to the back cover, the disturbing element is then smaller and negative effects are not as strong.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{img/ground_vs_display.eps}
-    \caption{The effect of using display or back cover as ground plane.}
+    \vspace{-7pt}
+    \caption{The effect of using display or back cover as an RF-ground.}
     \label{fig:ground_plane}
 \end{figure}
 
@@ -411,7 +416,7 @@ The observations and conclusions made from all these presented simulation result
         \hline
         Element width & Wider element slightly increases bandwidth. & Wider element slightly increases bandwidth.\\
         \hline
-        Location of the feed & Feed close to a corner of the display gives wider band. & No major difference if feed is at the long side. At the end its bandwidth is wider if the feed is closer to the center of the ground.\\
+        Location of the feed & Feed close to a corner of the display gives wider band. & No major difference if the feed is on the long side. At the end, the bandwidth is wider if the feed is closer to the center of the ground.\\
         \hline
         Back cover as the ground plane & Improved matching levels & More resonance frequencies and better matching levels.\\
         \hline
